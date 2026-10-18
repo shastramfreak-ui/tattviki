@@ -1,0 +1,47 @@
+name: Publish Tāttvikī and refresh tool releases
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '15 7 * * *'
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check learning content
+        run: |
+          node scripts/check_content.cjs
+          node scripts/test_ui_render.cjs
+      - name: Install enterprise lab dependencies
+        run: python -m pip install -r projects/enterprise-mdm-rdm-metadata/requirements.txt
+      - name: Verify enterprise semantic pipelines and SHACL
+        working-directory: projects/enterprise-mdm-rdm-metadata
+        run: |
+          python -m unittest -v test_lab.py
+          python generate.py
+          python run_queries.py
+      - name: Refresh published release data
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/refresh_updates.py
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4

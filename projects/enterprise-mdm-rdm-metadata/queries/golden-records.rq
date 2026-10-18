@@ -1,0 +1,10 @@
+PREFIX ex: <https://tattviki.example/enterprise/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct: <http://purl.org/dc/terms/>
+SELECT ?masterId ?name ?status (COUNT(?source) AS ?sourceCount)
+WHERE {
+  ?party a ex:GoldenParty ; dct:identifier ?masterId ; ex:approvedStatus ?code ; ex:sourceRecord ?source .
+  ?party <http://www.w3.org/2000/01/rdf-schema#label> ?name .
+  ?code skos:prefLabel ?status .
+}
+GROUP BY ?masterId ?name ?status ORDER BY ?masterId

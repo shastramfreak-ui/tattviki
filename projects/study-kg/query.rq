@@ -1,0 +1,11 @@
+PREFIX ex: <https://example.org/study/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?studyId ?compoundName ?indicationLabel WHERE {
+  ?study a ex:ClinicalStudy ;
+         ex:studyId ?studyId ;
+         ex:investigates ?compound ;
+         ex:indication ?indication .
+  ?compound ex:name ?compoundName .
+  ?indication skos:prefLabel ?indicationLabel .
+}
+ORDER BY ?studyId

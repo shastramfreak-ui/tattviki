@@ -1,0 +1,4 @@
+source_asset,target_asset,transformation,source_column,target_column
+CRM_PARTIES,GOLDEN_PARTIES,entity_resolution,registration_key,master_id
+ERP_PARTIES,GOLDEN_PARTIES,entity_resolution,registration_key,master_id
+GOLDEN_PARTIES,BI_CUSTOMERS,publish_dimension,master_id,master_id

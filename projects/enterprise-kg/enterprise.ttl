@@ -1,0 +1,1257 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ex: <https://tattviki.example/enterprise/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Application001 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 1"@en ;
+    ex:hostedOn ex:Server002 ;
+    ex:identifier "APP-001" ;
+    ex:ownedBy ex:Organization02 .
+
+ex:Application002 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 2"@en ;
+    ex:hostedOn ex:Server003 ;
+    ex:identifier "APP-002" ;
+    ex:ownedBy ex:Organization03 .
+
+ex:Application003 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 3"@en ;
+    ex:hostedOn ex:Server004 ;
+    ex:identifier "APP-003" ;
+    ex:ownedBy ex:Organization04 .
+
+ex:Application004 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 4"@en ;
+    ex:hostedOn ex:Server005 ;
+    ex:identifier "APP-004" ;
+    ex:ownedBy ex:Organization05 .
+
+ex:Application005 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 5"@en ;
+    ex:hostedOn ex:Server006 ;
+    ex:identifier "APP-005" ;
+    ex:ownedBy ex:Organization06 .
+
+ex:Application006 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 6"@en ;
+    ex:hostedOn ex:Server007 ;
+    ex:identifier "APP-006" ;
+    ex:ownedBy ex:Organization07 .
+
+ex:Application007 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 7"@en ;
+    ex:hostedOn ex:Server008 ;
+    ex:identifier "APP-007" ;
+    ex:ownedBy ex:Organization08 .
+
+ex:Application008 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 8"@en ;
+    ex:hostedOn ex:Server009 ;
+    ex:identifier "APP-008" ;
+    ex:ownedBy ex:Organization01 .
+
+ex:Application009 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 9"@en ;
+    ex:hostedOn ex:Server010 ;
+    ex:identifier "APP-009" ;
+    ex:ownedBy ex:Organization02 .
+
+ex:Application010 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 10"@en ;
+    ex:hostedOn ex:Server011 ;
+    ex:identifier "APP-010" ;
+    ex:ownedBy ex:Organization03 .
+
+ex:Application011 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 11"@en ;
+    ex:hostedOn ex:Server012 ;
+    ex:identifier "APP-011" ;
+    ex:ownedBy ex:Organization04 .
+
+ex:Application012 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 12"@en ;
+    ex:hostedOn ex:Server013 ;
+    ex:identifier "APP-012" ;
+    ex:ownedBy ex:Organization05 .
+
+ex:Application013 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 13"@en ;
+    ex:hostedOn ex:Server014 ;
+    ex:identifier "APP-013" ;
+    ex:ownedBy ex:Organization06 .
+
+ex:Application014 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 14"@en ;
+    ex:hostedOn ex:Server015 ;
+    ex:identifier "APP-014" ;
+    ex:ownedBy ex:Organization07 .
+
+ex:Application015 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 15"@en ;
+    ex:hostedOn ex:Server016 ;
+    ex:identifier "APP-015" ;
+    ex:ownedBy ex:Organization08 .
+
+ex:Application016 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 16"@en ;
+    ex:hostedOn ex:Server017 ;
+    ex:identifier "APP-016" ;
+    ex:ownedBy ex:Organization01 .
+
+ex:Application017 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 17"@en ;
+    ex:hostedOn ex:Server018 ;
+    ex:identifier "APP-017" ;
+    ex:ownedBy ex:Organization02 .
+
+ex:Application018 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 18"@en ;
+    ex:hostedOn ex:Server019 ;
+    ex:identifier "APP-018" ;
+    ex:ownedBy ex:Organization03 .
+
+ex:Application019 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 19"@en ;
+    ex:hostedOn ex:Server020 ;
+    ex:identifier "APP-019" ;
+    ex:ownedBy ex:Organization04 .
+
+ex:Application020 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 20"@en ;
+    ex:hostedOn ex:Server001 ;
+    ex:identifier "APP-020" ;
+    ex:ownedBy ex:Organization05 .
+
+ex:Application021 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 21"@en ;
+    ex:hostedOn ex:Server002 ;
+    ex:identifier "APP-021" ;
+    ex:ownedBy ex:Organization06 .
+
+ex:Application022 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 22"@en ;
+    ex:hostedOn ex:Server003 ;
+    ex:identifier "APP-022" ;
+    ex:ownedBy ex:Organization07 .
+
+ex:Application023 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 23"@en ;
+    ex:hostedOn ex:Server004 ;
+    ex:identifier "APP-023" ;
+    ex:ownedBy ex:Organization08 .
+
+ex:Application024 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 24"@en ;
+    ex:hostedOn ex:Server005 ;
+    ex:identifier "APP-024" ;
+    ex:ownedBy ex:Organization01 .
+
+ex:Application025 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 25"@en ;
+    ex:hostedOn ex:Server006 ;
+    ex:identifier "APP-025" ;
+    ex:ownedBy ex:Organization02 .
+
+ex:Application026 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 26"@en ;
+    ex:hostedOn ex:Server007 ;
+    ex:identifier "APP-026" ;
+    ex:ownedBy ex:Organization03 .
+
+ex:Application027 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 27"@en ;
+    ex:hostedOn ex:Server008 ;
+    ex:identifier "APP-027" ;
+    ex:ownedBy ex:Organization04 .
+
+ex:Application028 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 28"@en ;
+    ex:hostedOn ex:Server009 ;
+    ex:identifier "APP-028" ;
+    ex:ownedBy ex:Organization05 .
+
+ex:Application029 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 29"@en ;
+    ex:hostedOn ex:Server010 ;
+    ex:identifier "APP-029" ;
+    ex:ownedBy ex:Organization06 .
+
+ex:Application030 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 30"@en ;
+    ex:hostedOn ex:Server011 ;
+    ex:identifier "APP-030" ;
+    ex:ownedBy ex:Organization07 .
+
+ex:Application031 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 31"@en ;
+    ex:hostedOn ex:Server012 ;
+    ex:identifier "APP-031" ;
+    ex:ownedBy ex:Organization08 .
+
+ex:Application032 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 32"@en ;
+    ex:hostedOn ex:Server013 ;
+    ex:identifier "APP-032" ;
+    ex:ownedBy ex:Organization01 .
+
+ex:Application033 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 33"@en ;
+    ex:hostedOn ex:Server014 ;
+    ex:identifier "APP-033" ;
+    ex:ownedBy ex:Organization02 .
+
+ex:Application034 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 34"@en ;
+    ex:hostedOn ex:Server015 ;
+    ex:identifier "APP-034" ;
+    ex:ownedBy ex:Organization03 .
+
+ex:Application035 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 35"@en ;
+    ex:hostedOn ex:Server016 ;
+    ex:identifier "APP-035" ;
+    ex:ownedBy ex:Organization04 .
+
+ex:Application036 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 36"@en ;
+    ex:hostedOn ex:Server017 ;
+    ex:identifier "APP-036" ;
+    ex:ownedBy ex:Organization05 .
+
+ex:Application037 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 37"@en ;
+    ex:hostedOn ex:Server018 ;
+    ex:identifier "APP-037" ;
+    ex:ownedBy ex:Organization06 .
+
+ex:Application038 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 38"@en ;
+    ex:hostedOn ex:Server019 ;
+    ex:identifier "APP-038" ;
+    ex:ownedBy ex:Organization07 .
+
+ex:Application039 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 39"@en ;
+    ex:hostedOn ex:Server020 ;
+    ex:identifier "APP-039" ;
+    ex:ownedBy ex:Organization08 .
+
+ex:Application040 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 40"@en ;
+    ex:hostedOn ex:Server001 ;
+    ex:identifier "APP-040" ;
+    ex:ownedBy ex:Organization01 .
+
+ex:Application041 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 41"@en ;
+    ex:hostedOn ex:Server002 ;
+    ex:identifier "APP-041" ;
+    ex:ownedBy ex:Organization02 .
+
+ex:Application042 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 42"@en ;
+    ex:hostedOn ex:Server003 ;
+    ex:identifier "APP-042" ;
+    ex:ownedBy ex:Organization03 .
+
+ex:Application043 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 43"@en ;
+    ex:hostedOn ex:Server004 ;
+    ex:identifier "APP-043" ;
+    ex:ownedBy ex:Organization04 .
+
+ex:Application044 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 44"@en ;
+    ex:hostedOn ex:Server005 ;
+    ex:identifier "APP-044" ;
+    ex:ownedBy ex:Organization05 .
+
+ex:Application045 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 45"@en ;
+    ex:hostedOn ex:Server006 ;
+    ex:identifier "APP-045" ;
+    ex:ownedBy ex:Organization06 .
+
+ex:Application046 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 46"@en ;
+    ex:hostedOn ex:Server007 ;
+    ex:identifier "APP-046" ;
+    ex:ownedBy ex:Organization07 .
+
+ex:Application047 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 47"@en ;
+    ex:hostedOn ex:Server008 ;
+    ex:identifier "APP-047" ;
+    ex:ownedBy ex:Organization08 .
+
+ex:Application048 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 48"@en ;
+    ex:hostedOn ex:Server009 ;
+    ex:identifier "APP-048" ;
+    ex:ownedBy ex:Organization01 .
+
+ex:Application049 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 49"@en ;
+    ex:hostedOn ex:Server010 ;
+    ex:identifier "APP-049" ;
+    ex:ownedBy ex:Organization02 .
+
+ex:Application050 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 50"@en ;
+    ex:hostedOn ex:Server011 ;
+    ex:identifier "APP-050" ;
+    ex:ownedBy ex:Organization03 .
+
+ex:Application051 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 51"@en ;
+    ex:hostedOn ex:Server012 ;
+    ex:identifier "APP-051" ;
+    ex:ownedBy ex:Organization04 .
+
+ex:Application052 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 52"@en ;
+    ex:hostedOn ex:Server013 ;
+    ex:identifier "APP-052" ;
+    ex:ownedBy ex:Organization05 .
+
+ex:Application053 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 53"@en ;
+    ex:hostedOn ex:Server014 ;
+    ex:identifier "APP-053" ;
+    ex:ownedBy ex:Organization06 .
+
+ex:Application054 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 54"@en ;
+    ex:hostedOn ex:Server015 ;
+    ex:identifier "APP-054" ;
+    ex:ownedBy ex:Organization07 .
+
+ex:Application055 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 55"@en ;
+    ex:hostedOn ex:Server016 ;
+    ex:identifier "APP-055" ;
+    ex:ownedBy ex:Organization08 .
+
+ex:Application056 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 56"@en ;
+    ex:hostedOn ex:Server017 ;
+    ex:identifier "APP-056" ;
+    ex:ownedBy ex:Organization01 .
+
+ex:Application057 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 57"@en ;
+    ex:hostedOn ex:Server018 ;
+    ex:identifier "APP-057" ;
+    ex:ownedBy ex:Organization02 .
+
+ex:Application058 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 58"@en ;
+    ex:hostedOn ex:Server019 ;
+    ex:identifier "APP-058" ;
+    ex:ownedBy ex:Organization03 .
+
+ex:Application059 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 59"@en ;
+    ex:hostedOn ex:Server020 ;
+    ex:identifier "APP-059" ;
+    ex:ownedBy ex:Organization04 .
+
+ex:Application060 a ex:SoftwareAsset ;
+    rdfs:label "Synthetic application 60"@en ;
+    ex:hostedOn ex:Server001 ;
+    ex:identifier "APP-060" ;
+    ex:ownedBy ex:Organization05 .
+
+ex:Indication a owl:Class .
+
+ex:Researcher a owl:Class .
+
+ex:Study001 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 1"@en ;
+    dct:created "2025-02-02"^^xsd:date ;
+    ex:hasIndication ex:Indication02 ;
+    ex:identifier "SYN-0001" ;
+    ex:investigates ex:Compound02 ;
+    ex:ownedBy ex:Organization02 .
+
+ex:Study032 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 32"@en ;
+    dct:created "2025-09-06"^^xsd:date ;
+    ex:hasIndication ex:Indication03 ;
+    ex:identifier "SYN-0032" ;
+    ex:investigates ex:Compound03 ;
+    ex:ownedBy ex:Organization01 .
+
+ex:Study033 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 33"@en ;
+    dct:created "2025-10-07"^^xsd:date ;
+    ex:hasIndication ex:Indication04 ;
+    ex:identifier "SYN-0033" ;
+    ex:investigates ex:Compound04 ;
+    ex:ownedBy ex:Organization02 .
+
+ex:Study034 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 34"@en ;
+    dct:created "2025-11-08"^^xsd:date ;
+    ex:hasIndication ex:Indication05 ;
+    ex:identifier "SYN-0034" ;
+    ex:investigates ex:Compound05 ;
+    ex:ownedBy ex:Organization03 .
+
+ex:Study035 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 35"@en ;
+    dct:created "2025-12-09"^^xsd:date ;
+    ex:hasIndication ex:Indication06 ;
+    ex:identifier "SYN-0035" ;
+    ex:investigates ex:Compound06 ;
+    ex:ownedBy ex:Organization04 .
+
+ex:Study036 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 36"@en ;
+    dct:created "2025-01-10"^^xsd:date ;
+    ex:hasIndication ex:Indication07 ;
+    ex:identifier "SYN-0036" ;
+    ex:investigates ex:Compound07 ;
+    ex:ownedBy ex:Organization05 .
+
+ex:Study037 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 37"@en ;
+    dct:created "2025-02-11"^^xsd:date ;
+    ex:hasIndication ex:Indication08 ;
+    ex:identifier "SYN-0037" ;
+    ex:investigates ex:Compound08 ;
+    ex:ownedBy ex:Organization06 .
+
+ex:Study038 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 38"@en ;
+    dct:created "2025-03-12"^^xsd:date ;
+    ex:hasIndication ex:Indication09 ;
+    ex:identifier "SYN-0038" ;
+    ex:investigates ex:Compound09 ;
+    ex:ownedBy ex:Organization07 .
+
+ex:Study039 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 39"@en ;
+    dct:created "2025-04-13"^^xsd:date ;
+    ex:hasIndication ex:Indication10 ;
+    ex:identifier "SYN-0039" ;
+    ex:investigates ex:Compound10 ;
+    ex:ownedBy ex:Organization08 .
+
+ex:Study040 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 40"@en ;
+    dct:created "2025-05-14"^^xsd:date ;
+    ex:hasIndication ex:Indication01 ;
+    ex:identifier "SYN-0040" ;
+    ex:investigates ex:Compound11 ;
+    ex:ownedBy ex:Organization01 .
+
+ex:Study041 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 41"@en ;
+    dct:created "2025-06-15"^^xsd:date ;
+    ex:hasIndication ex:Indication02 ;
+    ex:identifier "SYN-0041" ;
+    ex:investigates ex:Compound12 ;
+    ex:ownedBy ex:Organization02 .
+
+ex:Study042 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 42"@en ;
+    dct:created "2025-07-16"^^xsd:date ;
+    ex:hasIndication ex:Indication03 ;
+    ex:identifier "SYN-0042" ;
+    ex:investigates ex:Compound13 ;
+    ex:ownedBy ex:Organization03 .
+
+ex:Study043 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 43"@en ;
+    dct:created "2025-08-17"^^xsd:date ;
+    ex:hasIndication ex:Indication04 ;
+    ex:identifier "SYN-0043" ;
+    ex:investigates ex:Compound14 ;
+    ex:ownedBy ex:Organization04 .
+
+ex:Study044 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 44"@en ;
+    dct:created "2025-09-18"^^xsd:date ;
+    ex:hasIndication ex:Indication05 ;
+    ex:identifier "SYN-0044" ;
+    ex:investigates ex:Compound15 ;
+    ex:ownedBy ex:Organization05 .
+
+ex:Study045 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 45"@en ;
+    dct:created "2025-10-19"^^xsd:date ;
+    ex:hasIndication ex:Indication06 ;
+    ex:identifier "SYN-0045" ;
+    ex:investigates ex:Compound01 ;
+    ex:ownedBy ex:Organization06 .
+
+ex:Study046 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 46"@en ;
+    dct:created "2025-11-20"^^xsd:date ;
+    ex:hasIndication ex:Indication07 ;
+    ex:identifier "SYN-0046" ;
+    ex:investigates ex:Compound02 ;
+    ex:ownedBy ex:Organization07 .
+
+ex:Study047 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 47"@en ;
+    dct:created "2025-12-21"^^xsd:date ;
+    ex:hasIndication ex:Indication08 ;
+    ex:identifier "SYN-0047" ;
+    ex:investigates ex:Compound03 ;
+    ex:ownedBy ex:Organization08 .
+
+ex:Study048 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 48"@en ;
+    dct:created "2025-01-22"^^xsd:date ;
+    ex:hasIndication ex:Indication09 ;
+    ex:identifier "SYN-0048" ;
+    ex:investigates ex:Compound04 ;
+    ex:ownedBy ex:Organization01 .
+
+ex:Study049 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 49"@en ;
+    dct:created "2025-02-23"^^xsd:date ;
+    ex:hasIndication ex:Indication10 ;
+    ex:identifier "SYN-0049" ;
+    ex:investigates ex:Compound05 ;
+    ex:ownedBy ex:Organization02 .
+
+ex:Study050 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 50"@en ;
+    dct:created "2025-03-24"^^xsd:date ;
+    ex:hasIndication ex:Indication01 ;
+    ex:identifier "SYN-0050" ;
+    ex:investigates ex:Compound06 ;
+    ex:ownedBy ex:Organization03 .
+
+ex:citesPublication a owl:ObjectProperty ;
+    rdfs:label "cites publication"@en .
+
+ex:hasIndication a owl:ObjectProperty ;
+    rdfs:label "has indication"@en .
+
+ex:hostedOn a owl:ObjectProperty ;
+    rdfs:label "hosted on"@en .
+
+ex:investigates a owl:ObjectProperty ;
+    rdfs:label "investigates compound"@en .
+
+ex:maintainedBy a owl:ObjectProperty ;
+    rdfs:label "maintained by"@en .
+
+ex:ownedBy a owl:ObjectProperty ;
+    rdfs:label "owned by"@en .
+
+ex:usesDataset a owl:ObjectProperty ;
+    rdfs:label "uses dataset"@en .
+
+ex:Dataset001 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study002 ;
+    ex:identifier "DS-001" .
+
+ex:Dataset002 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study003 ;
+    ex:identifier "DS-002" .
+
+ex:Dataset003 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study004 ;
+    ex:identifier "DS-003" .
+
+ex:Dataset004 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study005 ;
+    ex:identifier "DS-004" .
+
+ex:Dataset005 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study006 ;
+    ex:identifier "DS-005" .
+
+ex:Dataset006 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study007 ;
+    ex:identifier "DS-006" .
+
+ex:Dataset007 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study008 ;
+    ex:identifier "DS-007" .
+
+ex:Dataset008 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study009 ;
+    ex:identifier "DS-008" .
+
+ex:Dataset009 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study010 ;
+    ex:identifier "DS-009" .
+
+ex:Dataset010 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study011 ;
+    ex:identifier "DS-010" .
+
+ex:Dataset011 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study012 ;
+    ex:identifier "DS-011" .
+
+ex:Dataset012 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study013 ;
+    ex:identifier "DS-012" .
+
+ex:Dataset013 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study014 ;
+    ex:identifier "DS-013" .
+
+ex:Dataset014 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study015 ;
+    ex:identifier "DS-014" .
+
+ex:Dataset015 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study016 ;
+    ex:identifier "DS-015" .
+
+ex:Dataset016 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study017 ;
+    ex:identifier "DS-016" .
+
+ex:Dataset017 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study018 ;
+    ex:identifier "DS-017" .
+
+ex:Dataset018 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study019 ;
+    ex:identifier "DS-018" .
+
+ex:Dataset019 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study020 ;
+    ex:identifier "DS-019" .
+
+ex:Dataset020 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study021 ;
+    ex:identifier "DS-020" .
+
+ex:Dataset021 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study022 ;
+    ex:identifier "DS-021" .
+
+ex:Dataset022 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study023 ;
+    ex:identifier "DS-022" .
+
+ex:Dataset023 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study024 ;
+    ex:identifier "DS-023" .
+
+ex:Dataset024 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study025 ;
+    ex:identifier "DS-024" .
+
+ex:Dataset025 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study026 ;
+    ex:identifier "DS-025" .
+
+ex:Dataset026 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study027 ;
+    ex:identifier "DS-026" .
+
+ex:Dataset027 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study028 ;
+    ex:identifier "DS-027" .
+
+ex:Dataset028 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study029 ;
+    ex:identifier "DS-028" .
+
+ex:Dataset029 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study030 ;
+    ex:identifier "DS-029" .
+
+ex:Dataset030 a ex:Dataset ;
+    prov:wasGeneratedBy ex:Study031 ;
+    ex:identifier "DS-030" .
+
+ex:Publication001 a ex:Publication ;
+    dct:title "Demonstration publication 1"@en .
+
+ex:Publication002 a ex:Publication ;
+    dct:title "Demonstration publication 2"@en .
+
+ex:Publication003 a ex:Publication ;
+    dct:title "Demonstration publication 3"@en .
+
+ex:Publication004 a ex:Publication ;
+    dct:title "Demonstration publication 4"@en .
+
+ex:Publication005 a ex:Publication ;
+    dct:title "Demonstration publication 5"@en .
+
+ex:Publication006 a ex:Publication ;
+    dct:title "Demonstration publication 6"@en .
+
+ex:Publication007 a ex:Publication ;
+    dct:title "Demonstration publication 7"@en .
+
+ex:Publication008 a ex:Publication ;
+    dct:title "Demonstration publication 8"@en .
+
+ex:Publication009 a ex:Publication ;
+    dct:title "Demonstration publication 9"@en .
+
+ex:Publication010 a ex:Publication ;
+    dct:title "Demonstration publication 10"@en .
+
+ex:Publication011 a ex:Publication ;
+    dct:title "Demonstration publication 11"@en .
+
+ex:Publication012 a ex:Publication ;
+    dct:title "Demonstration publication 12"@en .
+
+ex:Publication013 a ex:Publication ;
+    dct:title "Demonstration publication 13"@en .
+
+ex:Publication014 a ex:Publication ;
+    dct:title "Demonstration publication 14"@en .
+
+ex:Publication015 a ex:Publication ;
+    dct:title "Demonstration publication 15"@en .
+
+ex:Publication016 a ex:Publication ;
+    dct:title "Demonstration publication 16"@en .
+
+ex:Publication017 a ex:Publication ;
+    dct:title "Demonstration publication 17"@en .
+
+ex:Publication018 a ex:Publication ;
+    dct:title "Demonstration publication 18"@en .
+
+ex:Publication019 a ex:Publication ;
+    dct:title "Demonstration publication 19"@en .
+
+ex:Publication020 a ex:Publication ;
+    dct:title "Demonstration publication 20"@en .
+
+ex:Publication021 a ex:Publication ;
+    dct:title "Demonstration publication 21"@en .
+
+ex:Publication022 a ex:Publication ;
+    dct:title "Demonstration publication 22"@en .
+
+ex:Publication023 a ex:Publication ;
+    dct:title "Demonstration publication 23"@en .
+
+ex:Publication024 a ex:Publication ;
+    dct:title "Demonstration publication 24"@en .
+
+ex:Publication025 a ex:Publication ;
+    dct:title "Demonstration publication 25"@en .
+
+ex:Study002 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 2"@en ;
+    dct:created "2025-03-03"^^xsd:date ;
+    ex:citesPublication ex:Publication001 ;
+    ex:hasIndication ex:Indication03 ;
+    ex:identifier "SYN-0002" ;
+    ex:investigates ex:Compound03 ;
+    ex:ownedBy ex:Organization03 ;
+    ex:usesDataset ex:Dataset001 .
+
+ex:Study003 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 3"@en ;
+    dct:created "2025-04-04"^^xsd:date ;
+    ex:citesPublication ex:Publication002 ;
+    ex:hasIndication ex:Indication04 ;
+    ex:identifier "SYN-0003" ;
+    ex:investigates ex:Compound04 ;
+    ex:ownedBy ex:Organization04 ;
+    ex:usesDataset ex:Dataset002 .
+
+ex:Study004 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 4"@en ;
+    dct:created "2025-05-05"^^xsd:date ;
+    ex:citesPublication ex:Publication003 ;
+    ex:hasIndication ex:Indication05 ;
+    ex:identifier "SYN-0004" ;
+    ex:investigates ex:Compound05 ;
+    ex:ownedBy ex:Organization05 ;
+    ex:usesDataset ex:Dataset003 .
+
+ex:Study005 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 5"@en ;
+    dct:created "2025-06-06"^^xsd:date ;
+    ex:citesPublication ex:Publication004 ;
+    ex:hasIndication ex:Indication06 ;
+    ex:identifier "SYN-0005" ;
+    ex:investigates ex:Compound06 ;
+    ex:ownedBy ex:Organization06 ;
+    ex:usesDataset ex:Dataset004 .
+
+ex:Study006 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 6"@en ;
+    dct:created "2025-07-07"^^xsd:date ;
+    ex:citesPublication ex:Publication005 ;
+    ex:hasIndication ex:Indication07 ;
+    ex:identifier "SYN-0006" ;
+    ex:investigates ex:Compound07 ;
+    ex:ownedBy ex:Organization07 ;
+    ex:usesDataset ex:Dataset005 .
+
+ex:Study007 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 7"@en ;
+    dct:created "2025-08-08"^^xsd:date ;
+    ex:citesPublication ex:Publication006 ;
+    ex:hasIndication ex:Indication08 ;
+    ex:identifier "SYN-0007" ;
+    ex:investigates ex:Compound08 ;
+    ex:ownedBy ex:Organization08 ;
+    ex:usesDataset ex:Dataset006 .
+
+ex:Study008 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 8"@en ;
+    dct:created "2025-09-09"^^xsd:date ;
+    ex:citesPublication ex:Publication007 ;
+    ex:hasIndication ex:Indication09 ;
+    ex:identifier "SYN-0008" ;
+    ex:investigates ex:Compound09 ;
+    ex:ownedBy ex:Organization01 ;
+    ex:usesDataset ex:Dataset007 .
+
+ex:Study009 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 9"@en ;
+    dct:created "2025-10-10"^^xsd:date ;
+    ex:citesPublication ex:Publication008 ;
+    ex:hasIndication ex:Indication10 ;
+    ex:identifier "SYN-0009" ;
+    ex:investigates ex:Compound10 ;
+    ex:ownedBy ex:Organization02 ;
+    ex:usesDataset ex:Dataset008 .
+
+ex:Study010 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 10"@en ;
+    dct:created "2025-11-11"^^xsd:date ;
+    ex:citesPublication ex:Publication009 ;
+    ex:hasIndication ex:Indication01 ;
+    ex:identifier "SYN-0010" ;
+    ex:investigates ex:Compound11 ;
+    ex:ownedBy ex:Organization03 ;
+    ex:usesDataset ex:Dataset009 .
+
+ex:Study011 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 11"@en ;
+    dct:created "2025-12-12"^^xsd:date ;
+    ex:citesPublication ex:Publication010 ;
+    ex:hasIndication ex:Indication02 ;
+    ex:identifier "SYN-0011" ;
+    ex:investigates ex:Compound12 ;
+    ex:ownedBy ex:Organization04 ;
+    ex:usesDataset ex:Dataset010 .
+
+ex:Study012 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 12"@en ;
+    dct:created "2025-01-13"^^xsd:date ;
+    ex:citesPublication ex:Publication011 ;
+    ex:hasIndication ex:Indication03 ;
+    ex:identifier "SYN-0012" ;
+    ex:investigates ex:Compound13 ;
+    ex:ownedBy ex:Organization05 ;
+    ex:usesDataset ex:Dataset011 .
+
+ex:Study013 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 13"@en ;
+    dct:created "2025-02-14"^^xsd:date ;
+    ex:citesPublication ex:Publication012 ;
+    ex:hasIndication ex:Indication04 ;
+    ex:identifier "SYN-0013" ;
+    ex:investigates ex:Compound14 ;
+    ex:ownedBy ex:Organization06 ;
+    ex:usesDataset ex:Dataset012 .
+
+ex:Study014 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 14"@en ;
+    dct:created "2025-03-15"^^xsd:date ;
+    ex:citesPublication ex:Publication013 ;
+    ex:hasIndication ex:Indication05 ;
+    ex:identifier "SYN-0014" ;
+    ex:investigates ex:Compound15 ;
+    ex:ownedBy ex:Organization07 ;
+    ex:usesDataset ex:Dataset013 .
+
+ex:Study015 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 15"@en ;
+    dct:created "2025-04-16"^^xsd:date ;
+    ex:citesPublication ex:Publication014 ;
+    ex:hasIndication ex:Indication06 ;
+    ex:identifier "SYN-0015" ;
+    ex:investigates ex:Compound01 ;
+    ex:ownedBy ex:Organization08 ;
+    ex:usesDataset ex:Dataset014 .
+
+ex:Study016 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 16"@en ;
+    dct:created "2025-05-17"^^xsd:date ;
+    ex:citesPublication ex:Publication015 ;
+    ex:hasIndication ex:Indication07 ;
+    ex:identifier "SYN-0016" ;
+    ex:investigates ex:Compound02 ;
+    ex:ownedBy ex:Organization01 ;
+    ex:usesDataset ex:Dataset015 .
+
+ex:Study017 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 17"@en ;
+    dct:created "2025-06-18"^^xsd:date ;
+    ex:citesPublication ex:Publication016 ;
+    ex:hasIndication ex:Indication08 ;
+    ex:identifier "SYN-0017" ;
+    ex:investigates ex:Compound03 ;
+    ex:ownedBy ex:Organization02 ;
+    ex:usesDataset ex:Dataset016 .
+
+ex:Study018 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 18"@en ;
+    dct:created "2025-07-19"^^xsd:date ;
+    ex:citesPublication ex:Publication017 ;
+    ex:hasIndication ex:Indication09 ;
+    ex:identifier "SYN-0018" ;
+    ex:investigates ex:Compound04 ;
+    ex:ownedBy ex:Organization03 ;
+    ex:usesDataset ex:Dataset017 .
+
+ex:Study019 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 19"@en ;
+    dct:created "2025-08-20"^^xsd:date ;
+    ex:citesPublication ex:Publication018 ;
+    ex:hasIndication ex:Indication10 ;
+    ex:identifier "SYN-0019" ;
+    ex:investigates ex:Compound05 ;
+    ex:ownedBy ex:Organization04 ;
+    ex:usesDataset ex:Dataset018 .
+
+ex:Study020 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 20"@en ;
+    dct:created "2025-09-21"^^xsd:date ;
+    ex:citesPublication ex:Publication019 ;
+    ex:hasIndication ex:Indication01 ;
+    ex:identifier "SYN-0020" ;
+    ex:investigates ex:Compound06 ;
+    ex:ownedBy ex:Organization05 ;
+    ex:usesDataset ex:Dataset019 .
+
+ex:Study021 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 21"@en ;
+    dct:created "2025-10-22"^^xsd:date ;
+    ex:citesPublication ex:Publication020 ;
+    ex:hasIndication ex:Indication02 ;
+    ex:identifier "SYN-0021" ;
+    ex:investigates ex:Compound07 ;
+    ex:ownedBy ex:Organization06 ;
+    ex:usesDataset ex:Dataset020 .
+
+ex:Study022 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 22"@en ;
+    dct:created "2025-11-23"^^xsd:date ;
+    ex:citesPublication ex:Publication021 ;
+    ex:hasIndication ex:Indication03 ;
+    ex:identifier "SYN-0022" ;
+    ex:investigates ex:Compound08 ;
+    ex:ownedBy ex:Organization07 ;
+    ex:usesDataset ex:Dataset021 .
+
+ex:Study023 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 23"@en ;
+    dct:created "2025-12-24"^^xsd:date ;
+    ex:citesPublication ex:Publication022 ;
+    ex:hasIndication ex:Indication04 ;
+    ex:identifier "SYN-0023" ;
+    ex:investigates ex:Compound09 ;
+    ex:ownedBy ex:Organization08 ;
+    ex:usesDataset ex:Dataset022 .
+
+ex:Study024 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 24"@en ;
+    dct:created "2025-01-25"^^xsd:date ;
+    ex:citesPublication ex:Publication023 ;
+    ex:hasIndication ex:Indication05 ;
+    ex:identifier "SYN-0024" ;
+    ex:investigates ex:Compound10 ;
+    ex:ownedBy ex:Organization01 ;
+    ex:usesDataset ex:Dataset023 .
+
+ex:Study025 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 25"@en ;
+    dct:created "2025-02-26"^^xsd:date ;
+    ex:citesPublication ex:Publication024 ;
+    ex:hasIndication ex:Indication06 ;
+    ex:identifier "SYN-0025" ;
+    ex:investigates ex:Compound11 ;
+    ex:ownedBy ex:Organization02 ;
+    ex:usesDataset ex:Dataset024 .
+
+ex:Study026 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 26"@en ;
+    dct:created "2025-03-27"^^xsd:date ;
+    ex:citesPublication ex:Publication025 ;
+    ex:hasIndication ex:Indication07 ;
+    ex:identifier "SYN-0026" ;
+    ex:investigates ex:Compound12 ;
+    ex:ownedBy ex:Organization03 ;
+    ex:usesDataset ex:Dataset025 .
+
+ex:Study027 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 27"@en ;
+    dct:created "2025-04-01"^^xsd:date ;
+    ex:hasIndication ex:Indication08 ;
+    ex:identifier "SYN-0027" ;
+    ex:investigates ex:Compound13 ;
+    ex:ownedBy ex:Organization04 ;
+    ex:usesDataset ex:Dataset026 .
+
+ex:Study028 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 28"@en ;
+    dct:created "2025-05-02"^^xsd:date ;
+    ex:hasIndication ex:Indication09 ;
+    ex:identifier "SYN-0028" ;
+    ex:investigates ex:Compound14 ;
+    ex:ownedBy ex:Organization05 ;
+    ex:usesDataset ex:Dataset027 .
+
+ex:Study029 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 29"@en ;
+    dct:created "2025-06-03"^^xsd:date ;
+    ex:hasIndication ex:Indication10 ;
+    ex:identifier "SYN-0029" ;
+    ex:investigates ex:Compound15 ;
+    ex:ownedBy ex:Organization06 ;
+    ex:usesDataset ex:Dataset028 .
+
+ex:Study030 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 30"@en ;
+    dct:created "2025-07-04"^^xsd:date ;
+    ex:hasIndication ex:Indication01 ;
+    ex:identifier "SYN-0030" ;
+    ex:investigates ex:Compound01 ;
+    ex:ownedBy ex:Organization07 ;
+    ex:usesDataset ex:Dataset029 .
+
+ex:Study031 a ex:ResearchStudy ;
+    rdfs:label "Fictional research study 31"@en ;
+    dct:created "2025-08-05"^^xsd:date ;
+    ex:hasIndication ex:Indication02 ;
+    ex:identifier "SYN-0031" ;
+    ex:investigates ex:Compound02 ;
+    ex:ownedBy ex:Organization08 ;
+    ex:usesDataset ex:Dataset030 .
+
+ex:Compound01 a ex:Compound ;
+    rdfs:label "Demonstration compound 1"@en .
+
+ex:Compound07 a ex:Compound ;
+    rdfs:label "Demonstration compound 7"@en .
+
+ex:Compound08 a ex:Compound ;
+    rdfs:label "Demonstration compound 8"@en .
+
+ex:Compound09 a ex:Compound ;
+    rdfs:label "Demonstration compound 9"@en .
+
+ex:Compound10 a ex:Compound ;
+    rdfs:label "Demonstration compound 10"@en .
+
+ex:Compound11 a ex:Compound ;
+    rdfs:label "Demonstration compound 11"@en .
+
+ex:Compound12 a ex:Compound ;
+    rdfs:label "Demonstration compound 12"@en .
+
+ex:Compound13 a ex:Compound ;
+    rdfs:label "Demonstration compound 13"@en .
+
+ex:Compound14 a ex:Compound ;
+    rdfs:label "Demonstration compound 14"@en .
+
+ex:Compound15 a ex:Compound ;
+    rdfs:label "Demonstration compound 15"@en .
+
+ex:Server001 a ex:Server ;
+    ex:identifier "SRV-001" ;
+    ex:ownedBy ex:Organization02 .
+
+ex:Server002 a ex:Server ;
+    ex:identifier "SRV-002" ;
+    ex:ownedBy ex:Organization03 .
+
+ex:Server003 a ex:Server ;
+    ex:identifier "SRV-003" ;
+    ex:ownedBy ex:Organization04 .
+
+ex:Server004 a ex:Server ;
+    ex:identifier "SRV-004" ;
+    ex:ownedBy ex:Organization05 .
+
+ex:Server005 a ex:Server ;
+    ex:identifier "SRV-005" ;
+    ex:ownedBy ex:Organization06 .
+
+ex:Server006 a ex:Server ;
+    ex:identifier "SRV-006" ;
+    ex:ownedBy ex:Organization07 .
+
+ex:Server007 a ex:Server ;
+    ex:identifier "SRV-007" ;
+    ex:ownedBy ex:Organization08 .
+
+ex:Server008 a ex:Server ;
+    ex:identifier "SRV-008" ;
+    ex:ownedBy ex:Organization01 .
+
+ex:Server009 a ex:Server ;
+    ex:identifier "SRV-009" ;
+    ex:ownedBy ex:Organization02 .
+
+ex:Server010 a ex:Server ;
+    ex:identifier "SRV-010" ;
+    ex:ownedBy ex:Organization03 .
+
+ex:Server011 a ex:Server ;
+    ex:identifier "SRV-011" ;
+    ex:ownedBy ex:Organization04 .
+
+ex:Server012 a ex:Server ;
+    ex:identifier "SRV-012" ;
+    ex:ownedBy ex:Organization05 .
+
+ex:Server013 a ex:Server ;
+    ex:identifier "SRV-013" ;
+    ex:ownedBy ex:Organization06 .
+
+ex:Server014 a ex:Server ;
+    ex:identifier "SRV-014" ;
+    ex:ownedBy ex:Organization07 .
+
+ex:Server015 a ex:Server ;
+    ex:identifier "SRV-015" ;
+    ex:ownedBy ex:Organization08 .
+
+ex:Server016 a ex:Server ;
+    ex:identifier "SRV-016" ;
+    ex:ownedBy ex:Organization01 .
+
+ex:Server017 a ex:Server ;
+    ex:identifier "SRV-017" ;
+    ex:ownedBy ex:Organization02 .
+
+ex:Server018 a ex:Server ;
+    ex:identifier "SRV-018" ;
+    ex:ownedBy ex:Organization03 .
+
+ex:Server019 a ex:Server ;
+    ex:identifier "SRV-019" ;
+    ex:ownedBy ex:Organization04 .
+
+ex:Server020 a ex:Server ;
+    ex:identifier "SRV-020" ;
+    ex:ownedBy ex:Organization05 .
+
+ex:Compound02 a ex:Compound ;
+    rdfs:label "Demonstration compound 2"@en .
+
+ex:Compound03 a ex:Compound ;
+    rdfs:label "Demonstration compound 3"@en .
+
+ex:Compound04 a ex:Compound ;
+    rdfs:label "Demonstration compound 4"@en .
+
+ex:Compound05 a ex:Compound ;
+    rdfs:label "Demonstration compound 5"@en .
+
+ex:Compound06 a ex:Compound ;
+    rdfs:label "Demonstration compound 6"@en .
+
+ex:Indication06 a skos:Concept ;
+    skos:broader ex:Indication03 ;
+    skos:inScheme ex:IndicationScheme ;
+    skos:prefLabel "Synthetic indication 6"@en .
+
+ex:Indication07 a skos:Concept ;
+    skos:broader ex:Indication04 ;
+    skos:inScheme ex:IndicationScheme ;
+    skos:prefLabel "Synthetic indication 7"@en .
+
+ex:Indication08 a skos:Concept ;
+    skos:broader ex:Indication04 ;
+    skos:inScheme ex:IndicationScheme ;
+    skos:prefLabel "Synthetic indication 8"@en .
+
+ex:Indication09 a skos:Concept ;
+    skos:broader ex:Indication05 ;
+    skos:inScheme ex:IndicationScheme ;
+    skos:prefLabel "Synthetic indication 9"@en .
+
+ex:Indication10 a skos:Concept ;
+    skos:broader ex:Indication05 ;
+    skos:inScheme ex:IndicationScheme ;
+    skos:prefLabel "Synthetic indication 10"@en .
+
+ex:Indication01 a skos:Concept ;
+    skos:inScheme ex:IndicationScheme ;
+    skos:prefLabel "Synthetic indication 1"@en .
+
+ex:Indication02 a skos:Concept ;
+    skos:broader ex:Indication01 ;
+    skos:inScheme ex:IndicationScheme ;
+    skos:prefLabel "Synthetic indication 2"@en .
+
+ex:Indication03 a skos:Concept ;
+    skos:broader ex:Indication02 ;
+    skos:inScheme ex:IndicationScheme ;
+    skos:prefLabel "Synthetic indication 3"@en .
+
+ex:Indication04 a skos:Concept ;
+    skos:broader ex:Indication02 ;
+    skos:inScheme ex:IndicationScheme ;
+    skos:prefLabel "Synthetic indication 4"@en .
+
+ex:Indication05 a skos:Concept ;
+    skos:broader ex:Indication03 ;
+    skos:inScheme ex:IndicationScheme ;
+    skos:prefLabel "Synthetic indication 5"@en .
+
+ex:Organization a owl:Class .
+
+ex:IndicationScheme a skos:ConceptScheme .
+
+ex:Compound a owl:Class .
+
+ex:Organization01 a ex:Organization ;
+    rdfs:label "Organization 1 (fictional)"@en .
+
+ex:Organization06 a ex:Organization ;
+    rdfs:label "Organization 6 (fictional)"@en .
+
+ex:Organization07 a ex:Organization ;
+    rdfs:label "Organization 7 (fictional)"@en .
+
+ex:Organization08 a ex:Organization ;
+    rdfs:label "Organization 8 (fictional)"@en .
+
+ex:Organization04 a ex:Organization ;
+    rdfs:label "Organization 4 (fictional)"@en .
+
+ex:Organization05 a ex:Organization ;
+    rdfs:label "Organization 5 (fictional)"@en .
+
+ex:Organization02 a ex:Organization ;
+    rdfs:label "Organization 2 (fictional)"@en .
+
+ex:Organization03 a ex:Organization ;
+    rdfs:label "Organization 3 (fictional)"@en .
+
+ex:Server a owl:Class .
+
+ex:Publication a owl:Class .
+
+ex:Dataset a owl:Class .
+
+ex:ResearchStudy a owl:Class .
+
+ex:SoftwareAsset a owl:Class .
+

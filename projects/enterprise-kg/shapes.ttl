@@ -1,0 +1,15 @@
+@prefix ex: <https://tattviki.example/enterprise/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:ResearchStudyShape a sh:NodeShape ;
+  sh:targetClass ex:ResearchStudy ;
+  sh:property [ sh:path ex:identifier ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:pattern "^SYN-[0-9]{4}$" ] ;
+  sh:property [ sh:path ex:investigates ; sh:minCount 1 ; sh:class ex:Compound ] ;
+  sh:property [ sh:path ex:hasIndication ; sh:minCount 1 ] ;
+  sh:property [ sh:path ex:ownedBy ; sh:minCount 1 ; sh:class ex:Organization ] .
+
+ex:SoftwareAssetShape a sh:NodeShape ;
+  sh:targetClass ex:SoftwareAsset ;
+  sh:property [ sh:path ex:identifier ; sh:minCount 1 ; sh:pattern "^APP-" ] ;
+  sh:property [ sh:path ex:hostedOn ; sh:minCount 1 ; sh:class ex:Server ] .

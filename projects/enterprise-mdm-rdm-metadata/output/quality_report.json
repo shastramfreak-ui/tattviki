@@ -1,0 +1,14 @@
+{
+  "source_records": 11,
+  "golden_parties": 5,
+  "requires_review": [
+    {
+      "system": "CRM",
+      "source_id": "C105",
+      "reason": "No registration key; routed for steward review"
+    }
+  ],
+  "unmapped_codes": [],
+  "status_codes": 3,
+  "triples": 203
+}

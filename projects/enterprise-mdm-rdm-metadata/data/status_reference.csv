@@ -1,0 +1,7 @@
+source,local_code,canonical_code,approved_label,version
+CRM,ACT,ACTIVE,Active,2026.1
+CRM,INACT,INACTIVE,Inactive,2026.1
+CRM,HOLD,SUSPENDED,Suspended,2026.1
+ERP,A,ACTIVE,Active,2026.1
+ERP,I,INACTIVE,Inactive,2026.1
+ERP,S,SUSPENDED,Suspended,2026.1

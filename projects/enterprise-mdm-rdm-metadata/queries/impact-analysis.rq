@@ -1,0 +1,10 @@
+PREFIX ex: <https://tattviki.example/enterprise/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?upstream ?downstream WHERE {
+  ?a dct:identifier ?upstream .
+  ?b dct:identifier ?downstream .
+  ?b prov:wasDerivedFrom+ ?a .
+  FILTER(?upstream = "CRM_PARTIES")
+}
+ORDER BY ?downstream

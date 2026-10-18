@@ -1,0 +1,5 @@
+asset_id,title,source_system,owner_team,classification,license,source_column
+CRM_PARTIES,CRM party register,CRM,Customer Operations,Internal,https://creativecommons.org/publicdomain/zero/1.0/,registration_key
+ERP_PARTIES,ERP party register,ERP,Finance Operations,Internal,https://creativecommons.org/publicdomain/zero/1.0/,registration_key
+GOLDEN_PARTIES,Governed party master,MDM,Data Governance,Restricted,https://creativecommons.org/publicdomain/zero/1.0/,master_id
+BI_CUSTOMERS,Customer dimension dashboard,BI,Analytics,Internal,https://creativecommons.org/publicdomain/zero/1.0/,master_id

@@ -1,0 +1,9 @@
+@prefix ex: <https://example.org/study/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:ClinicalStudyShape a sh:NodeShape ;
+  sh:targetClass ex:ClinicalStudy ;
+  sh:property [ sh:path ex:studyId ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path ex:investigates ; sh:minCount 1 ; sh:class ex:InvestigationalProduct ] ;
+  sh:property [ sh:path ex:indication ; sh:minCount 1 ] .

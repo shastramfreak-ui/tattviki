@@ -1,0 +1,22 @@
+@prefix ex: <https://tattviki.example/enterprise/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:GoldenPartyShape a sh:NodeShape ;
+    sh:targetClass ex:GoldenParty ;
+    sh:property [ sh:path dct:identifier ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:message "Golden records need exactly one canonical ID" ] ;
+    sh:property [ sh:path ex:approvedStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:class skos:Concept ; sh:message "Golden record requires approved SKOS status" ] ;
+    sh:property [ sh:path ex:sourceRecord ; sh:minCount 1 ; sh:message "Every master record needs its source record provenance" ] .
+
+ex:CatalogAssetShape a sh:NodeShape ;
+    sh:targetClass ex:CatalogAsset ;
+    sh:property [ sh:path dct:title ; sh:minCount 1 ; sh:datatype xsd:string ] ;
+    sh:property [ sh:path ex:ownedByTeam ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path dct:license ; sh:minCount 1 ; sh:nodeKind sh:IRI ] .
+
+ex:ApprovedCodeShape a sh:NodeShape ;
+    sh:targetClass ex:ApprovedCode ;
+    sh:property [ sh:path skos:prefLabel ; sh:minCount 1 ; sh:uniqueLang true ] ;
+    sh:property [ sh:path skos:inScheme ; sh:minCount 1 ; sh:maxCount 1 ] .

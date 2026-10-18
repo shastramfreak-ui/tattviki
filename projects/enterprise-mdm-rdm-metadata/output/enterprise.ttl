@@ -1,0 +1,251 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ex: <https://tattviki.example/enterprise/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+ex:code-CRM-ACT a skos:Concept ;
+    skos:exactMatch ex:status-ACTIVE ;
+    skos:notation "ACT" ;
+    skos:prefLabel "ACT" .
+
+ex:code-CRM-HOLD a skos:Concept ;
+    skos:exactMatch ex:status-SUSPENDED ;
+    skos:notation "HOLD" ;
+    skos:prefLabel "HOLD" .
+
+ex:code-CRM-INACT a skos:Concept ;
+    skos:exactMatch ex:status-INACTIVE ;
+    skos:notation "INACT" ;
+    skos:prefLabel "INACT" .
+
+ex:code-ERP-A a skos:Concept ;
+    skos:exactMatch ex:status-ACTIVE ;
+    skos:notation "A" ;
+    skos:prefLabel "A" .
+
+ex:code-ERP-I a skos:Concept ;
+    skos:exactMatch ex:status-INACTIVE ;
+    skos:notation "I" ;
+    skos:prefLabel "I" .
+
+ex:code-ERP-S a skos:Concept ;
+    skos:exactMatch ex:status-SUSPENDED ;
+    skos:notation "S" ;
+    skos:prefLabel "S" .
+
+ex:dataset-BI_CUSTOMERS a dcat:Dataset,
+        ex:CatalogAsset ;
+    dct:identifier "BI_CUSTOMERS" ;
+    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:title "Customer dimension dashboard" ;
+    prov:wasDerivedFrom ex:dataset-GOLDEN_PARTIES ;
+    prov:wasGeneratedBy ex:run-GOLDEN_PARTIES-to-BI_CUSTOMERS ;
+    ex:classification "Internal" ;
+    ex:hasColumn ex:column-BI_CUSTOMERS-master_id ;
+    ex:ownedByTeam ex:team-Analytics ;
+    ex:sourceSystem "BI" .
+
+ex:master-M-2C18B869281A a ex:GoldenParty ;
+    rdfs:label "Blue River Laboratories" ;
+    dct:identifier "M-2C18B869281A" ;
+    prov:wasDerivedFrom ex:source-CRM-C103,
+        ex:source-ERP-E802 ;
+    ex:approvedStatus ex:status-ACTIVE ;
+    ex:sourceRecord ex:source-CRM-C103,
+        ex:source-ERP-E802 ;
+    ex:survivorshipPolicy "ERP-first for legal name and party status; review disagreements" .
+
+ex:master-M-8DF1DBEC174F a ex:GoldenParty ;
+    rdfs:label "Cedar Logistics" ;
+    dct:identifier "M-8DF1DBEC174F" ;
+    prov:wasDerivedFrom ex:source-ERP-E804 ;
+    ex:approvedStatus ex:status-ACTIVE ;
+    ex:sourceRecord ex:source-ERP-E804 ;
+    ex:survivorshipPolicy "ERP-first for legal name and party status; review disagreements" .
+
+ex:master-M-9D3B3EF2B163 a ex:GoldenParty ;
+    rdfs:label "Orion Manufacturing GmbH" ;
+    dct:identifier "M-9D3B3EF2B163" ;
+    prov:wasDerivedFrom ex:source-CRM-C104,
+        ex:source-ERP-E803 ;
+    ex:approvedStatus ex:status-INACTIVE ;
+    ex:sourceRecord ex:source-CRM-C104,
+        ex:source-ERP-E803 ;
+    ex:survivorshipPolicy "ERP-first for legal name and party status; review disagreements" .
+
+ex:master-M-C6151859CB1E a ex:GoldenParty ;
+    rdfs:label "Northstar Health Limited" ;
+    dct:identifier "M-C6151859CB1E" ;
+    prov:wasDerivedFrom ex:source-CRM-C100,
+        ex:source-CRM-C101,
+        ex:source-ERP-E800 ;
+    ex:approvedStatus ex:status-ACTIVE ;
+    ex:sourceRecord ex:source-CRM-C100,
+        ex:source-CRM-C101,
+        ex:source-ERP-E800 ;
+    ex:survivorshipPolicy "ERP-first for legal name and party status; review disagreements" .
+
+ex:master-M-E8AF07F3EA26 a ex:GoldenParty ;
+    rdfs:label "Lumen Retail Limited" ;
+    dct:identifier "M-E8AF07F3EA26" ;
+    prov:wasDerivedFrom ex:source-CRM-C102,
+        ex:source-ERP-E801 ;
+    ex:approvedStatus ex:status-SUSPENDED ;
+    ex:sourceRecord ex:source-CRM-C102,
+        ex:source-ERP-E801 ;
+    ex:survivorshipPolicy "ERP-first for legal name and party status; review disagreements" .
+
+ex:source-CRM-C105 a ex:SourcePartyRecord ;
+    rdfs:label "Unknown Counterparty" ;
+    dct:identifier "C105" ;
+    ex:normalizedStatus ex:status-ACTIVE ;
+    ex:sourceSystem "CRM" .
+
+ex:column-BI_CUSTOMERS-master_id rdfs:label "master_id" ;
+    prov:wasDerivedFrom ex:column-GOLDEN_PARTIES-master_id .
+
+ex:run-CRM_PARTIES-to-GOLDEN_PARTIES a prov:Activity ;
+    rdfs:label "entity_resolution" ;
+    prov:used ex:dataset-CRM_PARTIES .
+
+ex:run-ERP_PARTIES-to-GOLDEN_PARTIES a prov:Activity ;
+    rdfs:label "entity_resolution" ;
+    prov:used ex:dataset-ERP_PARTIES .
+
+ex:run-GOLDEN_PARTIES-to-BI_CUSTOMERS a prov:Activity ;
+    rdfs:label "publish_dimension" ;
+    prov:used ex:dataset-GOLDEN_PARTIES .
+
+ex:team-Analytics rdfs:label "Analytics" .
+
+ex:team-Customer_Operations rdfs:label "Customer Operations" .
+
+ex:team-Data_Governance rdfs:label "Data Governance" .
+
+ex:team-Finance_Operations rdfs:label "Finance Operations" .
+
+ex:column-CRM_PARTIES-registration_key rdfs:label "registration_key" .
+
+ex:column-ERP_PARTIES-registration_key rdfs:label "registration_key" .
+
+ex:column-GOLDEN_PARTIES-master_id rdfs:label "master_id" ;
+    prov:wasDerivedFrom ex:column-CRM_PARTIES-registration_key,
+        ex:column-ERP_PARTIES-registration_key .
+
+ex:dataset-CRM_PARTIES a dcat:Dataset,
+        ex:CatalogAsset ;
+    dct:identifier "CRM_PARTIES" ;
+    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:title "CRM party register" ;
+    ex:classification "Internal" ;
+    ex:hasColumn ex:column-CRM_PARTIES-registration_key ;
+    ex:ownedByTeam ex:team-Customer_Operations ;
+    ex:sourceSystem "CRM" .
+
+ex:dataset-ERP_PARTIES a dcat:Dataset,
+        ex:CatalogAsset ;
+    dct:identifier "ERP_PARTIES" ;
+    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:title "ERP party register" ;
+    ex:classification "Internal" ;
+    ex:hasColumn ex:column-ERP_PARTIES-registration_key ;
+    ex:ownedByTeam ex:team-Finance_Operations ;
+    ex:sourceSystem "ERP" .
+
+ex:dataset-GOLDEN_PARTIES a dcat:Dataset,
+        ex:CatalogAsset ;
+    dct:identifier "GOLDEN_PARTIES" ;
+    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:title "Governed party master" ;
+    prov:wasDerivedFrom ex:dataset-CRM_PARTIES,
+        ex:dataset-ERP_PARTIES ;
+    prov:wasGeneratedBy ex:run-CRM_PARTIES-to-GOLDEN_PARTIES,
+        ex:run-ERP_PARTIES-to-GOLDEN_PARTIES ;
+    ex:classification "Restricted" ;
+    ex:hasColumn ex:column-GOLDEN_PARTIES-master_id ;
+    ex:ownedByTeam ex:team-Data_Governance ;
+    ex:sourceSystem "MDM" .
+
+ex:source-CRM-C100 a ex:SourcePartyRecord ;
+    rdfs:label "Northstar Health" ;
+    dct:identifier "C100" ;
+    ex:normalizedStatus ex:status-ACTIVE ;
+    ex:sourceSystem "CRM" .
+
+ex:source-CRM-C101 a ex:SourcePartyRecord ;
+    rdfs:label "Northstar Health Ltd" ;
+    dct:identifier "C101" ;
+    ex:normalizedStatus ex:status-ACTIVE ;
+    ex:sourceSystem "CRM" .
+
+ex:source-CRM-C102 a ex:SourcePartyRecord ;
+    rdfs:label "Lumen Retail" ;
+    dct:identifier "C102" ;
+    ex:normalizedStatus ex:status-SUSPENDED ;
+    ex:sourceSystem "CRM" .
+
+ex:source-CRM-C103 a ex:SourcePartyRecord ;
+    rdfs:label "Blue River Labs" ;
+    dct:identifier "C103" ;
+    ex:normalizedStatus ex:status-ACTIVE ;
+    ex:sourceSystem "CRM" .
+
+ex:source-CRM-C104 a ex:SourcePartyRecord ;
+    rdfs:label "Orion Manufacturing" ;
+    dct:identifier "C104" ;
+    ex:normalizedStatus ex:status-INACTIVE ;
+    ex:sourceSystem "CRM" .
+
+ex:source-ERP-E800 a ex:SourcePartyRecord ;
+    rdfs:label "Northstar Health Limited" ;
+    dct:identifier "E800" ;
+    ex:normalizedStatus ex:status-ACTIVE ;
+    ex:sourceSystem "ERP" .
+
+ex:source-ERP-E801 a ex:SourcePartyRecord ;
+    rdfs:label "Lumen Retail Limited" ;
+    dct:identifier "E801" ;
+    ex:normalizedStatus ex:status-SUSPENDED ;
+    ex:sourceSystem "ERP" .
+
+ex:source-ERP-E802 a ex:SourcePartyRecord ;
+    rdfs:label "Blue River Laboratories" ;
+    dct:identifier "E802" ;
+    ex:normalizedStatus ex:status-ACTIVE ;
+    ex:sourceSystem "ERP" .
+
+ex:source-ERP-E803 a ex:SourcePartyRecord ;
+    rdfs:label "Orion Manufacturing GmbH" ;
+    dct:identifier "E803" ;
+    ex:normalizedStatus ex:status-INACTIVE ;
+    ex:sourceSystem "ERP" .
+
+ex:source-ERP-E804 a ex:SourcePartyRecord ;
+    rdfs:label "Cedar Logistics" ;
+    dct:identifier "E804" ;
+    ex:normalizedStatus ex:status-ACTIVE ;
+    ex:sourceSystem "ERP" .
+
+ex:PartyStatusScheme a skos:ConceptScheme ;
+    skos:prefLabel "Party status"@en .
+
+ex:status-INACTIVE a skos:Concept,
+        ex:ApprovedCode ;
+    dct:hasVersion "2026.1" ;
+    skos:inScheme ex:PartyStatusScheme ;
+    skos:prefLabel "Inactive"@en .
+
+ex:status-SUSPENDED a skos:Concept,
+        ex:ApprovedCode ;
+    dct:hasVersion "2026.1" ;
+    skos:inScheme ex:PartyStatusScheme ;
+    skos:prefLabel "Suspended"@en .
+
+ex:status-ACTIVE a skos:Concept,
+        ex:ApprovedCode ;
+    dct:hasVersion "2026.1" ;
+    skos:inScheme ex:PartyStatusScheme ;
+    skos:prefLabel "Active"@en .
+

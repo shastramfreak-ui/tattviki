@@ -1,0 +1,19 @@
+@prefix ex: <https://example.org/study/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Fictional teaching data only — no actual trials, drugs or patients.
+ex:Study01 a ex:ClinicalStudy ;
+  ex:studyId "EXAMPLE-001" ;
+  ex:investigates ex:Compound01 ;
+  ex:indication ex:ConceptDiabetes .
+
+ex:Study02 a ex:ClinicalStudy ;
+  ex:studyId "EXAMPLE-002" ;
+  ex:investigates ex:Compound02 ;
+  ex:indication ex:ConceptHypertension .
+
+ex:Compound01 a ex:InvestigationalProduct ; ex:name "Example Compound A" .
+ex:Compound02 a ex:InvestigationalProduct ; ex:name "Example Compound B" .
+ex:ConceptDiabetes a skos:Concept ; skos:prefLabel "Diabetes mellitus"@en .
+ex:ConceptHypertension a skos:Concept ; skos:prefLabel "Hypertension"@en .
