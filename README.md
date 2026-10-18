@@ -105,4 +105,5 @@ python scripts/test_browser.py
 
 This test harness injects locally packaged JS/CSS into a headless Chromium page to avoid external network dependencies. It verifies interaction logic but cannot replace a live GitHub Pages smoke test. Screenshots are written to the system temporary directory. The GitHub publishing workflow additionally checks route rendering and curriculum integrity with Node.js.
 #   t a t t v i k i  
+ #   t a t t v i k i  
  
