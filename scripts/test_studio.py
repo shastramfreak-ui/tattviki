@@ -21,7 +21,7 @@ with sync_playwright() as p:
     # Browser sandbox blocks navigation to local HTTP/file URLs; inject the exact packaged assets.
     page.set_content('<html><head><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><div id="app"></div></body></html>')
     page.add_style_tag(content=(ROOT/'assets/styles.css').read_text())
-    for name in ['content','curriculum','deepdives','enterprise_curriculum','enterprise_cases','studio','app']:
+    for name in ['content','curriculum','deepdives','enterprise_curriculum','enterprise_cases','studio-templates','studio-graph','studio','app']:
         page.add_script_tag(content=(ROOT/'assets'/f'{name}.js').read_text())
     page.locator('[data-route="studio"]').first.click()
     assert page.locator('.studio-graph-node').count()>=25

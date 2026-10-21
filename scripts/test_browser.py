@@ -10,7 +10,7 @@ with sync_playwright() as p:
   errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
   page.set_content('<html><head><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><div id="app"></div></body></html>')
   page.add_style_tag(content=(root/'assets/styles.css').read_text())
-  for f in ['content','curriculum','deepdives','enterprise_curriculum','enterprise_cases','studio','app']:
+  for f in ['content','curriculum','deepdives','enterprise_curriculum','enterprise_cases','studio-templates','studio-graph','studio','app']:
    page.add_script_tag(content=(root/'assets'/f'{f}.js').read_text())
   return page,errors
  pg,errors=setup()

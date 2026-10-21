@@ -12,7 +12,7 @@ if True:
   page.set_content('<html><head><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><div id="app"></div></body></html>')
   page.evaluate("""() => {const d={};const mock={getItem:k=>d[k]||null,setItem:(k,v)=>{d[k]=String(v)},removeItem:k=>delete d[k]};Object.defineProperty(window,'localStorage',{value:mock,configurable:true});Object.defineProperty(window,'sessionStorage',{value:mock,configurable:true});}""")
   page.add_style_tag(content=(ROOT/'assets/styles.css').read_text())
-  for f in ['content','curriculum','deepdives','enterprise_curriculum','enterprise_cases','studio','advanced','semantic-workbench','app']:
+  for f in ['content','curriculum','deepdives','enterprise_curriculum','enterprise_cases','studio-templates','studio-graph','studio','advanced','semantic-workbench','app']:
    page.add_script_tag(content=(ROOT/'assets'/f'{f}.js').read_text())
   assert page.locator('[data-route="semantic"]').count()>=1
   page.locator('.nav-item[data-route="semantic"]').click()

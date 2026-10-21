@@ -8,13 +8,15 @@
 
 [**Website**](https://shastramfreak-ui.github.io/tattviki/) · [**Ontology Studio**](https://shastramfreak-ui.github.io/tattviki/#studio) · [**Semantic Workbench**](https://shastramfreak-ui.github.io/tattviki/#semantic) · [**Curriculum**](CURRICULUM.md) · [**Contribute**](CONTRIBUTING.md)
 
-**Version 7** · **613 learning topics** · **15 learning modules** · **12 enterprise use-case blueprints**
+**Version 8** · **613 learning topics** · **15 learning modules** · **12 enterprise use-case blueprints**
 
 **Created by Shubham**
 
 </div>
 
-![Tāttvikī learning dashboard](previews/desktop.png)
+![Tāttvikī v8 multi-relationship ontology graph](previews/studio-v8-graph.png)
+
+**[Open the live Studio](https://shastramfreak-ui.github.io/tattviki/#studio)** · [Create a new ontology](https://shastramfreak-ui.github.io/tattviki/#studio) · [View the project templates](previews/studio-v8-new-ontology.png)
 
 > **Deployment note:** The website links above refer to this repository's expected GitHub Pages address. The site is available there only after a successful GitHub Pages deployment.
 
@@ -24,7 +26,8 @@
 - [Features and capabilities](#features-and-capabilities)
 - [Explore the learning paths](#explore-the-learning-paths)
 - [Get started locally](#get-started-locally)
-- [Ontology Studio and Semantic Workbench](#ontology-studio-and-semantic-workbench)
+- [Visual Ontology Studio v8](#visual-ontology-studio-v8)
+- [Semantic Workbench](#semantic-workbench)
 - [Enterprise projects](#enterprise-projects)
 - [Optional advanced backend](#optional-advanced-backend)
 - [Deploy to GitHub Pages](#deploy-to-github-pages)
@@ -52,7 +55,10 @@ The **613 entries** consist of foundational lessons, concise micro-lessons, and 
 | --- | --- | --- |
 | Lessons, quizzes, searchable glossary and progress | ✅ | Not required |
 | Turtle practice, beginner SPARQL challenges and graph explorer | ✅ Teaching subset | Not required |
-| Visual OWL/RDF ontology modeling | ✅ | Not required |
+| Visual OWL/RDF ontology modeling | ✅ Interactive graph, zoom/pan/focus | Not required |
+| New blank ontology and multi-domain project starters | ✅ | Not required |
+| Class/property/individual/SKOS/SHACL graph views | ✅ | Not required |
+| Guided lessons linked directly to Studio | ✅ | Not required |
 | Classes, properties, individuals, SKOS concepts and selected axioms | ✅ | Not required |
 | Turtle, RDF/XML, JSON-LD and diagram export | ✅ | Not required |
 | Browser RDFS inference preview and explained findings | ✅ Supported subset | Not required |
@@ -119,23 +125,45 @@ Then open **http://localhost:8000/**. Depending on your installation, you may ne
 
 > Opening `index.html` with `file://` can prevent the updates JSON from loading because browsers restrict local file access. Using a local HTTP server is recommended.
 
-## Ontology Studio and Semantic Workbench
+## Visual Ontology Studio v8
 
-Open **http://localhost:8000/#studio** to create and edit ontologies.
+Open **http://localhost:8000/#studio**. Version 8 adds a genuine multi-relationship SVG graph viewer rather than displaying only the class tree.
 
-The original, Protégé-inspired editor provides:
+![Graph explorer, schema view](previews/studio-v8-graph.png)
 
-- Class and subclass hierarchies; object/data properties with domain and range.
-- Named individuals and property assertions.
-- Selected equivalent/disjoint axioms, restrictions, annotations, and SKOS terms.
-- Visual SVG hierarchy; project autosave; undo/redo; native project JSON backup/import.
-- Exports in **Turtle (`.ttl`)**, **RDF/XML (`.rdf`)**, **JSON-LD (`.jsonld`)**, and diagram **SVG**.
+The graph shows `rdfs:subClassOf`, class equivalence/disjointness, `rdfs:domain` and `rdfs:range`, `rdfs:subPropertyOf`, `owl:inverseOf`, individual `rdf:type` and object assertions, SKOS broader/scheme links, and SHACL target/path and selected restriction links. Toggle among **Class hierarchy**, **Schema & axioms**, **Individuals**, **SKOS**, and **Everything**. Colored node categories indicate OWL classes, object properties, data properties, individuals, SKOS terms, SHACL shapes and OWL restrictions.
 
-**RDF import limitation:** native JSON project import is supported, but arbitrary Turtle or RDF/XML import **into the editor** is not. Exported RDF files can be used in external RDF tools.
+Use **+ / −** or the mouse wheel to zoom, **Fit** to fit the complete filtered graph, and **drag** to pan. **Focus** expands the canvas to the full work area. **Neighbors** isolates the selected entity and its directly linked nodes; **Edge labels** reveals property/predicate names. Search filters entities and their connections. Click a node to edit its details in the inspector. All of this works on static GitHub Pages; no server is needed.
 
-Open **http://localhost:8000/#semantic** to inspect inferred memberships, model diagnostics, and relationships from the currently edited ontology.
+### Create an ontology from scratch
 
-For a concrete demonstration, see [projects/ontology-studio](projects/ontology-studio/README.md): a **fictional 25-class enterprise ontology with 512 RDF triples** spanning metadata, MDM/RDM, data lineage, and governance.
+Select **+ New ontology** in the Studio toolbar. Choose **Blank ontology**, enter a title and an HTTP(S) base namespace, and confirm. Blank projects start with zero classes, properties and individuals. Then add classes, relationships, individual assertions, SKOS terms and governance shapes using the sidebar. Export your work as editable project JSON or RDF formats. Projects are stored **locally in the current browser**; export a backup before switching templates or changing devices.
+
+### Large original example ontologies
+
+| New project template | Purpose | Typical generated size |
+| --- | --- | ---: |
+| **Enterprise 360** | Metadata catalog, MDM, RDM, stewardship, lineage and research | 512 RDF triples |
+| **Retail 360 & Supply Chain** | Product/customer/order integration, fulfillment and data products | 824 RDF triples |
+| **Industrial Asset Digital Twin** | Equipment/sensors, observations, maintenance and governed telemetry | 680 RDF triples |
+| **Open Research Data Integration** | Samples, experiments, FAIR catalogs, provenance and releases | 722 RDF triples |
+| **Blank ontology** | Start your own domain or industry model | Empty model |
+
+These generated samples are fictional teaching datasets (not licensed medical terminology or real company data). Counts describe the included example versions; they change when you edit a project.
+
+### Guided training is connected to the editor
+
+On any supported learning page, select **Open in Ontology Studio** to load a guided editing context. The Studio also provides five built-in practice cards covering subclass structures, object properties, individuals/assertions, SKOS vocabularies, and validation. The exercises use the currently open ontology; they do not silently overwrite a learner's project.
+
+The authoring editor supports classes, properties, individuals, selected OWL axioms/restrictions, SKOS, local quality checks, undo/redo, JSON backup/import, and exports in Turtle, RDF/XML, JSON-LD and SVG.
+
+**Known limitations:** The diagram shows explicitly modeled relationships, not a complete logical entailment closure; arbitrary RDF-to-editable-model import, full OWL 2 DL reasoning, advanced SHACL and live team collaboration are not available in the browser-only Studio. Select the optional backend for further semantic processing. This project is independent of Protégé and WebProtégé.
+
+## Semantic Workbench
+
+Open **http://localhost:8000/#semantic** to inspect the current ontology's supported inferred memberships, quality findings and lineage/relationship summaries. The browser-side inference is a *documented subset* of RDFS rather than full OWL 2 DL reasoning. Full RDFLib SPARQL, `owlrl` and `pySHACL` require the separate backend; GitHub Pages does not execute Python services.
+
+For a concrete reference implementation, see [projects/ontology-studio](projects/ontology-studio/README.md), using an original fictional 25-class / 512-triple enterprise ontology.
 
 ## Enterprise projects
 
@@ -248,7 +276,8 @@ Tattviki/
 | Curriculum integrity (613 entries) | `node scripts/check_content.cjs` |
 | Page/route rendering | `node scripts/test_ui_render.cjs` |
 | Browser interactions | `python scripts/test_browser.py` |
-| Ontology Studio interactions | `python scripts/test_studio.py` |
+| Ontology Studio regression tests | `python scripts/test_studio.py` |
+| **v8 Graph/project/user-flow tests** | `python scripts/test_v8_product.py` |
 | Semantic Workbench interactions | `python scripts/test_semantic_workbench.py` |
 | Advanced browser/API integration | `python scripts/test_advanced_browser.py` |
 | Semantic API unit tests | `python -m unittest -v backend.tests.test_api` |
@@ -261,7 +290,7 @@ python -m pip install playwright
 python -m playwright install chromium
 ```
 
-The v7 release was tested for core site behavior, editor interactions, semantic-workbench interactions, API routes and RDF export compatibility. These local checks do not replace public deployment testing, accessibility audits, or security review. Optional Java/HermiT reasoning was **not** execution-verified in the build environment.
+The v8 release was tested for core site behavior, editor interactions, semantic-workbench interactions, API routes and RDF export compatibility. These local checks do not replace public deployment testing, accessibility audits, or security review. Optional Java/HermiT reasoning was **not** execution-verified in the build environment.
 
 ## Privacy, licenses, and responsible use
 

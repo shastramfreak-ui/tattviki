@@ -36,7 +36,7 @@ with sync_playwright() as p:
   };
  }""")
  page.add_style_tag(content=(ROOT/'assets/styles.css').read_text())
- for f in ['content','curriculum','deepdives','enterprise_curriculum','enterprise_cases','studio','advanced','semantic-workbench','app']:
+ for f in ['content','curriculum','deepdives','enterprise_curriculum','enterprise_cases','studio-templates','studio-graph','studio','advanced','semantic-workbench','app']:
   page.add_script_tag(content=(ROOT/'assets'/f'{f}.js').read_text())
  page.locator('[data-route="semantic"]').first.click()
  page.locator('.semantic-tabs [data-semantic="tab"][data-value="engine"]').click()

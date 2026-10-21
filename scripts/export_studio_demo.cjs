@@ -3,7 +3,7 @@
 const fs=require('fs'),vm=require('vm'),path=require('path');
 const base=path.resolve(__dirname,'..'),out=path.join(base,'projects/ontology-studio');
 const sandbox={window:{},localStorage:{getItem(){return null;},setItem(){}},console};
-vm.runInNewContext(fs.readFileSync(path.join(base,'assets/studio.js'),'utf8'),sandbox,{filename:'studio.js'});
+for(const file of ['studio-templates.js','studio-graph.js','studio.js'])vm.runInNewContext(fs.readFileSync(path.join(base,'assets',file),'utf8'),sandbox,{filename:file});
 const studio=sandbox.window.TattvikiStudio;
 const check=studio.checks();
 if(check.issues.length)throw Error('Cannot publish invalid sample ontology: '+check.issues.join('; '));

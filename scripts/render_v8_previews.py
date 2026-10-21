@@ -1,0 +1,30 @@
+from pathlib import Path
+from playwright.sync_api import sync_playwright
+P=Path(__file__).resolve().parent.parent
+with sync_playwright() as p:
+ b=p.chromium.launch(headless=True,executable_path='/usr/bin/chromium',args=['--no-sandbox'])
+ q=b.new_page(viewport={'width':1600,'height':990},device_scale_factor=1)
+ q.on('dialog',lambda d:d.accept())
+ q.set_content('<html><head><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><div id="app"></div></body></html>')
+ q.add_style_tag(content=(P/'assets/styles.css').read_text())
+ for name in ['content','curriculum','deepdives','enterprise_curriculum','enterprise_cases','studio-templates','studio-graph','studio','advanced','semantic-workbench','app']:
+  q.add_script_tag(content=(P/'assets'/f'{name}.js').read_text())
+ q.locator('[data-route="studio"]').first.click()
+ q.locator('[data-studio-action="graph-mode"][data-mode="schema"]').click()
+ q.locator('.t8-graph-viewport').scroll_into_view_if_needed();q.wait_for_timeout(80)
+ q.screenshot(path=str(P/'previews/studio-v8-graph.png'))
+ q.locator('[data-studio-action="new-project"]').first.click();q.wait_for_timeout(90)
+ q.screenshot(path=str(P/'previews/studio-v8-new-ontology.png'))
+ q.locator('[data-studio-action="create-project"]').click()
+ q.locator('[data-studio-action="new-project"]').first.click()
+ q.locator('input[name="t8-template"][value="retail"]').check()
+ q.locator('#t8-project-name').fill('Retail data enterprise')
+ q.locator('#t8-project-iri').fill('https://example.org/retail#')
+ q.locator('[data-studio-action="create-project"]').click()
+ q.locator('[data-studio-action="graph-mode"][data-mode="all"]').click()
+ q.locator('.t8-graph-viewport').scroll_into_view_if_needed();q.wait_for_timeout(100)
+ q.screenshot(path=str(P/'previews/studio-v8-retail-graph.png'))
+ q.set_viewport_size({'width':390,'height':845})
+ q.locator('.t8-graph-viewport').scroll_into_view_if_needed();q.wait_for_timeout(80)
+ q.screenshot(path=str(P/'previews/studio-v8-graph-mobile.png'))
+ b.close()

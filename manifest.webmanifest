@@ -4,7 +4,7 @@
   "description": "Learn ontology and knowledge graphs with interactive examples",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#f4f6fb",
-  "theme_color": "#111d35",
+  "background_color": "#111b2a",
+  "theme_color": "#101827",
   "icons": [{"src":"assets/logo.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
 }

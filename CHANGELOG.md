@@ -1,3 +1,16 @@
+# Changelog
+
+## v8.0.0 — Graph Explorer, ontology starters, guided modeling & midnight UI
+
+- Replaced the class-only hierarchy drawing with an interactive multi-type ontology graph displaying subclass, property domain/range, inverse/superproperty, individuals, object assertions, SKOS, shapes and restrictions.
+- Added zoom in/out, wheel zoom, fit-to-graph, pointer drag/pan, focus mode, selection-neighborhood filtering, predicate labels and connected entity inspection.
+- Added a safe create-new-ontology dialog, true blank models and large original examples for enterprise, retail, industrial assets and open research.
+- Connected lessons to the live model and added five hands-on training cards.
+- Applied a coordinated dark slate/midnight theme across navigation, editor, panels and modal controls.
+- Retained all v7 features and 613 learning topics; no existing user project is overwritten automatically.
+- Added regression tests for new templates, graph controls, RDF parsing and desktop/mobile layouts.
+- Continued local-only default. Full OWL 2 DL and publicly hosted collaboration are not claimed.
+
 # Tāttvikī release history
 
 ## v7 — 2026-10-21: Semantic Workbench UX review and repair

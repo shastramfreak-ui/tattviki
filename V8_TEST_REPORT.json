@@ -1,0 +1,13 @@
+{
+  "release": "8.0.0",
+  "curriculum_topics": 613,
+  "v8_browser_checks": 26,
+  "existing_browser_and_editor_regressions": "passed in earlier runs during build",
+  "rdf_exports": "Turtle, RDF/XML and JSON-LD parsed consistently, 512 enterprise triples",
+  "note": "Test harness uses isolated DOM because runtime blocks HTTP browsing. Verify GitHub Pages after deployment.",
+  "limitations": [
+    "Backend features need self-hosted API",
+    "No complete OWL 2 DL browser reasoner",
+    "Large graph rendering is limited to 260 visible entities"
+  ]
+}

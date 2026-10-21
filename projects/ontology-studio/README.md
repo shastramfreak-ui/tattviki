@@ -50,3 +50,9 @@ for row in g.query(query):
 - The editor does not import arbitrary TTL/RDF/XML into its visual forms. Use its own project JSON for lossless round-trip editing, or open Turtle/RDF/XML files in external ontology tools.
 - `.owl.ttl` is Turtle syntax (not OWL/XML). `.rdf` is RDF/XML.
 - GitHub Pages hosts only the client-side interface and examples. Collaboration, access control, full OWL import resolution, plugin support, versioned team editing and complete reasoning require separate software/services.
+
+## Studio v8 practical learning
+
+Visit `#studio`, select **+ New ontology**, choose a fictional starter project, and explore its class, schema, instance, and SKOS graph views. Zoom with the wheel or +/−, pan by dragging, and select an entity to edit its properties. For a complete blank project choose **Blank ontology**. Native JSON is the editable round-trip format; RDF exports are interoperable but cannot yet be imported directly back into the visual editor.
+
+See the main [project README](../../README.md#visual-ontology-studio-v8) for screenshots and implementation limits.
