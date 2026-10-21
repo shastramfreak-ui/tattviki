@@ -1,3 +1,13 @@
+## v10 — Expanded learning content and progress reliability (2026-10-22)
+
+- Added 613 structured reading chapters with worked cases, implementation patterns, risks, tests and topic-based quizzes.
+- Expanded technical distinctions on foundational RDF, RDFS, OWL, SKOS, SPARQL, SHACL and enterprise subjects.
+- Fixed progress not increasing after a correct quiz answer: automatic completion now updates dashboard and learning paths.
+- Persisted quiz responses, kept valid existing completion IDs, and added progress JSON export/import.
+- Displayed reading + practice estimates separately; preserved lessons' original references and learning outcomes.
+- Added automated content and progress regression checks, and preserved v9 Studio, layouts, themes and RDF exports.
+- Known limitation: content depth varies, and this release is not 613 independently peer-reviewed textbooks. See LEARNING_CONTENT_GUIDE.md.
+
 ## Version 9 — Fluid graph explorer and light/dark theming (2026-10-21)
 
 - Replaced the tall fixed-column graph with a category overview and five selectable layouts (overview, radial, organic, hierarchy, swimlanes).

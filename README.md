@@ -8,7 +8,7 @@
 
 [**Website**](https://shastramfreak-ui.github.io/tattviki/) · [**Ontology Studio**](https://shastramfreak-ui.github.io/tattviki/#studio) · [**Semantic Workbench**](https://shastramfreak-ui.github.io/tattviki/#semantic) · [**Curriculum**](CURRICULUM.md) · [**Contribute**](CONTRIBUTING.md)
 
-**Version 9** · **613 learning topics** · **15 learning modules** · **12 enterprise use-case blueprints**
+**Version 10** · **613 learning topics** · **15 learning modules** · **12 enterprise use-case blueprints**
 
 **Created by Shubham**
 
@@ -20,13 +20,26 @@
 
 > **Deployment note:** The website links above refer to this repository's expected GitHub Pages address. The site is available there only after a successful GitHub Pages deployment.
 
+## New in v10 — detailed learning chapters & accurate progress
+
+Every learning topic now opens a multi-section chapter containing **concept explanations, worked enterprise scenarios, example RDF/SPARQL, tradeoffs, acceptance tests, reflection questions and a knowledge check**. The original 613 topics and existing visual ontology studio remain available.
+
+**Progress fix:** answering a quiz correctly immediately marks its lesson complete. The homepage and learning-path dashboard both update; completion and quiz results are saved in the current browser. In Learning Paths you can export a JSON progress backup and restore it later (including on another device).
+
+**Important:** the previous releases only saved a completed lesson when you separately clicked “Mark lesson complete”. Old *unsaved* correct quiz answers cannot be recovered. Already saved completions are preserved. Different site origins such as `localhost`, local files, and the GitHub Pages URL have independent browser storage.
+
+Chapters are larger and more instructional than the previous short summaries; specialist depth still varies. See [Learning content guide and editorial limitations](LEARNING_CONTENT_GUIDE.md) for standards policy, limitations and how to contribute deeper content.
+
+![Expanded v10 chapter](previews/v10-deep-lesson.png)
+
 ## Table of contents
 
 - [What is Tāttvikī?](#what-is-tāttvikī)
 - [Features and capabilities](#features-and-capabilities)
+- [Learning-content guide](LEARNING_CONTENT_GUIDE.md)
 - [Explore the learning paths](#explore-the-learning-paths)
 - [Get started locally](#get-started-locally)
-- [Visual Ontology Studio v9](#visual-ontology-studio-v8)
+- [Visual Ontology Studio v9](#visual-ontology-studio-v9)
 - [Semantic Workbench](#semantic-workbench)
 - [Enterprise projects](#enterprise-projects)
 - [Optional advanced backend](#optional-advanced-backend)

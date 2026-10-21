@@ -1,0 +1,26 @@
+{
+  "version": "10.0.0",
+  "date": "2026-10-22",
+  "curriculum_topics": 613,
+  "expanded_study_guides": 613,
+  "curriculum_paths": 14,
+  "new_chapter_sections_per_lesson": 5,
+  "study_chapter_test_checks": 20,
+  "v9_graph_interaction_checks": 26,
+  "enterprise_unit_tests": 6,
+  "enterprise_export_equivalent_triples": 512,
+  "checks": [
+    "Content integrity", "613 guide section completeness", "Main route rendering",
+    "Correct quiz auto-completion", "No completion for incorrect response",
+    "Dashboard progress immediately reflects completion", "Progress survives reinitialization",
+    "JSON progress export/import", "Old completion IDs preserved", "Unrecognized completion IDs ignored",
+    "V9 graph/zoom/theme regressions", "Semantic Workbench tests",
+    "Turtle/RDFXML/JSONLD consistent graph exports", "Enterprise pipeline unit tests"
+  ],
+  "limitations": [
+    "Chapters use shared training scenarios and are not 613 independently peer-reviewed specialist treatises",
+    "Progress is browser-origin local unless user exports/imports a JSON backup",
+    "Previously unsaved correct answers from older versions cannot be recovered",
+    "Advanced backend execution remains separate from GitHub Pages"
+  ]
+}

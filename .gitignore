@@ -10,3 +10,6 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 node_modules/
+
+# Automated private/local progress test artifact
+previews/v10-progress-backup.json

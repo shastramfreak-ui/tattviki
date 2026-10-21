@@ -26,6 +26,7 @@ jobs:
       - name: Check learning content
         run: |
           node scripts/check_content.cjs
+          python scripts/check_learning_guides.py
           node scripts/test_ui_render.cjs
       - name: Install enterprise lab dependencies
         run: python -m pip install -r projects/enterprise-mdm-rdm-metadata/requirements.txt
