@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:sh="http://www.w3.org/ns/shacl#" xmlns:dct="http://purl.org/dc/terms/" xmlns:ex="https://example.org/tattviki/enterprise#">
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology" />
+    <rdfs:label xml:lang="en">Enterprise Data &amp; Research Ontology</rdfs:label>
+    <rdfs:comment xml:lang="en">Fictional source-to-master data and clinical research integration. Every example record is invented.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#EnterpriseEntity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Enterprise entity</rdfs:label>
+    <rdfs:comment xml:lang="en">Root class for uniquely identified entities managed by the organization.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#Organization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Organization</rdfs:label>
+    <rdfs:comment xml:lang="en">An institution with responsibilities and data stewardship.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#EnterpriseEntity" />
+    <owl:disjointWith rdf:resource="https://example.org/tattviki/enterprise#Dataset" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#Person">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Person</rdfs:label>
+    <rdfs:comment xml:lang="en">A person represented by a governed identity.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#EnterpriseEntity" />
+    <owl:disjointWith rdf:resource="https://example.org/tattviki/enterprise#Dataset" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#ResearchStudy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Research study</rdfs:label>
+    <rdfs:comment xml:lang="en">A synthetic study with a sponsor and datasets.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#EnterpriseEntity" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#Dataset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Dataset</rdfs:label>
+    <rdfs:comment xml:lang="en">A discoverable information asset in the metadata catalog.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#EnterpriseEntity" />
+    <rdfs:subClassOf rdf:nodeID="restriction_OwnedDatasetRestriction" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#MasterRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Master record</rdfs:label>
+    <rdfs:comment xml:lang="en">Curated identity record representing reconciled source parties.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#EnterpriseEntity" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#ReferenceConcept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Reference concept</rdfs:label>
+    <rdfs:comment xml:lang="en">An approved controlled-vocabulary entry.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#EnterpriseEntity" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#SourceDataset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Source dataset</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise teaching class for source dataset.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#Dataset" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#CuratedDataset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Curated dataset</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise teaching class for curated dataset.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#Dataset" />
+    <rdfs:subClassOf rdf:nodeID="restriction_GovernedCuratedAsset" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#SemanticDataset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Semantic dataset</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise teaching class for semantic dataset.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#Dataset" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#DataProduct">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Data product</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise teaching class for data product.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#Dataset" />
+    <rdfs:subClassOf rdf:nodeID="restriction_ContractualProduct" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#DataContract">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Data contract</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise teaching class for data contract.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#EnterpriseEntity" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#GovernanceAsset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Governance asset</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise teaching class for governance asset.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#EnterpriseEntity" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#MetadataCatalog">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Metadata catalog</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise teaching class for metadata catalog.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#GovernanceAsset" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#QualityRule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Quality rule</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise teaching class for quality rule.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#GovernanceAsset" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#AccessPolicy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Access policy</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise teaching class for access policy.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#GovernanceAsset" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#SoftwareSystem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Software system</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise teaching class for software system.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#EnterpriseEntity" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#DataPipeline">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Data pipeline</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise teaching class for data pipeline.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#SoftwareSystem" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#BusinessGlossaryTerm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Business glossary term</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise teaching class for business glossary term.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#ReferenceConcept" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#PartyMaster">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Party master</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise teaching class for party master.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#MasterRecord" />
+    <rdfs:subClassOf rdf:nodeID="restriction_MasterStatusCardinality" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#ProductMaster">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Product master</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise teaching class for product master.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#MasterRecord" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#OrganizationUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Organization unit</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise teaching class for organization unit.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#Organization" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#DataSteward">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Data steward</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise teaching class for data steward.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#Person" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#StudyProtocol">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Study protocol</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise teaching class for study protocol.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#ResearchStudy" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#DataQualityIssue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="en">Data quality issue</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise teaching class for data quality issue.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://example.org/tattviki/enterprise#GovernanceAsset" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#ownedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="en">owned by</rdfs:label>
+    <rdfs:comment xml:lang="en">Responsible steward of a dataset.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#Dataset" />
+    <rdfs:range rdf:resource="https://example.org/tattviki/enterprise#Organization" />
+    <owl:inverseOf rdf:resource="https://example.org/tattviki/enterprise#owns" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#owns">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="en">owns</rdfs:label>
+    <rdfs:comment xml:lang="en">Inverse of owned by.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#Organization" />
+    <rdfs:range rdf:resource="https://example.org/tattviki/enterprise#Dataset" />
+    <owl:inverseOf rdf:resource="https://example.org/tattviki/enterprise#ownedBy" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#sponsoredBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="en">sponsored by</rdfs:label>
+    <rdfs:comment xml:lang="en">Sponsor of a research study.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#ResearchStudy" />
+    <rdfs:range rdf:resource="https://example.org/tattviki/enterprise#Organization" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#produces">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="en">produces</rdfs:label>
+    <rdfs:comment xml:lang="en">Study generates a dataset.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#ResearchStudy" />
+    <rdfs:range rdf:resource="https://example.org/tattviki/enterprise#Dataset" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#derivedFrom">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="en">derived from</rdfs:label>
+    <rdfs:comment xml:lang="en">Lineage relation between data assets.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#Dataset" />
+    <rdfs:range rdf:resource="https://example.org/tattviki/enterprise#Dataset" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#linkedToMaster">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="en">linked to master</rdfs:label>
+    <rdfs:comment xml:lang="en">A source identity points to a master identity record.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#Person" />
+    <rdfs:range rdf:resource="https://example.org/tattviki/enterprise#MasterRecord" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#managedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="en">managed by</rdfs:label>
+    <rdfs:comment xml:lang="en">Fictional enterprise semantic relationship: managed by.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#EnterpriseEntity" />
+    <rdfs:range rdf:resource="https://example.org/tattviki/enterprise#Organization" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#governedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="en">governed by</rdfs:label>
+    <rdfs:comment xml:lang="en">Fictional enterprise semantic relationship: governed by.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#Dataset" />
+    <rdfs:range rdf:resource="https://example.org/tattviki/enterprise#GovernanceAsset" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#catalogedIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="en">cataloged in</rdfs:label>
+    <rdfs:comment xml:lang="en">Fictional enterprise semantic relationship: cataloged in.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#Dataset" />
+    <rdfs:range rdf:resource="https://example.org/tattviki/enterprise#MetadataCatalog" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#hasContract">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="en">has contract</rdfs:label>
+    <rdfs:comment xml:lang="en">Fictional enterprise semantic relationship: has contract.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#DataProduct" />
+    <rdfs:range rdf:resource="https://example.org/tattviki/enterprise#DataContract" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#consumes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="en">consumes</rdfs:label>
+    <rdfs:comment xml:lang="en">Fictional enterprise semantic relationship: consumes.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#DataPipeline" />
+    <rdfs:range rdf:resource="https://example.org/tattviki/enterprise#SourceDataset" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#publishes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="en">publishes</rdfs:label>
+    <rdfs:comment xml:lang="en">Fictional enterprise semantic relationship: publishes.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#DataPipeline" />
+    <rdfs:range rdf:resource="https://example.org/tattviki/enterprise#CuratedDataset" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#supportsStudy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="en">supports study</rdfs:label>
+    <rdfs:comment xml:lang="en">Fictional enterprise semantic relationship: supports study.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#CuratedDataset" />
+    <rdfs:range rdf:resource="https://example.org/tattviki/enterprise#ResearchStudy" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#matchedTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="en">matched to</rdfs:label>
+    <rdfs:comment xml:lang="en">Fictional enterprise semantic relationship: matched to.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#Person" />
+    <rdfs:range rdf:resource="https://example.org/tattviki/enterprise#PartyMaster" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#reviewedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="en">reviewed by</rdfs:label>
+    <rdfs:comment xml:lang="en">Fictional enterprise semantic relationship: reviewed by.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#MasterRecord" />
+    <rdfs:range rdf:resource="https://example.org/tattviki/enterprise#DataSteward" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#enforcesPolicy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="en">enforces policy</rdfs:label>
+    <rdfs:comment xml:lang="en">Fictional enterprise semantic relationship: enforces policy.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#GovernanceAsset" />
+    <rdfs:range rdf:resource="https://example.org/tattviki/enterprise#AccessPolicy" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#implementsRule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="en">implements rule</rdfs:label>
+    <rdfs:comment xml:lang="en">Fictional enterprise semantic relationship: implements rule.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#DataPipeline" />
+    <rdfs:range rdf:resource="https://example.org/tattviki/enterprise#QualityRule" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#sourceSystem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="en">source system</rdfs:label>
+    <rdfs:comment xml:lang="en">System-of-record code.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#Dataset" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#qualityScore">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="en">quality score</rdfs:label>
+    <rdfs:comment xml:lang="en">Numeric quality score from zero to one.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#Dataset" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#recordStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="en">record status</rdfs:label>
+    <rdfs:comment xml:lang="en">Local status value; resolve it through the reference-data crosswalk.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#MasterRecord" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#approvalDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="en">approval date</rdfs:label>
+    <rdfs:comment xml:lang="en">Steward approval date.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#MasterRecord" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#recordCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="en">record count</rdfs:label>
+    <rdfs:comment xml:lang="en">Metadata field used in fictional enterprise exercises.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#Dataset" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#datasetVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="en">dataset version</rdfs:label>
+    <rdfs:comment xml:lang="en">Metadata field used in fictional enterprise exercises.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#Dataset" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#effectiveFrom">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="en">effective from</rdfs:label>
+    <rdfs:comment xml:lang="en">Metadata field used in fictional enterprise exercises.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#ReferenceConcept" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#matchingConfidence">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="en">matching confidence</rdfs:label>
+    <rdfs:comment xml:lang="en">Metadata field used in fictional enterprise exercises.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#PartyMaster" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#localStatusCode">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="en">local status code</rdfs:label>
+    <rdfs:comment xml:lang="en">Metadata field used in fictional enterprise exercises.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#PartyMaster" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#systemIdentifier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="en">system identifier</rdfs:label>
+    <rdfs:comment xml:lang="en">Metadata field used in fictional enterprise exercises.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#SoftwareSystem" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#refreshDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="en">refresh date</rdfs:label>
+    <rdfs:comment xml:lang="en">Metadata field used in fictional enterprise exercises.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#CuratedDataset" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#dataClassification">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="en">data classification</rdfs:label>
+    <rdfs:comment xml:lang="en">Metadata field used in fictional enterprise exercises.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#Dataset" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#stewardNote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="en">steward note</rdfs:label>
+    <rdfs:comment xml:lang="en">Metadata field used in fictional enterprise exercises.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tattviki/enterprise#MasterRecord" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#ResearchGroupA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdfs:label xml:lang="en">Research Group A</rdfs:label>
+    <rdfs:comment xml:lang="en">Invented organization.</rdfs:comment>
+    <rdf:type rdf:resource="https://example.org/tattviki/enterprise#Organization" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#StudyOrion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdfs:label xml:lang="en">Study Orion</rdfs:label>
+    <rdfs:comment xml:lang="en">Invented training study.</rdfs:comment>
+    <rdf:type rdf:resource="https://example.org/tattviki/enterprise#ResearchStudy" />
+    <ex:sponsoredBy rdf:resource="https://example.org/tattviki/enterprise#ResearchGroupA" />
+    <ex:produces rdf:resource="https://example.org/tattviki/enterprise#SafetyDataset" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#SafetyDataset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdfs:label xml:lang="en">Safety dataset</rdfs:label>
+    <rdfs:comment xml:lang="en">Invented trial dataset.</rdfs:comment>
+    <rdf:type rdf:resource="https://example.org/tattviki/enterprise#Dataset" />
+    <ex:ownedBy rdf:resource="https://example.org/tattviki/enterprise#ResearchGroupA" />
+    <ex:sourceSystem rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Synthetic EDC</ex:sourceSystem>
+    <ex:qualityScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.95</ex:qualityScore>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#MasterParty001">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdfs:label xml:lang="en">Master party 001</rdfs:label>
+    <rdfs:comment xml:lang="en">Invented master record.</rdfs:comment>
+    <rdf:type rdf:resource="https://example.org/tattviki/enterprise#MasterRecord" />
+    <ex:recordStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">APPROVED</ex:recordStatus>
+    <ex:approvalDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-01-12</ex:approvalDate>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#CRMSource">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdfs:label xml:lang="en">CRM source dataset</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise record for educational demonstrations.</rdfs:comment>
+    <rdf:type rdf:resource="https://example.org/tattviki/enterprise#SourceDataset" />
+    <ex:ownedBy rdf:resource="https://example.org/tattviki/enterprise#ResearchGroupA" />
+    <ex:sourceSystem rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CRM</ex:sourceSystem>
+    <ex:recordCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25000</ex:recordCount>
+    <ex:datasetVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2026.1</ex:datasetVersion>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#ERPSource">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdfs:label xml:lang="en">ERP source dataset</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise record for educational demonstrations.</rdfs:comment>
+    <rdf:type rdf:resource="https://example.org/tattviki/enterprise#SourceDataset" />
+    <ex:ownedBy rdf:resource="https://example.org/tattviki/enterprise#ResearchGroupA" />
+    <ex:sourceSystem rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ERP</ex:sourceSystem>
+    <ex:recordCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18000</ex:recordCount>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#CuratedParties">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdfs:label xml:lang="en">Curated party dataset</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise record for educational demonstrations.</rdfs:comment>
+    <rdf:type rdf:resource="https://example.org/tattviki/enterprise#CuratedDataset" />
+    <ex:ownedBy rdf:resource="https://example.org/tattviki/enterprise#ResearchGroupA" />
+    <ex:derivedFrom rdf:resource="https://example.org/tattviki/enterprise#CRMSource" />
+    <ex:derivedFrom rdf:resource="https://example.org/tattviki/enterprise#ERPSource" />
+    <ex:qualityScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.98</ex:qualityScore>
+    <ex:refreshDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-01</ex:refreshDate>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#Customer360">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdfs:label xml:lang="en">Customer 360 product</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise record for educational demonstrations.</rdfs:comment>
+    <rdf:type rdf:resource="https://example.org/tattviki/enterprise#DataProduct" />
+    <ex:ownedBy rdf:resource="https://example.org/tattviki/enterprise#ResearchGroupA" />
+    <ex:hasContract rdf:resource="https://example.org/tattviki/enterprise#ContractV1" />
+    <ex:datasetVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</ex:datasetVersion>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#ContractV1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdfs:label xml:lang="en">Data contract v1</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise record for educational demonstrations.</rdfs:comment>
+    <rdf:type rdf:resource="https://example.org/tattviki/enterprise#DataContract" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#MetadataRegistry">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdfs:label xml:lang="en">Metadata registry</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise record for educational demonstrations.</rdfs:comment>
+    <rdf:type rdf:resource="https://example.org/tattviki/enterprise#MetadataCatalog" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#QualityRulesetA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdfs:label xml:lang="en">Quality rule set A</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise record for educational demonstrations.</rdfs:comment>
+    <rdf:type rdf:resource="https://example.org/tattviki/enterprise#QualityRule" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#PrivacyTierA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdfs:label xml:lang="en">Data access policy A</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise record for educational demonstrations.</rdfs:comment>
+    <rdf:type rdf:resource="https://example.org/tattviki/enterprise#AccessPolicy" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#IngestionPipeline">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdfs:label xml:lang="en">Ingestion pipeline</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise record for educational demonstrations.</rdfs:comment>
+    <rdf:type rdf:resource="https://example.org/tattviki/enterprise#DataPipeline" />
+    <ex:consumes rdf:resource="https://example.org/tattviki/enterprise#CRMSource" />
+    <ex:consumes rdf:resource="https://example.org/tattviki/enterprise#ERPSource" />
+    <ex:publishes rdf:resource="https://example.org/tattviki/enterprise#CuratedParties" />
+    <ex:implementsRule rdf:resource="https://example.org/tattviki/enterprise#QualityRulesetA" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#MDMSystem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdfs:label xml:lang="en">MDM application</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise record for educational demonstrations.</rdfs:comment>
+    <rdf:type rdf:resource="https://example.org/tattviki/enterprise#SoftwareSystem" />
+    <ex:systemIdentifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mdm-demo-01</ex:systemIdentifier>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#StewardMira">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdfs:label xml:lang="en">Steward Mira</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise record for educational demonstrations.</rdfs:comment>
+    <rdf:type rdf:resource="https://example.org/tattviki/enterprise#DataSteward" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#MasterParty002">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdfs:label xml:lang="en">Master party 002</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise record for educational demonstrations.</rdfs:comment>
+    <rdf:type rdf:resource="https://example.org/tattviki/enterprise#PartyMaster" />
+    <ex:reviewedBy rdf:resource="https://example.org/tattviki/enterprise#StewardMira" />
+    <ex:recordStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">APPROVED</ex:recordStatus>
+    <ex:matchingConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.97</ex:matchingConfidence>
+    <ex:localStatusCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A</ex:localStatusCode>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#MasterParty003">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdfs:label xml:lang="en">Master party 003</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise record for educational demonstrations.</rdfs:comment>
+    <rdf:type rdf:resource="https://example.org/tattviki/enterprise#PartyMaster" />
+    <ex:reviewedBy rdf:resource="https://example.org/tattviki/enterprise#StewardMira" />
+    <ex:recordStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PENDING</ex:recordStatus>
+    <ex:matchingConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.82</ex:matchingConfidence>
+    <ex:localStatusCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P</ex:localStatusCode>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#OrionProtocol">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdfs:label xml:lang="en">Study Orion protocol</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise record for educational demonstrations.</rdfs:comment>
+    <rdf:type rdf:resource="https://example.org/tattviki/enterprise#StudyProtocol" />
+    <ex:sponsoredBy rdf:resource="https://example.org/tattviki/enterprise#ResearchGroupA" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#LineagePolicy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdfs:label xml:lang="en">Lineage access policy</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise record for educational demonstrations.</rdfs:comment>
+    <rdf:type rdf:resource="https://example.org/tattviki/enterprise#AccessPolicy" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#SourceTraceIssue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdfs:label xml:lang="en">Missing source evidence</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise record for educational demonstrations.</rdfs:comment>
+    <rdf:type rdf:resource="https://example.org/tattviki/enterprise#DataQualityIssue" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#AccountTerm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual" />
+    <rdfs:label xml:lang="en">Account (business term)</rdfs:label>
+    <rdfs:comment xml:lang="en">Synthetic enterprise record for educational demonstrations.</rdfs:comment>
+    <rdf:type rdf:resource="https://example.org/tattviki/enterprise#BusinessGlossaryTerm" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#StatusScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme" />
+    <skos:prefLabel xml:lang="en">Status vocabulary</skos:prefLabel>
+    <skos:definition xml:lang="en">A fictional controlled-vocabulary scheme.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#Approved">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Approved</skos:prefLabel>
+    <skos:definition xml:lang="en">Approved stewardship status.</skos:definition>
+    <skos:inScheme rdf:resource="https://example.org/tattviki/enterprise#StatusScheme" />
+    <skos:altLabel xml:lang="en">Accepted</skos:altLabel>
+    <skos:altLabel xml:lang="en">Valid</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#Pending">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Pending</skos:prefLabel>
+    <skos:definition xml:lang="en">Awaiting steward review.</skos:definition>
+    <skos:inScheme rdf:resource="https://example.org/tattviki/enterprise#StatusScheme" />
+    <skos:altLabel xml:lang="en">Open</skos:altLabel>
+    <skos:altLabel xml:lang="en">In review</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#Rejected">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Rejected</skos:prefLabel>
+    <skos:definition xml:lang="en">Not approved for publication.</skos:definition>
+    <skos:inScheme rdf:resource="https://example.org/tattviki/enterprise#StatusScheme" />
+    <skos:altLabel xml:lang="en">Declined</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#PartyScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme" />
+    <skos:prefLabel xml:lang="en">Party status scheme</skos:prefLabel>
+    <skos:definition xml:lang="en">Fictional, openly reusable vocabulary concept.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#DataClassScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme" />
+    <skos:prefLabel xml:lang="en">Data classification scheme</skos:prefLabel>
+    <skos:definition xml:lang="en">Fictional, openly reusable vocabulary concept.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#ActiveParty">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Active party</skos:prefLabel>
+    <skos:definition xml:lang="en">Fictional, openly reusable vocabulary concept.</skos:definition>
+    <skos:inScheme rdf:resource="https://example.org/tattviki/enterprise#PartyScheme" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#InactiveParty">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Inactive party</skos:prefLabel>
+    <skos:definition xml:lang="en">Fictional, openly reusable vocabulary concept.</skos:definition>
+    <skos:inScheme rdf:resource="https://example.org/tattviki/enterprise#PartyScheme" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#PendingReview">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Pending review</skos:prefLabel>
+    <skos:definition xml:lang="en">Fictional, openly reusable vocabulary concept.</skos:definition>
+    <skos:inScheme rdf:resource="https://example.org/tattviki/enterprise#PartyScheme" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#MergedParty">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Merged party</skos:prefLabel>
+    <skos:definition xml:lang="en">Fictional, openly reusable vocabulary concept.</skos:definition>
+    <skos:inScheme rdf:resource="https://example.org/tattviki/enterprise#PartyScheme" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#PublicData">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Public data</skos:prefLabel>
+    <skos:definition xml:lang="en">Fictional, openly reusable vocabulary concept.</skos:definition>
+    <skos:inScheme rdf:resource="https://example.org/tattviki/enterprise#DataClassScheme" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#InternalData">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Internal data</skos:prefLabel>
+    <skos:definition xml:lang="en">Fictional, openly reusable vocabulary concept.</skos:definition>
+    <skos:inScheme rdf:resource="https://example.org/tattviki/enterprise#DataClassScheme" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#RestrictedData">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Restricted data</skos:prefLabel>
+    <skos:definition xml:lang="en">Fictional, openly reusable vocabulary concept.</skos:definition>
+    <skos:inScheme rdf:resource="https://example.org/tattviki/enterprise#DataClassScheme" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#RegulatedData">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Regulated data</skos:prefLabel>
+    <skos:definition xml:lang="en">Fictional, openly reusable vocabulary concept.</skos:definition>
+    <skos:inScheme rdf:resource="https://example.org/tattviki/enterprise#DataClassScheme" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#SensitivityCritical">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Sensitivity critical</skos:prefLabel>
+    <skos:definition xml:lang="en">Fictional, openly reusable vocabulary concept.</skos:definition>
+    <skos:inScheme rdf:resource="https://example.org/tattviki/enterprise#DataClassScheme" />
+    <skos:broader rdf:resource="https://example.org/tattviki/enterprise#RestrictedData" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#SensitivityLow">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Sensitivity low</skos:prefLabel>
+    <skos:definition xml:lang="en">Fictional, openly reusable vocabulary concept.</skos:definition>
+    <skos:inScheme rdf:resource="https://example.org/tattviki/enterprise#DataClassScheme" />
+    <skos:broader rdf:resource="https://example.org/tattviki/enterprise#InternalData" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#DatasetShape">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape" />
+    <rdfs:label xml:lang="en">Dataset quality rules</rdfs:label>
+    <rdfs:comment xml:lang="en">All datasets should have an owner and a quality score.</rdfs:comment>
+    <sh:targetClass rdf:resource="https://example.org/tattviki/enterprise#Dataset" />
+    <sh:property rdf:resource="https://example.org/tattviki/enterprise#DatasetShape_property" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#DatasetShape_property">
+    <sh:path rdf:resource="https://example.org/tattviki/enterprise#ownedBy" />
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:class rdf:resource="https://example.org/tattviki/enterprise#Organization" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#StudyShape">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape" />
+    <rdfs:label xml:lang="en">Study quality rules</rdfs:label>
+    <rdfs:comment xml:lang="en">All studies must reference a sponsoring organization.</rdfs:comment>
+    <sh:targetClass rdf:resource="https://example.org/tattviki/enterprise#ResearchStudy" />
+    <sh:property rdf:resource="https://example.org/tattviki/enterprise#StudyShape_property" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#StudyShape_property">
+    <sh:path rdf:resource="https://example.org/tattviki/enterprise#sponsoredBy" />
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:class rdf:resource="https://example.org/tattviki/enterprise#Organization" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#CuratedDatasetShape">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape" />
+    <rdfs:label xml:lang="en">Curated dataset ownership</rdfs:label>
+    <rdfs:comment xml:lang="en">Curated data must have a responsible owner.</rdfs:comment>
+    <sh:targetClass rdf:resource="https://example.org/tattviki/enterprise#CuratedDataset" />
+    <sh:property rdf:resource="https://example.org/tattviki/enterprise#CuratedDatasetShape_property" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#CuratedDatasetShape_property">
+    <sh:path rdf:resource="https://example.org/tattviki/enterprise#ownedBy" />
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:class rdf:resource="https://example.org/tattviki/enterprise#Organization" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#PartyMasterShape">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape" />
+    <rdfs:label xml:lang="en">Party master status</rdfs:label>
+    <rdfs:comment xml:lang="en">Require a governed lifecycle code.</rdfs:comment>
+    <sh:targetClass rdf:resource="https://example.org/tattviki/enterprise#PartyMaster" />
+    <sh:property rdf:resource="https://example.org/tattviki/enterprise#PartyMasterShape_property" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#PartyMasterShape_property">
+    <sh:path rdf:resource="https://example.org/tattviki/enterprise#recordStatus" />
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#DataProductShape">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape" />
+    <rdfs:label xml:lang="en">Data product contract</rdfs:label>
+    <rdfs:comment xml:lang="en">Products must reference their data contract.</rdfs:comment>
+    <sh:targetClass rdf:resource="https://example.org/tattviki/enterprise#DataProduct" />
+    <sh:property rdf:resource="https://example.org/tattviki/enterprise#DataProductShape_property" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#DataProductShape_property">
+    <sh:path rdf:resource="https://example.org/tattviki/enterprise#hasContract" />
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:class rdf:resource="https://example.org/tattviki/enterprise#DataContract" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#SourceDatasetShape">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape" />
+    <rdfs:label xml:lang="en">Source dataset identifier</rdfs:label>
+    <rdfs:comment xml:lang="en">Source datasets must declare their origin.</rdfs:comment>
+    <sh:targetClass rdf:resource="https://example.org/tattviki/enterprise#SourceDataset" />
+    <sh:property rdf:resource="https://example.org/tattviki/enterprise#SourceDatasetShape_property" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tattviki/enterprise#SourceDatasetShape_property">
+    <sh:path rdf:resource="https://example.org/tattviki/enterprise#sourceSystem" />
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="restriction_OwnedDatasetRestriction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+    <owl:onProperty rdf:resource="https://example.org/tattviki/enterprise#ownedBy" />
+    <owl:someValuesFrom rdf:resource="https://example.org/tattviki/enterprise#Organization" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="restriction_ContractualProduct">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+    <owl:onProperty rdf:resource="https://example.org/tattviki/enterprise#hasContract" />
+    <owl:someValuesFrom rdf:resource="https://example.org/tattviki/enterprise#DataContract" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="restriction_GovernedCuratedAsset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+    <owl:onProperty rdf:resource="https://example.org/tattviki/enterprise#ownedBy" />
+    <owl:someValuesFrom rdf:resource="https://example.org/tattviki/enterprise#Organization" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="restriction_MasterStatusCardinality">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+    <owl:onProperty rdf:resource="https://example.org/tattviki/enterprise#reviewedBy" />
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+  </rdf:Description>
+</rdf:RDF>

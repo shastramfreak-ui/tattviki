@@ -1,0 +1,523 @@
+# Tāttvikī Ontology Studio · generated, fictional example data
+# OWL 2 / RDF triples expressed in Turtle. Open in Protégé Desktop.
+@prefix ex: <https://example.org/tattviki/enterprise#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<https://example.org/tattviki/enterprise#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://example.org/tattviki/enterprise#> <http://www.w3.org/2000/01/rdf-schema#label> "Enterprise Data & Research Ontology"@en .
+<https://example.org/tattviki/enterprise#> <http://www.w3.org/2000/01/rdf-schema#comment> "Fictional source-to-master data and clinical research integration. Every example record is invented."@en .
+<https://example.org/tattviki/enterprise#EnterpriseEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#EnterpriseEntity> <http://www.w3.org/2000/01/rdf-schema#label> "Enterprise entity"@en .
+<https://example.org/tattviki/enterprise#EnterpriseEntity> <http://www.w3.org/2000/01/rdf-schema#comment> "Root class for uniquely identified entities managed by the organization."@en .
+<https://example.org/tattviki/enterprise#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#Organization> <http://www.w3.org/2000/01/rdf-schema#label> "Organization"@en .
+<https://example.org/tattviki/enterprise#Organization> <http://www.w3.org/2000/01/rdf-schema#comment> "An institution with responsibilities and data stewardship."@en .
+<https://example.org/tattviki/enterprise#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#EnterpriseEntity> .
+<https://example.org/tattviki/enterprise#Organization> <http://www.w3.org/2002/07/owl#disjointWith> <https://example.org/tattviki/enterprise#Dataset> .
+<https://example.org/tattviki/enterprise#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#Person> <http://www.w3.org/2000/01/rdf-schema#label> "Person"@en .
+<https://example.org/tattviki/enterprise#Person> <http://www.w3.org/2000/01/rdf-schema#comment> "A person represented by a governed identity."@en .
+<https://example.org/tattviki/enterprise#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#EnterpriseEntity> .
+<https://example.org/tattviki/enterprise#Person> <http://www.w3.org/2002/07/owl#disjointWith> <https://example.org/tattviki/enterprise#Dataset> .
+<https://example.org/tattviki/enterprise#ResearchStudy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#ResearchStudy> <http://www.w3.org/2000/01/rdf-schema#label> "Research study"@en .
+<https://example.org/tattviki/enterprise#ResearchStudy> <http://www.w3.org/2000/01/rdf-schema#comment> "A synthetic study with a sponsor and datasets."@en .
+<https://example.org/tattviki/enterprise#ResearchStudy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#EnterpriseEntity> .
+<https://example.org/tattviki/enterprise#Dataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#Dataset> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset"@en .
+<https://example.org/tattviki/enterprise#Dataset> <http://www.w3.org/2000/01/rdf-schema#comment> "A discoverable information asset in the metadata catalog."@en .
+<https://example.org/tattviki/enterprise#Dataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#EnterpriseEntity> .
+<https://example.org/tattviki/enterprise#MasterRecord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#MasterRecord> <http://www.w3.org/2000/01/rdf-schema#label> "Master record"@en .
+<https://example.org/tattviki/enterprise#MasterRecord> <http://www.w3.org/2000/01/rdf-schema#comment> "Curated identity record representing reconciled source parties."@en .
+<https://example.org/tattviki/enterprise#MasterRecord> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#EnterpriseEntity> .
+<https://example.org/tattviki/enterprise#ReferenceConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#ReferenceConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Reference concept"@en .
+<https://example.org/tattviki/enterprise#ReferenceConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "An approved controlled-vocabulary entry."@en .
+<https://example.org/tattviki/enterprise#ReferenceConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#EnterpriseEntity> .
+<https://example.org/tattviki/enterprise#SourceDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#SourceDataset> <http://www.w3.org/2000/01/rdf-schema#label> "Source dataset"@en .
+<https://example.org/tattviki/enterprise#SourceDataset> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise teaching class for source dataset."@en .
+<https://example.org/tattviki/enterprise#SourceDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#Dataset> .
+<https://example.org/tattviki/enterprise#CuratedDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#CuratedDataset> <http://www.w3.org/2000/01/rdf-schema#label> "Curated dataset"@en .
+<https://example.org/tattviki/enterprise#CuratedDataset> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise teaching class for curated dataset."@en .
+<https://example.org/tattviki/enterprise#CuratedDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#Dataset> .
+<https://example.org/tattviki/enterprise#SemanticDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#SemanticDataset> <http://www.w3.org/2000/01/rdf-schema#label> "Semantic dataset"@en .
+<https://example.org/tattviki/enterprise#SemanticDataset> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise teaching class for semantic dataset."@en .
+<https://example.org/tattviki/enterprise#SemanticDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#Dataset> .
+<https://example.org/tattviki/enterprise#DataProduct> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#DataProduct> <http://www.w3.org/2000/01/rdf-schema#label> "Data product"@en .
+<https://example.org/tattviki/enterprise#DataProduct> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise teaching class for data product."@en .
+<https://example.org/tattviki/enterprise#DataProduct> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#Dataset> .
+<https://example.org/tattviki/enterprise#DataContract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#DataContract> <http://www.w3.org/2000/01/rdf-schema#label> "Data contract"@en .
+<https://example.org/tattviki/enterprise#DataContract> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise teaching class for data contract."@en .
+<https://example.org/tattviki/enterprise#DataContract> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#EnterpriseEntity> .
+<https://example.org/tattviki/enterprise#GovernanceAsset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#GovernanceAsset> <http://www.w3.org/2000/01/rdf-schema#label> "Governance asset"@en .
+<https://example.org/tattviki/enterprise#GovernanceAsset> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise teaching class for governance asset."@en .
+<https://example.org/tattviki/enterprise#GovernanceAsset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#EnterpriseEntity> .
+<https://example.org/tattviki/enterprise#MetadataCatalog> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#MetadataCatalog> <http://www.w3.org/2000/01/rdf-schema#label> "Metadata catalog"@en .
+<https://example.org/tattviki/enterprise#MetadataCatalog> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise teaching class for metadata catalog."@en .
+<https://example.org/tattviki/enterprise#MetadataCatalog> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#GovernanceAsset> .
+<https://example.org/tattviki/enterprise#QualityRule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#QualityRule> <http://www.w3.org/2000/01/rdf-schema#label> "Quality rule"@en .
+<https://example.org/tattviki/enterprise#QualityRule> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise teaching class for quality rule."@en .
+<https://example.org/tattviki/enterprise#QualityRule> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#GovernanceAsset> .
+<https://example.org/tattviki/enterprise#AccessPolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#AccessPolicy> <http://www.w3.org/2000/01/rdf-schema#label> "Access policy"@en .
+<https://example.org/tattviki/enterprise#AccessPolicy> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise teaching class for access policy."@en .
+<https://example.org/tattviki/enterprise#AccessPolicy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#GovernanceAsset> .
+<https://example.org/tattviki/enterprise#SoftwareSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#SoftwareSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Software system"@en .
+<https://example.org/tattviki/enterprise#SoftwareSystem> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise teaching class for software system."@en .
+<https://example.org/tattviki/enterprise#SoftwareSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#EnterpriseEntity> .
+<https://example.org/tattviki/enterprise#DataPipeline> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#DataPipeline> <http://www.w3.org/2000/01/rdf-schema#label> "Data pipeline"@en .
+<https://example.org/tattviki/enterprise#DataPipeline> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise teaching class for data pipeline."@en .
+<https://example.org/tattviki/enterprise#DataPipeline> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#SoftwareSystem> .
+<https://example.org/tattviki/enterprise#BusinessGlossaryTerm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#BusinessGlossaryTerm> <http://www.w3.org/2000/01/rdf-schema#label> "Business glossary term"@en .
+<https://example.org/tattviki/enterprise#BusinessGlossaryTerm> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise teaching class for business glossary term."@en .
+<https://example.org/tattviki/enterprise#BusinessGlossaryTerm> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#ReferenceConcept> .
+<https://example.org/tattviki/enterprise#PartyMaster> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#PartyMaster> <http://www.w3.org/2000/01/rdf-schema#label> "Party master"@en .
+<https://example.org/tattviki/enterprise#PartyMaster> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise teaching class for party master."@en .
+<https://example.org/tattviki/enterprise#PartyMaster> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#MasterRecord> .
+<https://example.org/tattviki/enterprise#ProductMaster> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#ProductMaster> <http://www.w3.org/2000/01/rdf-schema#label> "Product master"@en .
+<https://example.org/tattviki/enterprise#ProductMaster> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise teaching class for product master."@en .
+<https://example.org/tattviki/enterprise#ProductMaster> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#MasterRecord> .
+<https://example.org/tattviki/enterprise#OrganizationUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#OrganizationUnit> <http://www.w3.org/2000/01/rdf-schema#label> "Organization unit"@en .
+<https://example.org/tattviki/enterprise#OrganizationUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise teaching class for organization unit."@en .
+<https://example.org/tattviki/enterprise#OrganizationUnit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#Organization> .
+<https://example.org/tattviki/enterprise#DataSteward> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#DataSteward> <http://www.w3.org/2000/01/rdf-schema#label> "Data steward"@en .
+<https://example.org/tattviki/enterprise#DataSteward> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise teaching class for data steward."@en .
+<https://example.org/tattviki/enterprise#DataSteward> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#Person> .
+<https://example.org/tattviki/enterprise#StudyProtocol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#StudyProtocol> <http://www.w3.org/2000/01/rdf-schema#label> "Study protocol"@en .
+<https://example.org/tattviki/enterprise#StudyProtocol> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise teaching class for study protocol."@en .
+<https://example.org/tattviki/enterprise#StudyProtocol> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#ResearchStudy> .
+<https://example.org/tattviki/enterprise#DataQualityIssue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://example.org/tattviki/enterprise#DataQualityIssue> <http://www.w3.org/2000/01/rdf-schema#label> "Data quality issue"@en .
+<https://example.org/tattviki/enterprise#DataQualityIssue> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise teaching class for data quality issue."@en .
+<https://example.org/tattviki/enterprise#DataQualityIssue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://example.org/tattviki/enterprise#GovernanceAsset> .
+<https://example.org/tattviki/enterprise#ownedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/tattviki/enterprise#ownedBy> <http://www.w3.org/2000/01/rdf-schema#label> "owned by"@en .
+<https://example.org/tattviki/enterprise#ownedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Responsible steward of a dataset."@en .
+<https://example.org/tattviki/enterprise#ownedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#Dataset> .
+<https://example.org/tattviki/enterprise#ownedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/tattviki/enterprise#Organization> .
+<https://example.org/tattviki/enterprise#ownedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://example.org/tattviki/enterprise#owns> .
+<https://example.org/tattviki/enterprise#owns> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/tattviki/enterprise#owns> <http://www.w3.org/2000/01/rdf-schema#label> "owns"@en .
+<https://example.org/tattviki/enterprise#owns> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse of owned by."@en .
+<https://example.org/tattviki/enterprise#owns> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#Organization> .
+<https://example.org/tattviki/enterprise#owns> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/tattviki/enterprise#Dataset> .
+<https://example.org/tattviki/enterprise#owns> <http://www.w3.org/2002/07/owl#inverseOf> <https://example.org/tattviki/enterprise#ownedBy> .
+<https://example.org/tattviki/enterprise#sponsoredBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/tattviki/enterprise#sponsoredBy> <http://www.w3.org/2000/01/rdf-schema#label> "sponsored by"@en .
+<https://example.org/tattviki/enterprise#sponsoredBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Sponsor of a research study."@en .
+<https://example.org/tattviki/enterprise#sponsoredBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#ResearchStudy> .
+<https://example.org/tattviki/enterprise#sponsoredBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/tattviki/enterprise#Organization> .
+<https://example.org/tattviki/enterprise#produces> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/tattviki/enterprise#produces> <http://www.w3.org/2000/01/rdf-schema#label> "produces"@en .
+<https://example.org/tattviki/enterprise#produces> <http://www.w3.org/2000/01/rdf-schema#comment> "Study generates a dataset."@en .
+<https://example.org/tattviki/enterprise#produces> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#ResearchStudy> .
+<https://example.org/tattviki/enterprise#produces> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/tattviki/enterprise#Dataset> .
+<https://example.org/tattviki/enterprise#derivedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/tattviki/enterprise#derivedFrom> <http://www.w3.org/2000/01/rdf-schema#label> "derived from"@en .
+<https://example.org/tattviki/enterprise#derivedFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "Lineage relation between data assets."@en .
+<https://example.org/tattviki/enterprise#derivedFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#Dataset> .
+<https://example.org/tattviki/enterprise#derivedFrom> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/tattviki/enterprise#Dataset> .
+<https://example.org/tattviki/enterprise#derivedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<https://example.org/tattviki/enterprise#linkedToMaster> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/tattviki/enterprise#linkedToMaster> <http://www.w3.org/2000/01/rdf-schema#label> "linked to master"@en .
+<https://example.org/tattviki/enterprise#linkedToMaster> <http://www.w3.org/2000/01/rdf-schema#comment> "A source identity points to a master identity record."@en .
+<https://example.org/tattviki/enterprise#linkedToMaster> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#Person> .
+<https://example.org/tattviki/enterprise#linkedToMaster> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/tattviki/enterprise#MasterRecord> .
+<https://example.org/tattviki/enterprise#managedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/tattviki/enterprise#managedBy> <http://www.w3.org/2000/01/rdf-schema#label> "managed by"@en .
+<https://example.org/tattviki/enterprise#managedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Fictional enterprise semantic relationship: managed by."@en .
+<https://example.org/tattviki/enterprise#managedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#EnterpriseEntity> .
+<https://example.org/tattviki/enterprise#managedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/tattviki/enterprise#Organization> .
+<https://example.org/tattviki/enterprise#governedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/tattviki/enterprise#governedBy> <http://www.w3.org/2000/01/rdf-schema#label> "governed by"@en .
+<https://example.org/tattviki/enterprise#governedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Fictional enterprise semantic relationship: governed by."@en .
+<https://example.org/tattviki/enterprise#governedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#Dataset> .
+<https://example.org/tattviki/enterprise#governedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/tattviki/enterprise#GovernanceAsset> .
+<https://example.org/tattviki/enterprise#catalogedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/tattviki/enterprise#catalogedIn> <http://www.w3.org/2000/01/rdf-schema#label> "cataloged in"@en .
+<https://example.org/tattviki/enterprise#catalogedIn> <http://www.w3.org/2000/01/rdf-schema#comment> "Fictional enterprise semantic relationship: cataloged in."@en .
+<https://example.org/tattviki/enterprise#catalogedIn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#Dataset> .
+<https://example.org/tattviki/enterprise#catalogedIn> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/tattviki/enterprise#MetadataCatalog> .
+<https://example.org/tattviki/enterprise#hasContract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/tattviki/enterprise#hasContract> <http://www.w3.org/2000/01/rdf-schema#label> "has contract"@en .
+<https://example.org/tattviki/enterprise#hasContract> <http://www.w3.org/2000/01/rdf-schema#comment> "Fictional enterprise semantic relationship: has contract."@en .
+<https://example.org/tattviki/enterprise#hasContract> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#DataProduct> .
+<https://example.org/tattviki/enterprise#hasContract> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/tattviki/enterprise#DataContract> .
+<https://example.org/tattviki/enterprise#consumes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/tattviki/enterprise#consumes> <http://www.w3.org/2000/01/rdf-schema#label> "consumes"@en .
+<https://example.org/tattviki/enterprise#consumes> <http://www.w3.org/2000/01/rdf-schema#comment> "Fictional enterprise semantic relationship: consumes."@en .
+<https://example.org/tattviki/enterprise#consumes> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#DataPipeline> .
+<https://example.org/tattviki/enterprise#consumes> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/tattviki/enterprise#SourceDataset> .
+<https://example.org/tattviki/enterprise#publishes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/tattviki/enterprise#publishes> <http://www.w3.org/2000/01/rdf-schema#label> "publishes"@en .
+<https://example.org/tattviki/enterprise#publishes> <http://www.w3.org/2000/01/rdf-schema#comment> "Fictional enterprise semantic relationship: publishes."@en .
+<https://example.org/tattviki/enterprise#publishes> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#DataPipeline> .
+<https://example.org/tattviki/enterprise#publishes> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/tattviki/enterprise#CuratedDataset> .
+<https://example.org/tattviki/enterprise#supportsStudy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/tattviki/enterprise#supportsStudy> <http://www.w3.org/2000/01/rdf-schema#label> "supports study"@en .
+<https://example.org/tattviki/enterprise#supportsStudy> <http://www.w3.org/2000/01/rdf-schema#comment> "Fictional enterprise semantic relationship: supports study."@en .
+<https://example.org/tattviki/enterprise#supportsStudy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#CuratedDataset> .
+<https://example.org/tattviki/enterprise#supportsStudy> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/tattviki/enterprise#ResearchStudy> .
+<https://example.org/tattviki/enterprise#matchedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/tattviki/enterprise#matchedTo> <http://www.w3.org/2000/01/rdf-schema#label> "matched to"@en .
+<https://example.org/tattviki/enterprise#matchedTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Fictional enterprise semantic relationship: matched to."@en .
+<https://example.org/tattviki/enterprise#matchedTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#Person> .
+<https://example.org/tattviki/enterprise#matchedTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/tattviki/enterprise#PartyMaster> .
+<https://example.org/tattviki/enterprise#reviewedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/tattviki/enterprise#reviewedBy> <http://www.w3.org/2000/01/rdf-schema#label> "reviewed by"@en .
+<https://example.org/tattviki/enterprise#reviewedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Fictional enterprise semantic relationship: reviewed by."@en .
+<https://example.org/tattviki/enterprise#reviewedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#MasterRecord> .
+<https://example.org/tattviki/enterprise#reviewedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/tattviki/enterprise#DataSteward> .
+<https://example.org/tattviki/enterprise#enforcesPolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/tattviki/enterprise#enforcesPolicy> <http://www.w3.org/2000/01/rdf-schema#label> "enforces policy"@en .
+<https://example.org/tattviki/enterprise#enforcesPolicy> <http://www.w3.org/2000/01/rdf-schema#comment> "Fictional enterprise semantic relationship: enforces policy."@en .
+<https://example.org/tattviki/enterprise#enforcesPolicy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#GovernanceAsset> .
+<https://example.org/tattviki/enterprise#enforcesPolicy> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/tattviki/enterprise#AccessPolicy> .
+<https://example.org/tattviki/enterprise#implementsRule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://example.org/tattviki/enterprise#implementsRule> <http://www.w3.org/2000/01/rdf-schema#label> "implements rule"@en .
+<https://example.org/tattviki/enterprise#implementsRule> <http://www.w3.org/2000/01/rdf-schema#comment> "Fictional enterprise semantic relationship: implements rule."@en .
+<https://example.org/tattviki/enterprise#implementsRule> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#DataPipeline> .
+<https://example.org/tattviki/enterprise#implementsRule> <http://www.w3.org/2000/01/rdf-schema#range> <https://example.org/tattviki/enterprise#QualityRule> .
+<https://example.org/tattviki/enterprise#sourceSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/tattviki/enterprise#sourceSystem> <http://www.w3.org/2000/01/rdf-schema#label> "source system"@en .
+<https://example.org/tattviki/enterprise#sourceSystem> <http://www.w3.org/2000/01/rdf-schema#comment> "System-of-record code."@en .
+<https://example.org/tattviki/enterprise#sourceSystem> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#Dataset> .
+<https://example.org/tattviki/enterprise#sourceSystem> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/tattviki/enterprise#qualityScore> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/tattviki/enterprise#qualityScore> <http://www.w3.org/2000/01/rdf-schema#label> "quality score"@en .
+<https://example.org/tattviki/enterprise#qualityScore> <http://www.w3.org/2000/01/rdf-schema#comment> "Numeric quality score from zero to one."@en .
+<https://example.org/tattviki/enterprise#qualityScore> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#Dataset> .
+<https://example.org/tattviki/enterprise#qualityScore> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<https://example.org/tattviki/enterprise#recordStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/tattviki/enterprise#recordStatus> <http://www.w3.org/2000/01/rdf-schema#label> "record status"@en .
+<https://example.org/tattviki/enterprise#recordStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "Local status value; resolve it through the reference-data crosswalk."@en .
+<https://example.org/tattviki/enterprise#recordStatus> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#MasterRecord> .
+<https://example.org/tattviki/enterprise#recordStatus> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/tattviki/enterprise#approvalDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/tattviki/enterprise#approvalDate> <http://www.w3.org/2000/01/rdf-schema#label> "approval date"@en .
+<https://example.org/tattviki/enterprise#approvalDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Steward approval date."@en .
+<https://example.org/tattviki/enterprise#approvalDate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#MasterRecord> .
+<https://example.org/tattviki/enterprise#approvalDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<https://example.org/tattviki/enterprise#recordCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/tattviki/enterprise#recordCount> <http://www.w3.org/2000/01/rdf-schema#label> "record count"@en .
+<https://example.org/tattviki/enterprise#recordCount> <http://www.w3.org/2000/01/rdf-schema#comment> "Metadata field used in fictional enterprise exercises."@en .
+<https://example.org/tattviki/enterprise#recordCount> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#Dataset> .
+<https://example.org/tattviki/enterprise#recordCount> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/tattviki/enterprise#datasetVersion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/tattviki/enterprise#datasetVersion> <http://www.w3.org/2000/01/rdf-schema#label> "dataset version"@en .
+<https://example.org/tattviki/enterprise#datasetVersion> <http://www.w3.org/2000/01/rdf-schema#comment> "Metadata field used in fictional enterprise exercises."@en .
+<https://example.org/tattviki/enterprise#datasetVersion> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#Dataset> .
+<https://example.org/tattviki/enterprise#datasetVersion> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/tattviki/enterprise#effectiveFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/tattviki/enterprise#effectiveFrom> <http://www.w3.org/2000/01/rdf-schema#label> "effective from"@en .
+<https://example.org/tattviki/enterprise#effectiveFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "Metadata field used in fictional enterprise exercises."@en .
+<https://example.org/tattviki/enterprise#effectiveFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#ReferenceConcept> .
+<https://example.org/tattviki/enterprise#effectiveFrom> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<https://example.org/tattviki/enterprise#matchingConfidence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/tattviki/enterprise#matchingConfidence> <http://www.w3.org/2000/01/rdf-schema#label> "matching confidence"@en .
+<https://example.org/tattviki/enterprise#matchingConfidence> <http://www.w3.org/2000/01/rdf-schema#comment> "Metadata field used in fictional enterprise exercises."@en .
+<https://example.org/tattviki/enterprise#matchingConfidence> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#PartyMaster> .
+<https://example.org/tattviki/enterprise#matchingConfidence> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<https://example.org/tattviki/enterprise#localStatusCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/tattviki/enterprise#localStatusCode> <http://www.w3.org/2000/01/rdf-schema#label> "local status code"@en .
+<https://example.org/tattviki/enterprise#localStatusCode> <http://www.w3.org/2000/01/rdf-schema#comment> "Metadata field used in fictional enterprise exercises."@en .
+<https://example.org/tattviki/enterprise#localStatusCode> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#PartyMaster> .
+<https://example.org/tattviki/enterprise#localStatusCode> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/tattviki/enterprise#systemIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/tattviki/enterprise#systemIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "system identifier"@en .
+<https://example.org/tattviki/enterprise#systemIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "Metadata field used in fictional enterprise exercises."@en .
+<https://example.org/tattviki/enterprise#systemIdentifier> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#SoftwareSystem> .
+<https://example.org/tattviki/enterprise#systemIdentifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/tattviki/enterprise#refreshDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/tattviki/enterprise#refreshDate> <http://www.w3.org/2000/01/rdf-schema#label> "refresh date"@en .
+<https://example.org/tattviki/enterprise#refreshDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Metadata field used in fictional enterprise exercises."@en .
+<https://example.org/tattviki/enterprise#refreshDate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#CuratedDataset> .
+<https://example.org/tattviki/enterprise#refreshDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<https://example.org/tattviki/enterprise#dataClassification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/tattviki/enterprise#dataClassification> <http://www.w3.org/2000/01/rdf-schema#label> "data classification"@en .
+<https://example.org/tattviki/enterprise#dataClassification> <http://www.w3.org/2000/01/rdf-schema#comment> "Metadata field used in fictional enterprise exercises."@en .
+<https://example.org/tattviki/enterprise#dataClassification> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#Dataset> .
+<https://example.org/tattviki/enterprise#dataClassification> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/tattviki/enterprise#stewardNote> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://example.org/tattviki/enterprise#stewardNote> <http://www.w3.org/2000/01/rdf-schema#label> "steward note"@en .
+<https://example.org/tattviki/enterprise#stewardNote> <http://www.w3.org/2000/01/rdf-schema#comment> "Metadata field used in fictional enterprise exercises."@en .
+<https://example.org/tattviki/enterprise#stewardNote> <http://www.w3.org/2000/01/rdf-schema#domain> <https://example.org/tattviki/enterprise#MasterRecord> .
+<https://example.org/tattviki/enterprise#stewardNote> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/tattviki/enterprise#ResearchGroupA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/tattviki/enterprise#ResearchGroupA> <http://www.w3.org/2000/01/rdf-schema#label> "Research Group A"@en .
+<https://example.org/tattviki/enterprise#ResearchGroupA> <http://www.w3.org/2000/01/rdf-schema#comment> "Invented organization."@en .
+<https://example.org/tattviki/enterprise#ResearchGroupA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/tattviki/enterprise#Organization> .
+<https://example.org/tattviki/enterprise#StudyOrion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/tattviki/enterprise#StudyOrion> <http://www.w3.org/2000/01/rdf-schema#label> "Study Orion"@en .
+<https://example.org/tattviki/enterprise#StudyOrion> <http://www.w3.org/2000/01/rdf-schema#comment> "Invented training study."@en .
+<https://example.org/tattviki/enterprise#StudyOrion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/tattviki/enterprise#ResearchStudy> .
+<https://example.org/tattviki/enterprise#StudyOrion> <https://example.org/tattviki/enterprise#sponsoredBy> <https://example.org/tattviki/enterprise#ResearchGroupA> .
+<https://example.org/tattviki/enterprise#StudyOrion> <https://example.org/tattviki/enterprise#produces> <https://example.org/tattviki/enterprise#SafetyDataset> .
+<https://example.org/tattviki/enterprise#SafetyDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/tattviki/enterprise#SafetyDataset> <http://www.w3.org/2000/01/rdf-schema#label> "Safety dataset"@en .
+<https://example.org/tattviki/enterprise#SafetyDataset> <http://www.w3.org/2000/01/rdf-schema#comment> "Invented trial dataset."@en .
+<https://example.org/tattviki/enterprise#SafetyDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/tattviki/enterprise#Dataset> .
+<https://example.org/tattviki/enterprise#SafetyDataset> <https://example.org/tattviki/enterprise#ownedBy> <https://example.org/tattviki/enterprise#ResearchGroupA> .
+<https://example.org/tattviki/enterprise#SafetyDataset> <https://example.org/tattviki/enterprise#sourceSystem> "Synthetic EDC"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/tattviki/enterprise#SafetyDataset> <https://example.org/tattviki/enterprise#qualityScore> "0.95"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://example.org/tattviki/enterprise#MasterParty001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/tattviki/enterprise#MasterParty001> <http://www.w3.org/2000/01/rdf-schema#label> "Master party 001"@en .
+<https://example.org/tattviki/enterprise#MasterParty001> <http://www.w3.org/2000/01/rdf-schema#comment> "Invented master record."@en .
+<https://example.org/tattviki/enterprise#MasterParty001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/tattviki/enterprise#MasterRecord> .
+<https://example.org/tattviki/enterprise#MasterParty001> <https://example.org/tattviki/enterprise#recordStatus> "APPROVED"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/tattviki/enterprise#MasterParty001> <https://example.org/tattviki/enterprise#approvalDate> "2026-01-12"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://example.org/tattviki/enterprise#CRMSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/tattviki/enterprise#CRMSource> <http://www.w3.org/2000/01/rdf-schema#label> "CRM source dataset"@en .
+<https://example.org/tattviki/enterprise#CRMSource> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise record for educational demonstrations."@en .
+<https://example.org/tattviki/enterprise#CRMSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/tattviki/enterprise#SourceDataset> .
+<https://example.org/tattviki/enterprise#CRMSource> <https://example.org/tattviki/enterprise#ownedBy> <https://example.org/tattviki/enterprise#ResearchGroupA> .
+<https://example.org/tattviki/enterprise#CRMSource> <https://example.org/tattviki/enterprise#sourceSystem> "CRM"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/tattviki/enterprise#CRMSource> <https://example.org/tattviki/enterprise#recordCount> "25000"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/tattviki/enterprise#CRMSource> <https://example.org/tattviki/enterprise#datasetVersion> "2026.1"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/tattviki/enterprise#ERPSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/tattviki/enterprise#ERPSource> <http://www.w3.org/2000/01/rdf-schema#label> "ERP source dataset"@en .
+<https://example.org/tattviki/enterprise#ERPSource> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise record for educational demonstrations."@en .
+<https://example.org/tattviki/enterprise#ERPSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/tattviki/enterprise#SourceDataset> .
+<https://example.org/tattviki/enterprise#ERPSource> <https://example.org/tattviki/enterprise#ownedBy> <https://example.org/tattviki/enterprise#ResearchGroupA> .
+<https://example.org/tattviki/enterprise#ERPSource> <https://example.org/tattviki/enterprise#sourceSystem> "ERP"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/tattviki/enterprise#ERPSource> <https://example.org/tattviki/enterprise#recordCount> "18000"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/tattviki/enterprise#CuratedParties> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/tattviki/enterprise#CuratedParties> <http://www.w3.org/2000/01/rdf-schema#label> "Curated party dataset"@en .
+<https://example.org/tattviki/enterprise#CuratedParties> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise record for educational demonstrations."@en .
+<https://example.org/tattviki/enterprise#CuratedParties> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/tattviki/enterprise#CuratedDataset> .
+<https://example.org/tattviki/enterprise#CuratedParties> <https://example.org/tattviki/enterprise#ownedBy> <https://example.org/tattviki/enterprise#ResearchGroupA> .
+<https://example.org/tattviki/enterprise#CuratedParties> <https://example.org/tattviki/enterprise#derivedFrom> <https://example.org/tattviki/enterprise#CRMSource> .
+<https://example.org/tattviki/enterprise#CuratedParties> <https://example.org/tattviki/enterprise#derivedFrom> <https://example.org/tattviki/enterprise#ERPSource> .
+<https://example.org/tattviki/enterprise#CuratedParties> <https://example.org/tattviki/enterprise#qualityScore> "0.98"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://example.org/tattviki/enterprise#CuratedParties> <https://example.org/tattviki/enterprise#refreshDate> "2026-10-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://example.org/tattviki/enterprise#Customer360> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/tattviki/enterprise#Customer360> <http://www.w3.org/2000/01/rdf-schema#label> "Customer 360 product"@en .
+<https://example.org/tattviki/enterprise#Customer360> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise record for educational demonstrations."@en .
+<https://example.org/tattviki/enterprise#Customer360> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/tattviki/enterprise#DataProduct> .
+<https://example.org/tattviki/enterprise#Customer360> <https://example.org/tattviki/enterprise#ownedBy> <https://example.org/tattviki/enterprise#ResearchGroupA> .
+<https://example.org/tattviki/enterprise#Customer360> <https://example.org/tattviki/enterprise#hasContract> <https://example.org/tattviki/enterprise#ContractV1> .
+<https://example.org/tattviki/enterprise#Customer360> <https://example.org/tattviki/enterprise#datasetVersion> "1.0"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/tattviki/enterprise#ContractV1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/tattviki/enterprise#ContractV1> <http://www.w3.org/2000/01/rdf-schema#label> "Data contract v1"@en .
+<https://example.org/tattviki/enterprise#ContractV1> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise record for educational demonstrations."@en .
+<https://example.org/tattviki/enterprise#ContractV1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/tattviki/enterprise#DataContract> .
+<https://example.org/tattviki/enterprise#MetadataRegistry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/tattviki/enterprise#MetadataRegistry> <http://www.w3.org/2000/01/rdf-schema#label> "Metadata registry"@en .
+<https://example.org/tattviki/enterprise#MetadataRegistry> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise record for educational demonstrations."@en .
+<https://example.org/tattviki/enterprise#MetadataRegistry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/tattviki/enterprise#MetadataCatalog> .
+<https://example.org/tattviki/enterprise#QualityRulesetA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/tattviki/enterprise#QualityRulesetA> <http://www.w3.org/2000/01/rdf-schema#label> "Quality rule set A"@en .
+<https://example.org/tattviki/enterprise#QualityRulesetA> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise record for educational demonstrations."@en .
+<https://example.org/tattviki/enterprise#QualityRulesetA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/tattviki/enterprise#QualityRule> .
+<https://example.org/tattviki/enterprise#PrivacyTierA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/tattviki/enterprise#PrivacyTierA> <http://www.w3.org/2000/01/rdf-schema#label> "Data access policy A"@en .
+<https://example.org/tattviki/enterprise#PrivacyTierA> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise record for educational demonstrations."@en .
+<https://example.org/tattviki/enterprise#PrivacyTierA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/tattviki/enterprise#AccessPolicy> .
+<https://example.org/tattviki/enterprise#IngestionPipeline> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/tattviki/enterprise#IngestionPipeline> <http://www.w3.org/2000/01/rdf-schema#label> "Ingestion pipeline"@en .
+<https://example.org/tattviki/enterprise#IngestionPipeline> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise record for educational demonstrations."@en .
+<https://example.org/tattviki/enterprise#IngestionPipeline> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/tattviki/enterprise#DataPipeline> .
+<https://example.org/tattviki/enterprise#IngestionPipeline> <https://example.org/tattviki/enterprise#consumes> <https://example.org/tattviki/enterprise#CRMSource> .
+<https://example.org/tattviki/enterprise#IngestionPipeline> <https://example.org/tattviki/enterprise#consumes> <https://example.org/tattviki/enterprise#ERPSource> .
+<https://example.org/tattviki/enterprise#IngestionPipeline> <https://example.org/tattviki/enterprise#publishes> <https://example.org/tattviki/enterprise#CuratedParties> .
+<https://example.org/tattviki/enterprise#IngestionPipeline> <https://example.org/tattviki/enterprise#implementsRule> <https://example.org/tattviki/enterprise#QualityRulesetA> .
+<https://example.org/tattviki/enterprise#MDMSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/tattviki/enterprise#MDMSystem> <http://www.w3.org/2000/01/rdf-schema#label> "MDM application"@en .
+<https://example.org/tattviki/enterprise#MDMSystem> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise record for educational demonstrations."@en .
+<https://example.org/tattviki/enterprise#MDMSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/tattviki/enterprise#SoftwareSystem> .
+<https://example.org/tattviki/enterprise#MDMSystem> <https://example.org/tattviki/enterprise#systemIdentifier> "mdm-demo-01"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/tattviki/enterprise#StewardMira> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/tattviki/enterprise#StewardMira> <http://www.w3.org/2000/01/rdf-schema#label> "Steward Mira"@en .
+<https://example.org/tattviki/enterprise#StewardMira> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise record for educational demonstrations."@en .
+<https://example.org/tattviki/enterprise#StewardMira> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/tattviki/enterprise#DataSteward> .
+<https://example.org/tattviki/enterprise#MasterParty002> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/tattviki/enterprise#MasterParty002> <http://www.w3.org/2000/01/rdf-schema#label> "Master party 002"@en .
+<https://example.org/tattviki/enterprise#MasterParty002> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise record for educational demonstrations."@en .
+<https://example.org/tattviki/enterprise#MasterParty002> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/tattviki/enterprise#PartyMaster> .
+<https://example.org/tattviki/enterprise#MasterParty002> <https://example.org/tattviki/enterprise#reviewedBy> <https://example.org/tattviki/enterprise#StewardMira> .
+<https://example.org/tattviki/enterprise#MasterParty002> <https://example.org/tattviki/enterprise#recordStatus> "APPROVED"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/tattviki/enterprise#MasterParty002> <https://example.org/tattviki/enterprise#matchingConfidence> "0.97"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://example.org/tattviki/enterprise#MasterParty002> <https://example.org/tattviki/enterprise#localStatusCode> "A"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/tattviki/enterprise#MasterParty003> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/tattviki/enterprise#MasterParty003> <http://www.w3.org/2000/01/rdf-schema#label> "Master party 003"@en .
+<https://example.org/tattviki/enterprise#MasterParty003> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise record for educational demonstrations."@en .
+<https://example.org/tattviki/enterprise#MasterParty003> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/tattviki/enterprise#PartyMaster> .
+<https://example.org/tattviki/enterprise#MasterParty003> <https://example.org/tattviki/enterprise#reviewedBy> <https://example.org/tattviki/enterprise#StewardMira> .
+<https://example.org/tattviki/enterprise#MasterParty003> <https://example.org/tattviki/enterprise#recordStatus> "PENDING"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/tattviki/enterprise#MasterParty003> <https://example.org/tattviki/enterprise#matchingConfidence> "0.82"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://example.org/tattviki/enterprise#MasterParty003> <https://example.org/tattviki/enterprise#localStatusCode> "P"^^<http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/tattviki/enterprise#OrionProtocol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/tattviki/enterprise#OrionProtocol> <http://www.w3.org/2000/01/rdf-schema#label> "Study Orion protocol"@en .
+<https://example.org/tattviki/enterprise#OrionProtocol> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise record for educational demonstrations."@en .
+<https://example.org/tattviki/enterprise#OrionProtocol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/tattviki/enterprise#StudyProtocol> .
+<https://example.org/tattviki/enterprise#OrionProtocol> <https://example.org/tattviki/enterprise#sponsoredBy> <https://example.org/tattviki/enterprise#ResearchGroupA> .
+<https://example.org/tattviki/enterprise#LineagePolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/tattviki/enterprise#LineagePolicy> <http://www.w3.org/2000/01/rdf-schema#label> "Lineage access policy"@en .
+<https://example.org/tattviki/enterprise#LineagePolicy> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise record for educational demonstrations."@en .
+<https://example.org/tattviki/enterprise#LineagePolicy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/tattviki/enterprise#AccessPolicy> .
+<https://example.org/tattviki/enterprise#SourceTraceIssue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/tattviki/enterprise#SourceTraceIssue> <http://www.w3.org/2000/01/rdf-schema#label> "Missing source evidence"@en .
+<https://example.org/tattviki/enterprise#SourceTraceIssue> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise record for educational demonstrations."@en .
+<https://example.org/tattviki/enterprise#SourceTraceIssue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/tattviki/enterprise#DataQualityIssue> .
+<https://example.org/tattviki/enterprise#AccountTerm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://example.org/tattviki/enterprise#AccountTerm> <http://www.w3.org/2000/01/rdf-schema#label> "Account (business term)"@en .
+<https://example.org/tattviki/enterprise#AccountTerm> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic enterprise record for educational demonstrations."@en .
+<https://example.org/tattviki/enterprise#AccountTerm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://example.org/tattviki/enterprise#BusinessGlossaryTerm> .
+<https://example.org/tattviki/enterprise#StatusScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+<https://example.org/tattviki/enterprise#StatusScheme> <http://www.w3.org/2004/02/skos/core#prefLabel> "Status vocabulary"@en .
+<https://example.org/tattviki/enterprise#StatusScheme> <http://www.w3.org/2004/02/skos/core#definition> "A fictional controlled-vocabulary scheme."@en .
+<https://example.org/tattviki/enterprise#Approved> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://example.org/tattviki/enterprise#Approved> <http://www.w3.org/2004/02/skos/core#prefLabel> "Approved"@en .
+<https://example.org/tattviki/enterprise#Approved> <http://www.w3.org/2004/02/skos/core#definition> "Approved stewardship status."@en .
+<https://example.org/tattviki/enterprise#Approved> <http://www.w3.org/2004/02/skos/core#inScheme> <https://example.org/tattviki/enterprise#StatusScheme> .
+<https://example.org/tattviki/enterprise#Approved> <http://www.w3.org/2004/02/skos/core#altLabel> "Accepted"@en .
+<https://example.org/tattviki/enterprise#Approved> <http://www.w3.org/2004/02/skos/core#altLabel> "Valid"@en .
+<https://example.org/tattviki/enterprise#Pending> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://example.org/tattviki/enterprise#Pending> <http://www.w3.org/2004/02/skos/core#prefLabel> "Pending"@en .
+<https://example.org/tattviki/enterprise#Pending> <http://www.w3.org/2004/02/skos/core#definition> "Awaiting steward review."@en .
+<https://example.org/tattviki/enterprise#Pending> <http://www.w3.org/2004/02/skos/core#inScheme> <https://example.org/tattviki/enterprise#StatusScheme> .
+<https://example.org/tattviki/enterprise#Pending> <http://www.w3.org/2004/02/skos/core#altLabel> "Open"@en .
+<https://example.org/tattviki/enterprise#Pending> <http://www.w3.org/2004/02/skos/core#altLabel> "In review"@en .
+<https://example.org/tattviki/enterprise#Rejected> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://example.org/tattviki/enterprise#Rejected> <http://www.w3.org/2004/02/skos/core#prefLabel> "Rejected"@en .
+<https://example.org/tattviki/enterprise#Rejected> <http://www.w3.org/2004/02/skos/core#definition> "Not approved for publication."@en .
+<https://example.org/tattviki/enterprise#Rejected> <http://www.w3.org/2004/02/skos/core#inScheme> <https://example.org/tattviki/enterprise#StatusScheme> .
+<https://example.org/tattviki/enterprise#Rejected> <http://www.w3.org/2004/02/skos/core#altLabel> "Declined"@en .
+<https://example.org/tattviki/enterprise#PartyScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+<https://example.org/tattviki/enterprise#PartyScheme> <http://www.w3.org/2004/02/skos/core#prefLabel> "Party status scheme"@en .
+<https://example.org/tattviki/enterprise#PartyScheme> <http://www.w3.org/2004/02/skos/core#definition> "Fictional, openly reusable vocabulary concept."@en .
+<https://example.org/tattviki/enterprise#DataClassScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+<https://example.org/tattviki/enterprise#DataClassScheme> <http://www.w3.org/2004/02/skos/core#prefLabel> "Data classification scheme"@en .
+<https://example.org/tattviki/enterprise#DataClassScheme> <http://www.w3.org/2004/02/skos/core#definition> "Fictional, openly reusable vocabulary concept."@en .
+<https://example.org/tattviki/enterprise#ActiveParty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://example.org/tattviki/enterprise#ActiveParty> <http://www.w3.org/2004/02/skos/core#prefLabel> "Active party"@en .
+<https://example.org/tattviki/enterprise#ActiveParty> <http://www.w3.org/2004/02/skos/core#definition> "Fictional, openly reusable vocabulary concept."@en .
+<https://example.org/tattviki/enterprise#ActiveParty> <http://www.w3.org/2004/02/skos/core#inScheme> <https://example.org/tattviki/enterprise#PartyScheme> .
+<https://example.org/tattviki/enterprise#InactiveParty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://example.org/tattviki/enterprise#InactiveParty> <http://www.w3.org/2004/02/skos/core#prefLabel> "Inactive party"@en .
+<https://example.org/tattviki/enterprise#InactiveParty> <http://www.w3.org/2004/02/skos/core#definition> "Fictional, openly reusable vocabulary concept."@en .
+<https://example.org/tattviki/enterprise#InactiveParty> <http://www.w3.org/2004/02/skos/core#inScheme> <https://example.org/tattviki/enterprise#PartyScheme> .
+<https://example.org/tattviki/enterprise#PendingReview> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://example.org/tattviki/enterprise#PendingReview> <http://www.w3.org/2004/02/skos/core#prefLabel> "Pending review"@en .
+<https://example.org/tattviki/enterprise#PendingReview> <http://www.w3.org/2004/02/skos/core#definition> "Fictional, openly reusable vocabulary concept."@en .
+<https://example.org/tattviki/enterprise#PendingReview> <http://www.w3.org/2004/02/skos/core#inScheme> <https://example.org/tattviki/enterprise#PartyScheme> .
+<https://example.org/tattviki/enterprise#MergedParty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://example.org/tattviki/enterprise#MergedParty> <http://www.w3.org/2004/02/skos/core#prefLabel> "Merged party"@en .
+<https://example.org/tattviki/enterprise#MergedParty> <http://www.w3.org/2004/02/skos/core#definition> "Fictional, openly reusable vocabulary concept."@en .
+<https://example.org/tattviki/enterprise#MergedParty> <http://www.w3.org/2004/02/skos/core#inScheme> <https://example.org/tattviki/enterprise#PartyScheme> .
+<https://example.org/tattviki/enterprise#PublicData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://example.org/tattviki/enterprise#PublicData> <http://www.w3.org/2004/02/skos/core#prefLabel> "Public data"@en .
+<https://example.org/tattviki/enterprise#PublicData> <http://www.w3.org/2004/02/skos/core#definition> "Fictional, openly reusable vocabulary concept."@en .
+<https://example.org/tattviki/enterprise#PublicData> <http://www.w3.org/2004/02/skos/core#inScheme> <https://example.org/tattviki/enterprise#DataClassScheme> .
+<https://example.org/tattviki/enterprise#InternalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://example.org/tattviki/enterprise#InternalData> <http://www.w3.org/2004/02/skos/core#prefLabel> "Internal data"@en .
+<https://example.org/tattviki/enterprise#InternalData> <http://www.w3.org/2004/02/skos/core#definition> "Fictional, openly reusable vocabulary concept."@en .
+<https://example.org/tattviki/enterprise#InternalData> <http://www.w3.org/2004/02/skos/core#inScheme> <https://example.org/tattviki/enterprise#DataClassScheme> .
+<https://example.org/tattviki/enterprise#RestrictedData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://example.org/tattviki/enterprise#RestrictedData> <http://www.w3.org/2004/02/skos/core#prefLabel> "Restricted data"@en .
+<https://example.org/tattviki/enterprise#RestrictedData> <http://www.w3.org/2004/02/skos/core#definition> "Fictional, openly reusable vocabulary concept."@en .
+<https://example.org/tattviki/enterprise#RestrictedData> <http://www.w3.org/2004/02/skos/core#inScheme> <https://example.org/tattviki/enterprise#DataClassScheme> .
+<https://example.org/tattviki/enterprise#RegulatedData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://example.org/tattviki/enterprise#RegulatedData> <http://www.w3.org/2004/02/skos/core#prefLabel> "Regulated data"@en .
+<https://example.org/tattviki/enterprise#RegulatedData> <http://www.w3.org/2004/02/skos/core#definition> "Fictional, openly reusable vocabulary concept."@en .
+<https://example.org/tattviki/enterprise#RegulatedData> <http://www.w3.org/2004/02/skos/core#inScheme> <https://example.org/tattviki/enterprise#DataClassScheme> .
+<https://example.org/tattviki/enterprise#SensitivityCritical> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://example.org/tattviki/enterprise#SensitivityCritical> <http://www.w3.org/2004/02/skos/core#prefLabel> "Sensitivity critical"@en .
+<https://example.org/tattviki/enterprise#SensitivityCritical> <http://www.w3.org/2004/02/skos/core#definition> "Fictional, openly reusable vocabulary concept."@en .
+<https://example.org/tattviki/enterprise#SensitivityCritical> <http://www.w3.org/2004/02/skos/core#inScheme> <https://example.org/tattviki/enterprise#DataClassScheme> .
+<https://example.org/tattviki/enterprise#SensitivityCritical> <http://www.w3.org/2004/02/skos/core#broader> <https://example.org/tattviki/enterprise#RestrictedData> .
+<https://example.org/tattviki/enterprise#SensitivityLow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://example.org/tattviki/enterprise#SensitivityLow> <http://www.w3.org/2004/02/skos/core#prefLabel> "Sensitivity low"@en .
+<https://example.org/tattviki/enterprise#SensitivityLow> <http://www.w3.org/2004/02/skos/core#definition> "Fictional, openly reusable vocabulary concept."@en .
+<https://example.org/tattviki/enterprise#SensitivityLow> <http://www.w3.org/2004/02/skos/core#inScheme> <https://example.org/tattviki/enterprise#DataClassScheme> .
+<https://example.org/tattviki/enterprise#SensitivityLow> <http://www.w3.org/2004/02/skos/core#broader> <https://example.org/tattviki/enterprise#InternalData> .
+<https://example.org/tattviki/enterprise#DatasetShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://example.org/tattviki/enterprise#DatasetShape> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset quality rules"@en .
+<https://example.org/tattviki/enterprise#DatasetShape> <http://www.w3.org/2000/01/rdf-schema#comment> "All datasets should have an owner and a quality score."@en .
+<https://example.org/tattviki/enterprise#DatasetShape> <http://www.w3.org/ns/shacl#targetClass> <https://example.org/tattviki/enterprise#Dataset> .
+<https://example.org/tattviki/enterprise#DatasetShape> <http://www.w3.org/ns/shacl#property> <https://example.org/tattviki/enterprise#DatasetShape_property> .
+<https://example.org/tattviki/enterprise#DatasetShape_property> <http://www.w3.org/ns/shacl#path> <https://example.org/tattviki/enterprise#ownedBy> .
+<https://example.org/tattviki/enterprise#DatasetShape_property> <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/tattviki/enterprise#DatasetShape_property> <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/tattviki/enterprise#DatasetShape_property> <http://www.w3.org/ns/shacl#class> <https://example.org/tattviki/enterprise#Organization> .
+<https://example.org/tattviki/enterprise#StudyShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://example.org/tattviki/enterprise#StudyShape> <http://www.w3.org/2000/01/rdf-schema#label> "Study quality rules"@en .
+<https://example.org/tattviki/enterprise#StudyShape> <http://www.w3.org/2000/01/rdf-schema#comment> "All studies must reference a sponsoring organization."@en .
+<https://example.org/tattviki/enterprise#StudyShape> <http://www.w3.org/ns/shacl#targetClass> <https://example.org/tattviki/enterprise#ResearchStudy> .
+<https://example.org/tattviki/enterprise#StudyShape> <http://www.w3.org/ns/shacl#property> <https://example.org/tattviki/enterprise#StudyShape_property> .
+<https://example.org/tattviki/enterprise#StudyShape_property> <http://www.w3.org/ns/shacl#path> <https://example.org/tattviki/enterprise#sponsoredBy> .
+<https://example.org/tattviki/enterprise#StudyShape_property> <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/tattviki/enterprise#StudyShape_property> <http://www.w3.org/ns/shacl#class> <https://example.org/tattviki/enterprise#Organization> .
+<https://example.org/tattviki/enterprise#CuratedDatasetShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://example.org/tattviki/enterprise#CuratedDatasetShape> <http://www.w3.org/2000/01/rdf-schema#label> "Curated dataset ownership"@en .
+<https://example.org/tattviki/enterprise#CuratedDatasetShape> <http://www.w3.org/2000/01/rdf-schema#comment> "Curated data must have a responsible owner."@en .
+<https://example.org/tattviki/enterprise#CuratedDatasetShape> <http://www.w3.org/ns/shacl#targetClass> <https://example.org/tattviki/enterprise#CuratedDataset> .
+<https://example.org/tattviki/enterprise#CuratedDatasetShape> <http://www.w3.org/ns/shacl#property> <https://example.org/tattviki/enterprise#CuratedDatasetShape_property> .
+<https://example.org/tattviki/enterprise#CuratedDatasetShape_property> <http://www.w3.org/ns/shacl#path> <https://example.org/tattviki/enterprise#ownedBy> .
+<https://example.org/tattviki/enterprise#CuratedDatasetShape_property> <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/tattviki/enterprise#CuratedDatasetShape_property> <http://www.w3.org/ns/shacl#class> <https://example.org/tattviki/enterprise#Organization> .
+<https://example.org/tattviki/enterprise#PartyMasterShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://example.org/tattviki/enterprise#PartyMasterShape> <http://www.w3.org/2000/01/rdf-schema#label> "Party master status"@en .
+<https://example.org/tattviki/enterprise#PartyMasterShape> <http://www.w3.org/2000/01/rdf-schema#comment> "Require a governed lifecycle code."@en .
+<https://example.org/tattviki/enterprise#PartyMasterShape> <http://www.w3.org/ns/shacl#targetClass> <https://example.org/tattviki/enterprise#PartyMaster> .
+<https://example.org/tattviki/enterprise#PartyMasterShape> <http://www.w3.org/ns/shacl#property> <https://example.org/tattviki/enterprise#PartyMasterShape_property> .
+<https://example.org/tattviki/enterprise#PartyMasterShape_property> <http://www.w3.org/ns/shacl#path> <https://example.org/tattviki/enterprise#recordStatus> .
+<https://example.org/tattviki/enterprise#PartyMasterShape_property> <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/tattviki/enterprise#PartyMasterShape_property> <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/tattviki/enterprise#DataProductShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://example.org/tattviki/enterprise#DataProductShape> <http://www.w3.org/2000/01/rdf-schema#label> "Data product contract"@en .
+<https://example.org/tattviki/enterprise#DataProductShape> <http://www.w3.org/2000/01/rdf-schema#comment> "Products must reference their data contract."@en .
+<https://example.org/tattviki/enterprise#DataProductShape> <http://www.w3.org/ns/shacl#targetClass> <https://example.org/tattviki/enterprise#DataProduct> .
+<https://example.org/tattviki/enterprise#DataProductShape> <http://www.w3.org/ns/shacl#property> <https://example.org/tattviki/enterprise#DataProductShape_property> .
+<https://example.org/tattviki/enterprise#DataProductShape_property> <http://www.w3.org/ns/shacl#path> <https://example.org/tattviki/enterprise#hasContract> .
+<https://example.org/tattviki/enterprise#DataProductShape_property> <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/tattviki/enterprise#DataProductShape_property> <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/tattviki/enterprise#DataProductShape_property> <http://www.w3.org/ns/shacl#class> <https://example.org/tattviki/enterprise#DataContract> .
+<https://example.org/tattviki/enterprise#SourceDatasetShape> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://example.org/tattviki/enterprise#SourceDatasetShape> <http://www.w3.org/2000/01/rdf-schema#label> "Source dataset identifier"@en .
+<https://example.org/tattviki/enterprise#SourceDatasetShape> <http://www.w3.org/2000/01/rdf-schema#comment> "Source datasets must declare their origin."@en .
+<https://example.org/tattviki/enterprise#SourceDatasetShape> <http://www.w3.org/ns/shacl#targetClass> <https://example.org/tattviki/enterprise#SourceDataset> .
+<https://example.org/tattviki/enterprise#SourceDatasetShape> <http://www.w3.org/ns/shacl#property> <https://example.org/tattviki/enterprise#SourceDatasetShape_property> .
+<https://example.org/tattviki/enterprise#SourceDatasetShape_property> <http://www.w3.org/ns/shacl#path> <https://example.org/tattviki/enterprise#sourceSystem> .
+<https://example.org/tattviki/enterprise#SourceDatasetShape_property> <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/tattviki/enterprise#SourceDatasetShape_property> <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://example.org/tattviki/enterprise#SourceDatasetShape_property> <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+<https://example.org/tattviki/enterprise#Dataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:restriction_OwnedDatasetRestriction .
+_:restriction_OwnedDatasetRestriction <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:restriction_OwnedDatasetRestriction <http://www.w3.org/2002/07/owl#onProperty> <https://example.org/tattviki/enterprise#ownedBy> .
+_:restriction_OwnedDatasetRestriction <http://www.w3.org/2002/07/owl#someValuesFrom> <https://example.org/tattviki/enterprise#Organization> .
+<https://example.org/tattviki/enterprise#DataProduct> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:restriction_ContractualProduct .
+_:restriction_ContractualProduct <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:restriction_ContractualProduct <http://www.w3.org/2002/07/owl#onProperty> <https://example.org/tattviki/enterprise#hasContract> .
+_:restriction_ContractualProduct <http://www.w3.org/2002/07/owl#someValuesFrom> <https://example.org/tattviki/enterprise#DataContract> .
+<https://example.org/tattviki/enterprise#CuratedDataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:restriction_GovernedCuratedAsset .
+_:restriction_GovernedCuratedAsset <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:restriction_GovernedCuratedAsset <http://www.w3.org/2002/07/owl#onProperty> <https://example.org/tattviki/enterprise#ownedBy> .
+_:restriction_GovernedCuratedAsset <http://www.w3.org/2002/07/owl#someValuesFrom> <https://example.org/tattviki/enterprise#Organization> .
+<https://example.org/tattviki/enterprise#PartyMaster> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:restriction_MasterStatusCardinality .
+_:restriction_MasterStatusCardinality <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:restriction_MasterStatusCardinality <http://www.w3.org/2002/07/owl#onProperty> <https://example.org/tattviki/enterprise#reviewedBy> .
+_:restriction_MasterStatusCardinality <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .

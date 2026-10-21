@@ -10,14 +10,14 @@ with sync_playwright() as p:
   errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
   page.set_content('<html><head><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><div id="app"></div></body></html>')
   page.add_style_tag(content=(root/'assets/styles.css').read_text())
-  for f in ['content','curriculum','deepdives','enterprise_curriculum','enterprise_cases','app']:
+  for f in ['content','curriculum','deepdives','enterprise_curriculum','enterprise_cases','studio','app']:
    page.add_script_tag(content=(root/'assets'/f'{f}.js').read_text())
   return page,errors
  pg,errors=setup()
  def goto(route,needle):
   pg.locator(f'.nav-item[data-route="{route}"]').click()
   assert needle in pg.locator('body').inner_text(),(route,pg.locator('body').inner_text()[:200]);results.append('Route '+route)
- for path,expect in [('learn','Your path to graph expertise'),('enterprise','12 implementation blueprints'),('workbench','MDM × RDM × metadata workbench'),('tools','Tool explorer'),('methods','Methodologies'),('updates','Latest updates'),('glossary','Glossary'),('publishing','Legal, licensing'),('about','Shubham'),('datasets','Explore openly reusable sources'),('project','Build a knowledge graph'),('playground','Play with real graph ideas'),('home','Make data meaningful')]:
+ for path,expect in [('studio','Ontology Studio'),('learn','Your path to graph expertise'),('enterprise','12 implementation blueprints'),('workbench','MDM × RDM × metadata workbench'),('tools','Tool explorer'),('methods','Methodologies'),('updates','Latest updates'),('glossary','Glossary'),('publishing','Legal, licensing'),('about','Shubham'),('datasets','Explore openly reusable sources'),('project','Build a knowledge graph'),('playground','Play with real graph ideas'),('home','Make data meaningful')]:
   try:goto(path,expect)
   except Exception as e:print('FAIL route',path,str(e)[:200]);raise
  import base64

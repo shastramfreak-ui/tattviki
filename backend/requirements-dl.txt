@@ -1,0 +1,3 @@
+# Optional experimental OWL 2 DL reasoning; install a Java 17+ runtime too.
+-r requirements.txt
+owlready2>=0.48,<1

@@ -1,4 +1,24 @@
+# Tāttvikī release history
+
+## v7 — 2026-10-21: Semantic Workbench UX review and repair
+- Split server-only v6 panel away from the v5 ontology editor into a visually distinct full-size Semantic Workbench.
+- Added 4 directly usable workflows on static hosting: project diagnostics, inference preview with explanations, quality review, and relationship inspection.
+- Added per-class explorer, real-model statistics and CSV exports, refreshed responsive design and versioned browser assets.
+- Preserved full RDFLib SPARQL/OWL RL/pySHACL and versioned collaboration behind an explicit self-hosted engine tab; static GitHub Pages does not provide these server APIs.
+- Updated advanced browser regression test to follow new route, and added 10 workbench browser tests.
+
 # Changelog
+
+## v5 — Ontology Studio (October 2026)
+
+- New original in-browser ontology designer for OWL/RDFS classes, object/data properties, individuals, annotations, SKOS vocabulary concepts, selected OWL restrictions, and basic SHACL shapes.
+- Interactive class hierarchy, inspector, search, guided quick tour, history, JSON backup/import, and browser-local autosave.
+- Three RDF-compatible export formats (Turtle, RDF/XML, JSON-LD) verified to represent the same graph using RDFLib; class diagram export as SVG.
+- Synthetic enterprise ontology demo: 25 OWL classes, 512 RDF triples; metadata, lineage, MDM, RDM, policies and data products.
+- Standalone ontology demo in `projects/ontology-studio`; RDFLib serialization/lineage tests in the publishing workflow.
+- Clear UI explanation of unavailable advanced reasoning, collaborative editing, and full SHACL validation.
+- No protected terminology examples, proprietary enterprise data or Protégé assets bundled.
+
 
 ## v4 (2026-10) — UI & offline playground reliability
 - Creator shown as **Shubham** in site, licenses and docs.
@@ -8,6 +28,17 @@
 - Added browser interaction regression tests; full parser via CDN remains network dependent.
 
 # Tāttvikī changelog
+
+## v6 — 21 October 2026
+
+- Added an original advanced ontology workbench beneath the existing visual OWL studio.
+- Created optional FastAPI/RDFLib backend with real read-only SPARQL, limited RDFS closure, OWL RL via owlrl, and standard SHACL via pySHACL.
+- Added optional unverified Owlready2/HermiT OWL DL classification adapter with Java prerequisite and 45-second worker timeout.
+- Added explicitly limited named-class DL-style instance queries.
+- Added SQLite team projects, hashed authentication tokens, PBKDF2 passwords, owner/editor/viewer authorization, invitations and revocations, optimistic-save conflict checks, immutable revision history and restoration.
+- Added 11 API tests and 14 browser integration checks; previous 613-topic course and 512-triple enterprise ontology unchanged.
+- Backend stays separate from GitHub Pages; comprehensive production hardening is still required before public server hosting.
+
 
 ## v3 — 18 October 2026
 

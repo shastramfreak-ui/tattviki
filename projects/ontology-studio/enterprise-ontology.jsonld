@@ -1,0 +1,3072 @@
+{
+  "@context": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "dct": "http://purl.org/dc/terms/"
+  },
+  "@graph": [
+    {
+      "@id": "https://example.org/tattviki/enterprise#",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Ontology"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Enterprise Data & Research Ontology",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Fictional source-to-master data and clinical research integration. Every example record is invented.",
+          "@language": "en"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#EnterpriseEntity",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Enterprise entity",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Root class for uniquely identified entities managed by the organization.",
+          "@language": "en"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#Organization",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Organization",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "An institution with responsibilities and data stewardship.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#EnterpriseEntity"
+        }
+      ],
+      "http://www.w3.org/2002/07/owl#disjointWith": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Dataset"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#Person",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Person",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "A person represented by a governed identity.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#EnterpriseEntity"
+        }
+      ],
+      "http://www.w3.org/2002/07/owl#disjointWith": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Dataset"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#ResearchStudy",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Research study",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "A synthetic study with a sponsor and datasets.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#EnterpriseEntity"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#Dataset",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Dataset",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "A discoverable information asset in the metadata catalog.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#EnterpriseEntity"
+        },
+        {
+          "@id": "_:restriction_OwnedDatasetRestriction"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#MasterRecord",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Master record",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Curated identity record representing reconciled source parties.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#EnterpriseEntity"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#ReferenceConcept",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Reference concept",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "An approved controlled-vocabulary entry.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#EnterpriseEntity"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#SourceDataset",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Source dataset",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise teaching class for source dataset.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Dataset"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#CuratedDataset",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Curated dataset",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise teaching class for curated dataset.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Dataset"
+        },
+        {
+          "@id": "_:restriction_GovernedCuratedAsset"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#SemanticDataset",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Semantic dataset",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise teaching class for semantic dataset.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Dataset"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#DataProduct",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Data product",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise teaching class for data product.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Dataset"
+        },
+        {
+          "@id": "_:restriction_ContractualProduct"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#DataContract",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Data contract",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise teaching class for data contract.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#EnterpriseEntity"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#GovernanceAsset",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Governance asset",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise teaching class for governance asset.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#EnterpriseEntity"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#MetadataCatalog",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Metadata catalog",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise teaching class for metadata catalog.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#GovernanceAsset"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#QualityRule",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Quality rule",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise teaching class for quality rule.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#GovernanceAsset"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#AccessPolicy",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Access policy",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise teaching class for access policy.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#GovernanceAsset"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#SoftwareSystem",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Software system",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise teaching class for software system.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#EnterpriseEntity"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#DataPipeline",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Data pipeline",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise teaching class for data pipeline.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#SoftwareSystem"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#BusinessGlossaryTerm",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Business glossary term",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise teaching class for business glossary term.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#ReferenceConcept"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#PartyMaster",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Party master",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise teaching class for party master.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#MasterRecord"
+        },
+        {
+          "@id": "_:restriction_MasterStatusCardinality"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#ProductMaster",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Product master",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise teaching class for product master.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#MasterRecord"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#OrganizationUnit",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Organization unit",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise teaching class for organization unit.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Organization"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#DataSteward",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Data steward",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise teaching class for data steward.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Person"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#StudyProtocol",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Study protocol",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise teaching class for study protocol.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#ResearchStudy"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#DataQualityIssue",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Data quality issue",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise teaching class for data quality issue.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#GovernanceAsset"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#ownedBy",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "owned by",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Responsible steward of a dataset.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Dataset"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Organization"
+        }
+      ],
+      "http://www.w3.org/2002/07/owl#inverseOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#owns"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#owns",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "owns",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Inverse of owned by.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Organization"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Dataset"
+        }
+      ],
+      "http://www.w3.org/2002/07/owl#inverseOf": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#ownedBy"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#sponsoredBy",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "sponsored by",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Sponsor of a research study.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#ResearchStudy"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Organization"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#produces",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "produces",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Study generates a dataset.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#ResearchStudy"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Dataset"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#derivedFrom",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        },
+        {
+          "@id": "http://www.w3.org/2002/07/owl#TransitiveProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "derived from",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Lineage relation between data assets.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Dataset"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Dataset"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#linkedToMaster",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "linked to master",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "A source identity points to a master identity record.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Person"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#MasterRecord"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#managedBy",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "managed by",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Fictional enterprise semantic relationship: managed by.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#EnterpriseEntity"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Organization"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#governedBy",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "governed by",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Fictional enterprise semantic relationship: governed by.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Dataset"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#GovernanceAsset"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#catalogedIn",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "cataloged in",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Fictional enterprise semantic relationship: cataloged in.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Dataset"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#MetadataCatalog"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#hasContract",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "has contract",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Fictional enterprise semantic relationship: has contract.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#DataProduct"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#DataContract"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#consumes",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "consumes",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Fictional enterprise semantic relationship: consumes.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#DataPipeline"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#SourceDataset"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#publishes",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "publishes",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Fictional enterprise semantic relationship: publishes.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#DataPipeline"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#CuratedDataset"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#supportsStudy",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "supports study",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Fictional enterprise semantic relationship: supports study.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#CuratedDataset"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#ResearchStudy"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#matchedTo",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "matched to",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Fictional enterprise semantic relationship: matched to.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Person"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#PartyMaster"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#reviewedBy",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "reviewed by",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Fictional enterprise semantic relationship: reviewed by.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#MasterRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#DataSteward"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#enforcesPolicy",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "enforces policy",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Fictional enterprise semantic relationship: enforces policy.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#GovernanceAsset"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#AccessPolicy"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#implementsRule",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "implements rule",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Fictional enterprise semantic relationship: implements rule.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#DataPipeline"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#QualityRule"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#sourceSystem",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "source system",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "System-of-record code.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Dataset"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#qualityScore",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "quality score",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Numeric quality score from zero to one.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Dataset"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#recordStatus",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "record status",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Local status value; resolve it through the reference-data crosswalk.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#MasterRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#approvalDate",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "approval date",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Steward approval date.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#MasterRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#date"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#recordCount",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "record count",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Metadata field used in fictional enterprise exercises.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Dataset"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#integer"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#datasetVersion",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "dataset version",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Metadata field used in fictional enterprise exercises.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Dataset"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#effectiveFrom",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "effective from",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Metadata field used in fictional enterprise exercises.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#ReferenceConcept"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#date"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#matchingConfidence",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "matching confidence",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Metadata field used in fictional enterprise exercises.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#PartyMaster"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#localStatusCode",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "local status code",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Metadata field used in fictional enterprise exercises.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#PartyMaster"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#systemIdentifier",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "system identifier",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Metadata field used in fictional enterprise exercises.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#SoftwareSystem"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#refreshDate",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "refresh date",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Metadata field used in fictional enterprise exercises.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#CuratedDataset"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#date"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#dataClassification",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "data classification",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Metadata field used in fictional enterprise exercises.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Dataset"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#stewardNote",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "steward note",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Metadata field used in fictional enterprise exercises.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#MasterRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#ResearchGroupA",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#NamedIndividual"
+        },
+        {
+          "@id": "https://example.org/tattviki/enterprise#Organization"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Research Group A",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Invented organization.",
+          "@language": "en"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#StudyOrion",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#NamedIndividual"
+        },
+        {
+          "@id": "https://example.org/tattviki/enterprise#ResearchStudy"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Study Orion",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Invented training study.",
+          "@language": "en"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#sponsoredBy": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#ResearchGroupA"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#produces": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#SafetyDataset"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#SafetyDataset",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#NamedIndividual"
+        },
+        {
+          "@id": "https://example.org/tattviki/enterprise#Dataset"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Safety dataset",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Invented trial dataset.",
+          "@language": "en"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#ownedBy": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#ResearchGroupA"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#sourceSystem": [
+        {
+          "@value": "Synthetic EDC",
+          "@type": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#qualityScore": [
+        {
+          "@value": "0.95",
+          "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#MasterParty001",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#NamedIndividual"
+        },
+        {
+          "@id": "https://example.org/tattviki/enterprise#MasterRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Master party 001",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Invented master record.",
+          "@language": "en"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#recordStatus": [
+        {
+          "@value": "APPROVED",
+          "@type": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#approvalDate": [
+        {
+          "@value": "2026-01-12",
+          "@type": "http://www.w3.org/2001/XMLSchema#date"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#CRMSource",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#NamedIndividual"
+        },
+        {
+          "@id": "https://example.org/tattviki/enterprise#SourceDataset"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "CRM source dataset",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise record for educational demonstrations.",
+          "@language": "en"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#ownedBy": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#ResearchGroupA"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#sourceSystem": [
+        {
+          "@value": "CRM",
+          "@type": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#recordCount": [
+        {
+          "@value": "25000",
+          "@type": "http://www.w3.org/2001/XMLSchema#integer"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#datasetVersion": [
+        {
+          "@value": "2026.1",
+          "@type": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#ERPSource",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#NamedIndividual"
+        },
+        {
+          "@id": "https://example.org/tattviki/enterprise#SourceDataset"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "ERP source dataset",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise record for educational demonstrations.",
+          "@language": "en"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#ownedBy": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#ResearchGroupA"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#sourceSystem": [
+        {
+          "@value": "ERP",
+          "@type": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#recordCount": [
+        {
+          "@value": "18000",
+          "@type": "http://www.w3.org/2001/XMLSchema#integer"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#CuratedParties",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#NamedIndividual"
+        },
+        {
+          "@id": "https://example.org/tattviki/enterprise#CuratedDataset"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Curated party dataset",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise record for educational demonstrations.",
+          "@language": "en"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#ownedBy": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#ResearchGroupA"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#derivedFrom": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#CRMSource"
+        },
+        {
+          "@id": "https://example.org/tattviki/enterprise#ERPSource"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#qualityScore": [
+        {
+          "@value": "0.98",
+          "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#refreshDate": [
+        {
+          "@value": "2026-10-01",
+          "@type": "http://www.w3.org/2001/XMLSchema#date"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#Customer360",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#NamedIndividual"
+        },
+        {
+          "@id": "https://example.org/tattviki/enterprise#DataProduct"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Customer 360 product",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise record for educational demonstrations.",
+          "@language": "en"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#ownedBy": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#ResearchGroupA"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#hasContract": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#ContractV1"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#datasetVersion": [
+        {
+          "@value": "1.0",
+          "@type": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#ContractV1",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#NamedIndividual"
+        },
+        {
+          "@id": "https://example.org/tattviki/enterprise#DataContract"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Data contract v1",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise record for educational demonstrations.",
+          "@language": "en"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#MetadataRegistry",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#NamedIndividual"
+        },
+        {
+          "@id": "https://example.org/tattviki/enterprise#MetadataCatalog"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Metadata registry",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise record for educational demonstrations.",
+          "@language": "en"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#QualityRulesetA",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#NamedIndividual"
+        },
+        {
+          "@id": "https://example.org/tattviki/enterprise#QualityRule"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Quality rule set A",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise record for educational demonstrations.",
+          "@language": "en"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#PrivacyTierA",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#NamedIndividual"
+        },
+        {
+          "@id": "https://example.org/tattviki/enterprise#AccessPolicy"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Data access policy A",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise record for educational demonstrations.",
+          "@language": "en"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#IngestionPipeline",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#NamedIndividual"
+        },
+        {
+          "@id": "https://example.org/tattviki/enterprise#DataPipeline"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Ingestion pipeline",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise record for educational demonstrations.",
+          "@language": "en"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#consumes": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#CRMSource"
+        },
+        {
+          "@id": "https://example.org/tattviki/enterprise#ERPSource"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#publishes": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#CuratedParties"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#implementsRule": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#QualityRulesetA"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#MDMSystem",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#NamedIndividual"
+        },
+        {
+          "@id": "https://example.org/tattviki/enterprise#SoftwareSystem"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "MDM application",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise record for educational demonstrations.",
+          "@language": "en"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#systemIdentifier": [
+        {
+          "@value": "mdm-demo-01",
+          "@type": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#StewardMira",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#NamedIndividual"
+        },
+        {
+          "@id": "https://example.org/tattviki/enterprise#DataSteward"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Steward Mira",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise record for educational demonstrations.",
+          "@language": "en"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#MasterParty002",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#NamedIndividual"
+        },
+        {
+          "@id": "https://example.org/tattviki/enterprise#PartyMaster"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Master party 002",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise record for educational demonstrations.",
+          "@language": "en"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#reviewedBy": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#StewardMira"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#recordStatus": [
+        {
+          "@value": "APPROVED",
+          "@type": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#matchingConfidence": [
+        {
+          "@value": "0.97",
+          "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#localStatusCode": [
+        {
+          "@value": "A",
+          "@type": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#MasterParty003",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#NamedIndividual"
+        },
+        {
+          "@id": "https://example.org/tattviki/enterprise#PartyMaster"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Master party 003",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise record for educational demonstrations.",
+          "@language": "en"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#reviewedBy": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#StewardMira"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#recordStatus": [
+        {
+          "@value": "PENDING",
+          "@type": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#matchingConfidence": [
+        {
+          "@value": "0.82",
+          "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#localStatusCode": [
+        {
+          "@value": "P",
+          "@type": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#OrionProtocol",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#NamedIndividual"
+        },
+        {
+          "@id": "https://example.org/tattviki/enterprise#StudyProtocol"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Study Orion protocol",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise record for educational demonstrations.",
+          "@language": "en"
+        }
+      ],
+      "https://example.org/tattviki/enterprise#sponsoredBy": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#ResearchGroupA"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#LineagePolicy",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#NamedIndividual"
+        },
+        {
+          "@id": "https://example.org/tattviki/enterprise#AccessPolicy"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Lineage access policy",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise record for educational demonstrations.",
+          "@language": "en"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#SourceTraceIssue",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#NamedIndividual"
+        },
+        {
+          "@id": "https://example.org/tattviki/enterprise#DataQualityIssue"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Missing source evidence",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise record for educational demonstrations.",
+          "@language": "en"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#AccountTerm",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#NamedIndividual"
+        },
+        {
+          "@id": "https://example.org/tattviki/enterprise#BusinessGlossaryTerm"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Account (business term)",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Synthetic enterprise record for educational demonstrations.",
+          "@language": "en"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#StatusScheme",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#prefLabel": [
+        {
+          "@value": "Status vocabulary",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#definition": [
+        {
+          "@value": "A fictional controlled-vocabulary scheme.",
+          "@language": "en"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#Approved",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#prefLabel": [
+        {
+          "@value": "Approved",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#definition": [
+        {
+          "@value": "Approved stewardship status.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#inScheme": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#StatusScheme"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#altLabel": [
+        {
+          "@value": "Accepted",
+          "@language": "en"
+        },
+        {
+          "@value": "Valid",
+          "@language": "en"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#Pending",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#prefLabel": [
+        {
+          "@value": "Pending",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#definition": [
+        {
+          "@value": "Awaiting steward review.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#inScheme": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#StatusScheme"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#altLabel": [
+        {
+          "@value": "Open",
+          "@language": "en"
+        },
+        {
+          "@value": "In review",
+          "@language": "en"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#Rejected",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#prefLabel": [
+        {
+          "@value": "Rejected",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#definition": [
+        {
+          "@value": "Not approved for publication.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#inScheme": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#StatusScheme"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#altLabel": [
+        {
+          "@value": "Declined",
+          "@language": "en"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#PartyScheme",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#prefLabel": [
+        {
+          "@value": "Party status scheme",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#definition": [
+        {
+          "@value": "Fictional, openly reusable vocabulary concept.",
+          "@language": "en"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#DataClassScheme",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#prefLabel": [
+        {
+          "@value": "Data classification scheme",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#definition": [
+        {
+          "@value": "Fictional, openly reusable vocabulary concept.",
+          "@language": "en"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#ActiveParty",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#prefLabel": [
+        {
+          "@value": "Active party",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#definition": [
+        {
+          "@value": "Fictional, openly reusable vocabulary concept.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#inScheme": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#PartyScheme"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#InactiveParty",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#prefLabel": [
+        {
+          "@value": "Inactive party",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#definition": [
+        {
+          "@value": "Fictional, openly reusable vocabulary concept.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#inScheme": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#PartyScheme"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#PendingReview",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#prefLabel": [
+        {
+          "@value": "Pending review",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#definition": [
+        {
+          "@value": "Fictional, openly reusable vocabulary concept.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#inScheme": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#PartyScheme"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#MergedParty",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#prefLabel": [
+        {
+          "@value": "Merged party",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#definition": [
+        {
+          "@value": "Fictional, openly reusable vocabulary concept.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#inScheme": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#PartyScheme"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#PublicData",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#prefLabel": [
+        {
+          "@value": "Public data",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#definition": [
+        {
+          "@value": "Fictional, openly reusable vocabulary concept.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#inScheme": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#DataClassScheme"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#InternalData",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#prefLabel": [
+        {
+          "@value": "Internal data",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#definition": [
+        {
+          "@value": "Fictional, openly reusable vocabulary concept.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#inScheme": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#DataClassScheme"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#RestrictedData",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#prefLabel": [
+        {
+          "@value": "Restricted data",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#definition": [
+        {
+          "@value": "Fictional, openly reusable vocabulary concept.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#inScheme": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#DataClassScheme"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#RegulatedData",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#prefLabel": [
+        {
+          "@value": "Regulated data",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#definition": [
+        {
+          "@value": "Fictional, openly reusable vocabulary concept.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#inScheme": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#DataClassScheme"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#SensitivityCritical",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#prefLabel": [
+        {
+          "@value": "Sensitivity critical",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#definition": [
+        {
+          "@value": "Fictional, openly reusable vocabulary concept.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#inScheme": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#DataClassScheme"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#broader": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#RestrictedData"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#SensitivityLow",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#prefLabel": [
+        {
+          "@value": "Sensitivity low",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#definition": [
+        {
+          "@value": "Fictional, openly reusable vocabulary concept.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#inScheme": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#DataClassScheme"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#broader": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#InternalData"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#DatasetShape",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/ns/shacl#NodeShape"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Dataset quality rules",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "All datasets should have an owner and a quality score.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#targetClass": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Dataset"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#property": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#DatasetShape_property"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#DatasetShape_property",
+      "http://www.w3.org/ns/shacl#path": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#ownedBy"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#minCount": [
+        {
+          "@value": "1",
+          "@type": "http://www.w3.org/2001/XMLSchema#integer"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#maxCount": [
+        {
+          "@value": "1",
+          "@type": "http://www.w3.org/2001/XMLSchema#integer"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#class": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Organization"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#StudyShape",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/ns/shacl#NodeShape"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Study quality rules",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "All studies must reference a sponsoring organization.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#targetClass": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#ResearchStudy"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#property": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#StudyShape_property"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#StudyShape_property",
+      "http://www.w3.org/ns/shacl#path": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#sponsoredBy"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#minCount": [
+        {
+          "@value": "1",
+          "@type": "http://www.w3.org/2001/XMLSchema#integer"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#class": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Organization"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#CuratedDatasetShape",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/ns/shacl#NodeShape"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Curated dataset ownership",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Curated data must have a responsible owner.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#targetClass": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#CuratedDataset"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#property": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#CuratedDatasetShape_property"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#CuratedDatasetShape_property",
+      "http://www.w3.org/ns/shacl#path": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#ownedBy"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#minCount": [
+        {
+          "@value": "1",
+          "@type": "http://www.w3.org/2001/XMLSchema#integer"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#class": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Organization"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#PartyMasterShape",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/ns/shacl#NodeShape"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Party master status",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Require a governed lifecycle code.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#targetClass": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#PartyMaster"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#property": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#PartyMasterShape_property"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#PartyMasterShape_property",
+      "http://www.w3.org/ns/shacl#path": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#recordStatus"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#minCount": [
+        {
+          "@value": "1",
+          "@type": "http://www.w3.org/2001/XMLSchema#integer"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#datatype": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#DataProductShape",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/ns/shacl#NodeShape"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Data product contract",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Products must reference their data contract.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#targetClass": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#DataProduct"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#property": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#DataProductShape_property"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#DataProductShape_property",
+      "http://www.w3.org/ns/shacl#path": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#hasContract"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#minCount": [
+        {
+          "@value": "1",
+          "@type": "http://www.w3.org/2001/XMLSchema#integer"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#maxCount": [
+        {
+          "@value": "1",
+          "@type": "http://www.w3.org/2001/XMLSchema#integer"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#class": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#DataContract"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#SourceDatasetShape",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/ns/shacl#NodeShape"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@value": "Source dataset identifier",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@value": "Source datasets must declare their origin.",
+          "@language": "en"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#targetClass": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#SourceDataset"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#property": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#SourceDatasetShape_property"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tattviki/enterprise#SourceDatasetShape_property",
+      "http://www.w3.org/ns/shacl#path": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#sourceSystem"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#minCount": [
+        {
+          "@value": "1",
+          "@type": "http://www.w3.org/2001/XMLSchema#integer"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#maxCount": [
+        {
+          "@value": "1",
+          "@type": "http://www.w3.org/2001/XMLSchema#integer"
+        }
+      ],
+      "http://www.w3.org/ns/shacl#datatype": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "@id": "_:restriction_OwnedDatasetRestriction",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Restriction"
+        }
+      ],
+      "http://www.w3.org/2002/07/owl#onProperty": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#ownedBy"
+        }
+      ],
+      "http://www.w3.org/2002/07/owl#someValuesFrom": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Organization"
+        }
+      ]
+    },
+    {
+      "@id": "_:restriction_ContractualProduct",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Restriction"
+        }
+      ],
+      "http://www.w3.org/2002/07/owl#onProperty": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#hasContract"
+        }
+      ],
+      "http://www.w3.org/2002/07/owl#someValuesFrom": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#DataContract"
+        }
+      ]
+    },
+    {
+      "@id": "_:restriction_GovernedCuratedAsset",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Restriction"
+        }
+      ],
+      "http://www.w3.org/2002/07/owl#onProperty": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#ownedBy"
+        }
+      ],
+      "http://www.w3.org/2002/07/owl#someValuesFrom": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#Organization"
+        }
+      ]
+    },
+    {
+      "@id": "_:restriction_MasterStatusCardinality",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Restriction"
+        }
+      ],
+      "http://www.w3.org/2002/07/owl#onProperty": [
+        {
+          "@id": "https://example.org/tattviki/enterprise#reviewedBy"
+        }
+      ],
+      "http://www.w3.org/2002/07/owl#minCardinality": [
+        {
+          "@value": "1",
+          "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        }
+      ]
+    }
+  ]
+}

@@ -1,80 +1,154 @@
-# Tāttvikī — free ontology and knowledge graph learning
+<div align="center">
 
-![Tāttvikī professional learning dashboard](previews/desktop.png)
+# Tāttvikī
 
-**v4 curriculum:** 613 distinct learning entries = 13 original foundational lessons + 240 legacy micro-lessons + 360 additional enterprise-focused topics across 15 modules and 14 learning paths. Includes 12 detailed industry blueprints, an interactive MDM/RDM teaching workbench and two downloadable executable Python KG labs. See `CURRICULUM.md` and `LEGAL_AND_DATA_REVIEW.md` for depth and rights disclosure.
+### Learn ontology engineering. Build knowledge graphs. Explore enterprise semantics.
 
+**A free, open-source learning platform and hands-on semantic engineering workspace.**
 
-A **working, no-backend learning website** for making ontology and knowledge-graph concepts approachable. All pages and in-browser exercise checks work without accounts or paid APIs.
+[**Website**](https://shastramfreak-ui.github.io/tattviki/) · [**Ontology Studio**](https://shastramfreak-ui.github.io/tattviki/#studio) · [**Semantic Workbench**](https://shastramfreak-ui.github.io/tattviki/#semantic) · [**Curriculum**](CURRICULUM.md) · [**Contribute**](CONTRIBUTING.md)
 
-## Included
+**Version 7** · **613 learning topics** · **15 learning modules** · **12 enterprise use-case blueprints**
 
-- 613 uniquely named topics, with a clear separation between foundational chapters, micro-lessons and topic-specific enterprise implementation briefs.
-- Browser-local progress and code edits (localStorage only; no accounts, cookies, or analytics).
-- Offline Turtle playground with prefixes, multiple statements, semicolon predicate lists, comma object lists, datatype and language literals, plus useful line-level syntax errors.
-- Optional **real Turtle parsing** using [N3.js](https://github.com/rdfjs/N3.js) from a public CDN when the learner explicitly selects “Extended parser (online)”. Network required for that button only. No code is submitted to Tāttvikī servers.
-- A **limited offline SPARQL practice interpreter** supporting PREFIX, SELECT, DISTINCT, basic graph patterns/joins, ORDER BY, LIMIT and OFFSET. It is **not** a general SPARQL or SHACL engine.
-- SVG graph explorer with clickable RDF resources.
-- **Two runnable enterprise capstone projects**: `projects/enterprise-kg` (1,014-triple integrated KG), and `projects/enterprise-mdm-rdm-metadata` (synthetic CRM + ERP source records, SKOS reference mappings, master record consolidation, DCAT metadata, PROV lineage, executable SPARQL, pySHACL and unit tests). The original `projects/study-kg` introductory example is included too.
-- 12 original enterprise blueprints (finance, clinical research, retail, manufacturing, IT, procurement, logistics, AI etc.), 27 tool references, seven methods, a glossary and local content search.
-- Curated W3C standards references and a daily GitHub Action which retrieves latest official software release **metadata** from selected repositories. No AI-generated news or invented dates.
-- Responsive, accessible, static assets and no build step.
+**Created by Shubham**
 
-## Project creator and intellectual property
+</div>
 
-Created by **Shubham**. Code: MIT; original educational text/examples: CC BY 4.0; all sample records are invented. This has received a preliminary licensing/PII audit only — **not a formal legal opinion**. See `LEGAL_AND_DATA_REVIEW.md`; run a trademark check for “Tāttvikī” before public launch.
+![Tāttvikī learning dashboard](previews/desktop.png)
 
-## Run locally
+> **Deployment note:** The website links above refer to this repository's expected GitHub Pages address. The site is available there only after a successful GitHub Pages deployment.
 
-Use Python's built-in server from the project folder:
+## Table of contents
+
+- [What is Tāttvikī?](#what-is-tāttvikī)
+- [Features and capabilities](#features-and-capabilities)
+- [Explore the learning paths](#explore-the-learning-paths)
+- [Get started locally](#get-started-locally)
+- [Ontology Studio and Semantic Workbench](#ontology-studio-and-semantic-workbench)
+- [Enterprise projects](#enterprise-projects)
+- [Optional advanced backend](#optional-advanced-backend)
+- [Deploy to GitHub Pages](#deploy-to-github-pages)
+- [Project structure](#project-structure)
+- [Tests and quality checks](#tests-and-quality-checks)
+- [Privacy, licenses, and responsible use](#privacy-licenses-and-responsible-use)
+- [Contributing](#contributing)
+
+## What is Tāttvikī?
+
+**Tāttvikī** makes ontology development, knowledge graphs, and enterprise semantic technologies approachable through guided lessons, editable examples, visual modeling, and executable projects.
+
+It brings together:
+
+- **Foundations:** data and information modeling, vocabularies, taxonomies, thesauri, RDF, RDFS, OWL, SKOS, SPARQL, and SHACL.
+- **Ontology engineering:** classes, properties, individuals, axioms, annotations, class hierarchies, model quality, and RDF exports.
+- **Enterprise semantics:** metadata catalogs, data lineage, master data management (MDM), reference data management (RDM), governance, integration, and knowledge-graph pipelines.
+- **Advanced topics:** reasoning, GraphRAG, semantic interoperability, data products, architecture patterns, and domain-focused implementations.
+
+The **613 entries** consist of foundational lessons, concise micro-lessons, and enterprise topic briefs. They are *not* all full textbook-length chapters. See [CURRICULUM.md](CURRICULUM.md) and [the searchable topic index](CURRICULUM_INDEX.csv).
+
+## Features and capabilities
+
+| Capability | Free browser experience | Optional local backend |
+| --- | --- | --- |
+| Lessons, quizzes, searchable glossary and progress | ✅ | Not required |
+| Turtle practice, beginner SPARQL challenges and graph explorer | ✅ Teaching subset | Not required |
+| Visual OWL/RDF ontology modeling | ✅ | Not required |
+| Classes, properties, individuals, SKOS concepts and selected axioms | ✅ | Not required |
+| Turtle, RDF/XML, JSON-LD and diagram export | ✅ | Not required |
+| Browser RDFS inference preview and explained findings | ✅ Supported subset | Not required |
+| Relationship inspection and structural quality diagnostics | ✅ Supported subset | Not required |
+| General SPARQL execution on an ontology | — | ✅ RDFLib, read-only |
+| OWL RL inference and SHACL Core validation | — | ✅ `owlrl` and `pySHACL` |
+| Shared projects, access roles and version history | — | ✅ SQLite-backed API |
+| Experimental OWL DL classification | — | ⚠️ Optional Java/HermiT adapter |
+
+**Scope matters:** the browser parser, SPARQL practice interpreter, inference preview, and quality checks are educational subsets—not complete implementations of their underlying standards. The local backend supports more advanced features but is **not a production-ready public service**. Full Protégé/WebProtégé feature parity is not claimed.
+
+### The Semantic Workbench
+
+![Semantic Workbench desktop view](previews/semantic-workbench-desktop.png)
+
+In **Semantic Workbench** (`#semantic`), analyze the ontology currently open in the Studio:
+
+- View inferred class memberships and their explanations.
+- Inspect explicit relationships and browse classes.
+- Run browser-side structural/quality diagnostics.
+- Export displayed findings as CSV.
+- Switch to the **Full semantic engine** when a separately running backend is available.
+
+The browser-only analysis works on GitHub Pages; the advanced engine and shared revisions do not run on GitHub Pages itself.
+
+## Explore the learning paths
+
+| Area | Example subjects |
+| --- | --- |
+| Semantic foundations | Knowledge representation, identifiers, controlled vocabularies, thesauri |
+| RDF and linked data | IRIs, triples, graphs, Turtle, JSON-LD, RDF datasets |
+| Ontology modeling | RDFS, OWL classes, properties, constraints, design patterns |
+| SKOS and reference data | Concepts, labels, hierarchies, mapping, terminology governance |
+| Query and validation | SPARQL, SHACL, competency questions, data-quality checks |
+| Knowledge-graph engineering | ETL/ELT, graph construction, integration, lineage, entity resolution |
+| Enterprise data management | Metadata, MDM, RDM, master records, cataloging, data contracts |
+| Governance and operations | Versioning, stewardship, interoperability, FAIR, change management |
+| Advanced and applied topics | Reasoning, graph algorithms, GraphRAG, industry use cases |
+
+Browse all subjects using the **Lessons** section of the website, [CURRICULUM.md](CURRICULUM.md), or [CURRICULUM_INDEX.csv](CURRICULUM_INDEX.csv).
+
+## Get started locally
+
+The main website has **no Node.js build step, account requirement, or paid API dependency**. You only need a modern browser and a small local web server.
+
+### Windows — easiest method
+
+1. Download or clone the repository.
+2. Make sure **Python 3** is installed.
+3. Double-click [`START_WINDOWS.bat`](START_WINDOWS.bat) from the project root.
+4. Open **http://localhost:8000/** if the browser does not open automatically.
+
+Close the server terminal to stop the site.
+
+### Windows, macOS, or Linux — manual method
+
+From the project root:
 
 ```bash
-cd Tattviki
 python -m http.server 8000
 ```
 
-Open http://localhost:8000 . The file can also be opened directly, but latest-updates JSON may not load from `file://` due to browser security policy.
+Then open **http://localhost:8000/**. Depending on your installation, you may need `python3` or (on Windows) `py -3` instead of `python`.
 
-## Host free on GitHub Pages
+> Opening `index.html` with `file://` can prevent the updates JSON from loading because browsers restrict local file access. Using a local HTTP server is recommended.
 
-1. Create a **public** repository (for example `tattviki`) and copy **the contents** of this folder into its root.
-2. Commit and push to the `main` branch.
-3. In **Settings → Pages**, set **Source = GitHub Actions**.
-4. In **Actions**, enable workflows if prompted. `pages.yml` publishes on push and refreshes release data daily around 07:15 UTC. GitHub may delay or skip scheduled runs under heavy load.
-5. Your site should appear at `https://YOUR-USERNAME.github.io/tattviki/` after the deployment succeeds. The link is an example, **not an existing deployment**.
+## Ontology Studio and Semantic Workbench
 
-No npm, server hosting, domain purchase, API subscription or database is required. A custom domain is optional and may cost money.
+Open **http://localhost:8000/#studio** to create and edit ontologies.
 
-## Maintain and contribute
+The original, Protégé-inspired editor provides:
 
-- `assets/content.js`, `assets/curriculum.js`, `assets/deepdives.js`: legacy course material.
-- `assets/enterprise_curriculum.js`: 360 new lessons in 15 industry/engineering modules and 10 new learning paths.
-- `assets/enterprise_cases.js`: 12 original enterprise case blueprints.
-- `assets/app.js`: view rendering, in-browser RDF/SPARQL practice, local sample graphs and MDM/RDM teaching workbench logic.
+- Class and subclass hierarchies; object/data properties with domain and range.
+- Named individuals and property assertions.
+- Selected equivalent/disjoint axioms, restrictions, annotations, and SKOS terms.
+- Visual SVG hierarchy; project autosave; undo/redo; native project JSON backup/import.
+- Exports in **Turtle (`.ttl`)**, **RDF/XML (`.rdf`)**, **JSON-LD (`.jsonld`)**, and diagram **SVG**.
 
-- `assets/styles.css`: redesigned professional, responsive styling.
-- `scripts/test_browser.py`: optional Playwright browser interaction regression tests (run locally after installing Playwright + Chromium).
-- `data/updates.json`: curated standards cards + published release metadata.
-- `scripts/refresh_updates.py`: transparent source-refresh script (uses public GitHub release API; skips failed sources).
-- `.github/workflows/pages.yml`: daily scheduled publish and update.
+**RDF import limitation:** native JSON project import is supported, but arbitrary Turtle or RDF/XML import **into the editor** is not. Exported RDF files can be used in external RDF tools.
 
-Only add third-party content when you have the right to republish it. Publicly available data is not automatically open-licensed. For lesson updates, include a source URL, status (e.g., Working Draft vs Recommendation), last verification date and an example a learner can actually run. Prefer primary standards and project documentation over marketing copy. Check links and license claims periodically.
+Open **http://localhost:8000/#semantic** to inspect inferred memberships, model diagnostics, and relationships from the currently edited ontology.
 
-### Starter lab scope and next engineering milestones
+For a concrete demonstration, see [projects/ontology-studio](projects/ontology-studio/README.md): a **fictional 25-class enterprise ontology with 512 RDF triples** spanning metadata, MDM/RDM, data lineage, and governance.
 
-The offline Turtle parser supports common Turtle shorthand (`;` and `,`), prefix declarations, language-tagged and typed literals; it does **not** support all Turtle syntax (e.g. bracketed blank-node property lists, collections, multiline quoted literals or RDF-star). The optional N3.js button provides real Turtle syntax validation online. The built-in SPARQL interpreter handles only the subset listed above; for general SPARQL 1.1/1.2, integrate a mature engine such as [Comunica](https://comunica.dev/) or a server-side RDF4J/Jena/Oxigraph service. For SHACL validation, integrate a real [pySHACL](https://github.com/RDFLib/pySHACL) service or a browser-compatible validator. OWL reasoning requires an actual reasoner. Do not describe the current playground as production ready.
+## Enterprise projects
 
-Potential next features: exercises in OWL and SKOS, SHACL reports, video/illustrations, reusable examples, Hindi/Marathi content, contributor editorial review and accessibility testing with learners.
+| Project | What you will implement |
+| --- | --- |
+| [Study KG](projects/study-kg/README.md) | Introductory RDF modeling, SPARQL and SHACL shapes |
+| [Enterprise KG](projects/enterprise-kg/README.md) | Synthetic multi-domain knowledge graph (1,014 triples), queries and validation |
+| [Enterprise MDM / RDM / Metadata](projects/enterprise-mdm-rdm-metadata/README.md) | Consolidate fictional CRM/ERP data; SKOS code mapping; DCAT metadata; PROV lineage; SPARQL; SHACL; tests |
+| [Ontology Studio example](projects/ontology-studio/README.md) | Model and export an enterprise ontology, run sample queries, import an editable native project |
 
-## Privacy & licenses
+### Run the enterprise MDM / RDM / metadata capstone
 
-Code: MIT (see LICENSE). Original instructional content: CC BY 4.0 (see CONTENT-LICENSE.md). External linked standards/software remain governed by their own terms. Browser editor/progress state stays on the user's device.
-
-### Windows quick start
-
-Double-click `START_WINDOWS.bat` if Python 3 is already installed. It opens a local web server and launches the site in your default browser. Close the terminal to stop the server.
-
-### Enterprise capstone walkthrough
+From the repository root:
 
 ```bash
 cd projects/enterprise-mdm-rdm-metadata
@@ -82,28 +156,136 @@ python -m pip install -r requirements.txt
 python generate.py
 python run_queries.py
 python -m unittest -v test_lab.py
-python generate.py --break-shape   # intentional SHACL violation, nonzero exit expected
 ```
 
-SHACL validation runs with `pyshacl` installed. Without it, the generator prints a dependency warning instead of fabricating a successful validation. The browser workbench implements real, local synthetic string-comparison scoring and RDM code lookup, **not** full enterprise entity resolution or a production catalog.
+Optional negative test (intentionally generates a SHACL violation):
 
-### Changes in version 4
-- Credits display **Shubham** only. No real employer/client information has been intentionally included in sample records.
-- Replaced restricted-terminology lesson names and case text with open-ontology use cases and a separate **Open data sources** reference page. None of those external data resources are bundled.
-- Added 3 selectable Turtle/SPARQL practice datasets, offline Turtle shorthand support, ORDER BY / OFFSET, RDF export, copy fallback and improved explanations for non-executable examples.
-- Redesigned home, lab and lesson directory; added search and pagination to the 613-topic library.
-- Validated routes, editor changes, 3 challenge queries, enterprise workbench, quiz completion, mobile navigation and download via headless Chromium.
-- The optional extended parser still requires an external CDN connection; do not rely on it for offline use. OWL reasoner and server-side SHACL are not built into the browser.
+```bash
+python generate.py --break-shape
+```
 
-### Optional UI regression testing
+This final command is intended to demonstrate validation failure. `pySHACL` is needed for full SHACL execution; an unavailable dependency must not be interpreted as a successful validation.
+
+## Optional advanced backend
+
+The **Full semantic engine** tab connects to a separate Python/FastAPI service for advanced SPARQL, OWL RL, SHACL, and revisioned projects.
+
+**Windows setup:** Open two terminal windows from the project root.
+
+**Terminal 1 — website:**
+
+```powershell
+py -3 -m http.server 8000
+```
+
+**Terminal 2 — semantic backend:**
+
+```powershell
+py -m pip install -r backend/requirements.txt
+py -m uvicorn backend.main:app --host 127.0.0.1 --port 8765
+```
+
+Alternatively, use `START_WINDOWS.bat` and `backend/START_ADVANCED_WINDOWS.bat`.
+
+Visit **http://localhost:8000/#semantic**, open the **Full semantic engine** tab, and connect to **http://127.0.0.1:8765**. The FastAPI documentation is available at **http://127.0.0.1:8765/docs**.
+
+For dependency details, local project storage, permissions, limits, HermiT prerequisites and security guidance, read [backend/README.md](backend/README.md).
+
+> **Security:** this backend is for local or trusted development. Do not expose the unmodified development server or its SQLite account database to the public internet. A real public multi-user deployment requires separate secure hosting, HTTPS, authentication hardening, resource controls, backups and privacy protections.
+
+## Deploy to GitHub Pages
+
+Only the static website is published by GitHub Pages. Python services, server-side reasoning, and shared project accounts must be hosted separately.
+
+1. Push the **contents of this project folder** to the root of a public GitHub repository named `tattviki` (do not upload the ZIP as a single file).
+2. Open **Settings → Pages** and choose **GitHub Actions** as the build/deployment source.
+3. Check the **Actions** tab for the `Publish Tāttvikī and refresh tool releases` workflow.
+4. After a successful run, visit `https://<your-username>.github.io/tattviki/`.
+
+This repository already includes [`.github/workflows/pages.yml`](.github/workflows/pages.yml), which publishes on pushes to `main`, supports manual runs, and schedules a refresh of selected software-release **metadata**. It does not automatically rewrite course material or guarantee real-time news.
+
+### Update the existing Tāttvikī repository
+
+If you are editing a previously cloned copy, keep the hidden `.git` directory intact. After replacing or updating files, run:
+
+```powershell
+git add -A
+git commit -m "Update Tattviki documentation and website"
+git push origin main
+```
+
+For this specific repository, the expected website URL is **https://shastramfreak-ui.github.io/tattviki/** after GitHub Pages deployment succeeds.
+
+## Project structure
+
+```text
+Tattviki/
+├── index.html                     # Static application entry point
+├── assets/                        # UI, curriculum, Studio and Workbench JS/CSS
+├── data/                          # Curated standards and release metadata
+├── projects/                      # Hands-on RDF/ontology/enterprise projects
+│   ├── study-kg/
+│   ├── enterprise-kg/
+│   ├── enterprise-mdm-rdm-metadata/
+│   └── ontology-studio/
+├── backend/                       # Optional FastAPI/SQLite semantic service
+├── scripts/                       # Content, export and regression checks
+├── previews/                      # Desktop/mobile screenshots
+├── .github/workflows/pages.yml    # Automated GitHub Pages deployment
+├── CURRICULUM.md                  # Learning pathway overview
+├── CURRICULUM_INDEX.csv           # Searchable/exportable lesson list
+├── CONTRIBUTING.md                # Contribution guidelines
+├── LEGAL_AND_DATA_REVIEW.md       # Publication and licensing review
+├── LICENSE                        # MIT source-code license
+├── CONTENT-LICENSE.md             # CC BY 4.0 original learning content
+└── START_WINDOWS.bat              # Local static-server launcher
+```
+
+## Tests and quality checks
+
+| Check | Command |
+| --- | --- |
+| Curriculum integrity (613 entries) | `node scripts/check_content.cjs` |
+| Page/route rendering | `node scripts/test_ui_render.cjs` |
+| Browser interactions | `python scripts/test_browser.py` |
+| Ontology Studio interactions | `python scripts/test_studio.py` |
+| Semantic Workbench interactions | `python scripts/test_semantic_workbench.py` |
+| Advanced browser/API integration | `python scripts/test_advanced_browser.py` |
+| Semantic API unit tests | `python -m unittest -v backend.tests.test_api` |
+| RDF-format interoperability | `node scripts/export_studio_demo.cjs` then `python scripts/check_studio_exports.py` |
+
+Browser test scripts require **Playwright and Chromium**; RDF-related checks may require RDFLib and the dependencies documented in the project-specific README files.
 
 ```bash
 python -m pip install playwright
 python -m playwright install chromium
-python scripts/test_browser.py
 ```
 
-This test harness injects locally packaged JS/CSS into a headless Chromium page to avoid external network dependencies. It verifies interaction logic but cannot replace a live GitHub Pages smoke test. Screenshots are written to the system temporary directory. The GitHub publishing workflow additionally checks route rendering and curriculum integrity with Node.js.
-#   t a t t v i k i  
- #   t a t t v i k i  
- 
+The v7 release was tested for core site behavior, editor interactions, semantic-workbench interactions, API routes and RDF export compatibility. These local checks do not replace public deployment testing, accessibility audits, or security review. Optional Java/HermiT reasoning was **not** execution-verified in the build environment.
+
+## Privacy, licenses, and responsible use
+
+- **Creator credit:** Shubham.
+- **Code:** [MIT License](LICENSE).
+- **Original learning content and educational examples:** [CC BY 4.0](CONTENT-LICENSE.md).
+- **Examples:** synthetic/fictional; no real employer or client data is intended for distribution.
+- **External ontologies, standards and tools:** follow their own licenses and attribution requirements. Merely being publicly accessible does not mean material can be redistributed.
+- **Browser-only experience:** model drafts and learning progress are stored in the local browser. Optional self-hosted account and project data are stored by the backend on the server running it.
+- **Brand and publication:** the name *Tāttvikī* should receive trademark clearance before broader commercial branding. See [LEGAL_AND_DATA_REVIEW.md](LEGAL_AND_DATA_REVIEW.md) for the preliminary audit (not a legal opinion).
+
+The interface is an independent educational project and is **not affiliated with Protégé or WebProtégé**.
+
+## Contributing
+
+Contributions are welcome in the form of corrections, runnable tutorials, ontology patterns, synthetic example datasets, quality tests, and well-sourced tool updates. See [CONTRIBUTING.md](CONTRIBUTING.md) for the workflow and [GitHub Issues](https://github.com/shastramfreak-ui/tattviki/issues) for proposed improvements.
+
+Please avoid uploading confidential enterprise schemas, personal information, proprietary vocabulary exports, or third-party material you do not have permission to redistribute.
+
+---
+
+<div align="center">
+
+**Tāttvikī** · Open learning for the semantic web and enterprise knowledge graphs  
+**Created by Shubham**
+
+</div>

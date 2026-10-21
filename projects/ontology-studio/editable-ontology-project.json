@@ -1,0 +1,1120 @@
+{
+  "version": 1,
+  "name": "Enterprise Data & Research Ontology",
+  "base": "https://example.org/tattviki/enterprise#",
+  "description": "Fictional source-to-master data and clinical research integration. Every example record is invented.",
+  "classes": [
+    {
+      "id": "EnterpriseEntity",
+      "label": "Enterprise entity",
+      "comment": "Root class for uniquely identified entities managed by the organization.",
+      "parent": "",
+      "equivalent": "",
+      "disjoint": ""
+    },
+    {
+      "id": "Organization",
+      "label": "Organization",
+      "comment": "An institution with responsibilities and data stewardship.",
+      "parent": "EnterpriseEntity",
+      "equivalent": "",
+      "disjoint": "Dataset"
+    },
+    {
+      "id": "Person",
+      "label": "Person",
+      "comment": "A person represented by a governed identity.",
+      "parent": "EnterpriseEntity",
+      "equivalent": "",
+      "disjoint": "Dataset"
+    },
+    {
+      "id": "ResearchStudy",
+      "label": "Research study",
+      "comment": "A synthetic study with a sponsor and datasets.",
+      "parent": "EnterpriseEntity",
+      "equivalent": "",
+      "disjoint": ""
+    },
+    {
+      "id": "Dataset",
+      "label": "Dataset",
+      "comment": "A discoverable information asset in the metadata catalog.",
+      "parent": "EnterpriseEntity",
+      "equivalent": "",
+      "disjoint": ""
+    },
+    {
+      "id": "MasterRecord",
+      "label": "Master record",
+      "comment": "Curated identity record representing reconciled source parties.",
+      "parent": "EnterpriseEntity",
+      "equivalent": "",
+      "disjoint": ""
+    },
+    {
+      "id": "ReferenceConcept",
+      "label": "Reference concept",
+      "comment": "An approved controlled-vocabulary entry.",
+      "parent": "EnterpriseEntity",
+      "equivalent": "",
+      "disjoint": ""
+    },
+    {
+      "id": "SourceDataset",
+      "label": "Source dataset",
+      "parent": "Dataset",
+      "comment": "Synthetic enterprise teaching class for source dataset.",
+      "equivalent": "",
+      "disjoint": ""
+    },
+    {
+      "id": "CuratedDataset",
+      "label": "Curated dataset",
+      "parent": "Dataset",
+      "comment": "Synthetic enterprise teaching class for curated dataset.",
+      "equivalent": "",
+      "disjoint": ""
+    },
+    {
+      "id": "SemanticDataset",
+      "label": "Semantic dataset",
+      "parent": "Dataset",
+      "comment": "Synthetic enterprise teaching class for semantic dataset.",
+      "equivalent": "",
+      "disjoint": ""
+    },
+    {
+      "id": "DataProduct",
+      "label": "Data product",
+      "parent": "Dataset",
+      "comment": "Synthetic enterprise teaching class for data product.",
+      "equivalent": "",
+      "disjoint": ""
+    },
+    {
+      "id": "DataContract",
+      "label": "Data contract",
+      "parent": "EnterpriseEntity",
+      "comment": "Synthetic enterprise teaching class for data contract.",
+      "equivalent": "",
+      "disjoint": ""
+    },
+    {
+      "id": "GovernanceAsset",
+      "label": "Governance asset",
+      "parent": "EnterpriseEntity",
+      "comment": "Synthetic enterprise teaching class for governance asset.",
+      "equivalent": "",
+      "disjoint": ""
+    },
+    {
+      "id": "MetadataCatalog",
+      "label": "Metadata catalog",
+      "parent": "GovernanceAsset",
+      "comment": "Synthetic enterprise teaching class for metadata catalog.",
+      "equivalent": "",
+      "disjoint": ""
+    },
+    {
+      "id": "QualityRule",
+      "label": "Quality rule",
+      "parent": "GovernanceAsset",
+      "comment": "Synthetic enterprise teaching class for quality rule.",
+      "equivalent": "",
+      "disjoint": ""
+    },
+    {
+      "id": "AccessPolicy",
+      "label": "Access policy",
+      "parent": "GovernanceAsset",
+      "comment": "Synthetic enterprise teaching class for access policy.",
+      "equivalent": "",
+      "disjoint": ""
+    },
+    {
+      "id": "SoftwareSystem",
+      "label": "Software system",
+      "parent": "EnterpriseEntity",
+      "comment": "Synthetic enterprise teaching class for software system.",
+      "equivalent": "",
+      "disjoint": ""
+    },
+    {
+      "id": "DataPipeline",
+      "label": "Data pipeline",
+      "parent": "SoftwareSystem",
+      "comment": "Synthetic enterprise teaching class for data pipeline.",
+      "equivalent": "",
+      "disjoint": ""
+    },
+    {
+      "id": "BusinessGlossaryTerm",
+      "label": "Business glossary term",
+      "parent": "ReferenceConcept",
+      "comment": "Synthetic enterprise teaching class for business glossary term.",
+      "equivalent": "",
+      "disjoint": ""
+    },
+    {
+      "id": "PartyMaster",
+      "label": "Party master",
+      "parent": "MasterRecord",
+      "comment": "Synthetic enterprise teaching class for party master.",
+      "equivalent": "",
+      "disjoint": ""
+    },
+    {
+      "id": "ProductMaster",
+      "label": "Product master",
+      "parent": "MasterRecord",
+      "comment": "Synthetic enterprise teaching class for product master.",
+      "equivalent": "",
+      "disjoint": ""
+    },
+    {
+      "id": "OrganizationUnit",
+      "label": "Organization unit",
+      "parent": "Organization",
+      "comment": "Synthetic enterprise teaching class for organization unit.",
+      "equivalent": "",
+      "disjoint": ""
+    },
+    {
+      "id": "DataSteward",
+      "label": "Data steward",
+      "parent": "Person",
+      "comment": "Synthetic enterprise teaching class for data steward.",
+      "equivalent": "",
+      "disjoint": ""
+    },
+    {
+      "id": "StudyProtocol",
+      "label": "Study protocol",
+      "parent": "ResearchStudy",
+      "comment": "Synthetic enterprise teaching class for study protocol.",
+      "equivalent": "",
+      "disjoint": ""
+    },
+    {
+      "id": "DataQualityIssue",
+      "label": "Data quality issue",
+      "parent": "GovernanceAsset",
+      "comment": "Synthetic enterprise teaching class for data quality issue.",
+      "equivalent": "",
+      "disjoint": ""
+    }
+  ],
+  "objectProperties": [
+    {
+      "id": "ownedBy",
+      "label": "owned by",
+      "comment": "Responsible steward of a dataset.",
+      "domain": "Dataset",
+      "range": "Organization",
+      "inverse": "owns",
+      "parent": "",
+      "characteristics": []
+    },
+    {
+      "id": "owns",
+      "label": "owns",
+      "comment": "Inverse of owned by.",
+      "domain": "Organization",
+      "range": "Dataset",
+      "inverse": "ownedBy",
+      "parent": "",
+      "characteristics": []
+    },
+    {
+      "id": "sponsoredBy",
+      "label": "sponsored by",
+      "comment": "Sponsor of a research study.",
+      "domain": "ResearchStudy",
+      "range": "Organization",
+      "inverse": "",
+      "parent": "",
+      "characteristics": []
+    },
+    {
+      "id": "produces",
+      "label": "produces",
+      "comment": "Study generates a dataset.",
+      "domain": "ResearchStudy",
+      "range": "Dataset",
+      "inverse": "",
+      "parent": "",
+      "characteristics": []
+    },
+    {
+      "id": "derivedFrom",
+      "label": "derived from",
+      "comment": "Lineage relation between data assets.",
+      "domain": "Dataset",
+      "range": "Dataset",
+      "inverse": "",
+      "parent": "",
+      "characteristics": [
+        "TransitiveProperty"
+      ]
+    },
+    {
+      "id": "linkedToMaster",
+      "label": "linked to master",
+      "comment": "A source identity points to a master identity record.",
+      "domain": "Person",
+      "range": "MasterRecord",
+      "inverse": "",
+      "parent": "",
+      "characteristics": []
+    },
+    {
+      "id": "managedBy",
+      "label": "managed by",
+      "comment": "Fictional enterprise semantic relationship: managed by.",
+      "domain": "EnterpriseEntity",
+      "range": "Organization",
+      "inverse": "",
+      "parent": "",
+      "characteristics": []
+    },
+    {
+      "id": "governedBy",
+      "label": "governed by",
+      "comment": "Fictional enterprise semantic relationship: governed by.",
+      "domain": "Dataset",
+      "range": "GovernanceAsset",
+      "inverse": "",
+      "parent": "",
+      "characteristics": []
+    },
+    {
+      "id": "catalogedIn",
+      "label": "cataloged in",
+      "comment": "Fictional enterprise semantic relationship: cataloged in.",
+      "domain": "Dataset",
+      "range": "MetadataCatalog",
+      "inverse": "",
+      "parent": "",
+      "characteristics": []
+    },
+    {
+      "id": "hasContract",
+      "label": "has contract",
+      "comment": "Fictional enterprise semantic relationship: has contract.",
+      "domain": "DataProduct",
+      "range": "DataContract",
+      "inverse": "",
+      "parent": "",
+      "characteristics": []
+    },
+    {
+      "id": "consumes",
+      "label": "consumes",
+      "comment": "Fictional enterprise semantic relationship: consumes.",
+      "domain": "DataPipeline",
+      "range": "SourceDataset",
+      "inverse": "",
+      "parent": "",
+      "characteristics": []
+    },
+    {
+      "id": "publishes",
+      "label": "publishes",
+      "comment": "Fictional enterprise semantic relationship: publishes.",
+      "domain": "DataPipeline",
+      "range": "CuratedDataset",
+      "inverse": "",
+      "parent": "",
+      "characteristics": []
+    },
+    {
+      "id": "supportsStudy",
+      "label": "supports study",
+      "comment": "Fictional enterprise semantic relationship: supports study.",
+      "domain": "CuratedDataset",
+      "range": "ResearchStudy",
+      "inverse": "",
+      "parent": "",
+      "characteristics": []
+    },
+    {
+      "id": "matchedTo",
+      "label": "matched to",
+      "comment": "Fictional enterprise semantic relationship: matched to.",
+      "domain": "Person",
+      "range": "PartyMaster",
+      "inverse": "",
+      "parent": "",
+      "characteristics": []
+    },
+    {
+      "id": "reviewedBy",
+      "label": "reviewed by",
+      "comment": "Fictional enterprise semantic relationship: reviewed by.",
+      "domain": "MasterRecord",
+      "range": "DataSteward",
+      "inverse": "",
+      "parent": "",
+      "characteristics": []
+    },
+    {
+      "id": "enforcesPolicy",
+      "label": "enforces policy",
+      "comment": "Fictional enterprise semantic relationship: enforces policy.",
+      "domain": "GovernanceAsset",
+      "range": "AccessPolicy",
+      "inverse": "",
+      "parent": "",
+      "characteristics": []
+    },
+    {
+      "id": "implementsRule",
+      "label": "implements rule",
+      "comment": "Fictional enterprise semantic relationship: implements rule.",
+      "domain": "DataPipeline",
+      "range": "QualityRule",
+      "inverse": "",
+      "parent": "",
+      "characteristics": []
+    }
+  ],
+  "dataProperties": [
+    {
+      "id": "sourceSystem",
+      "label": "source system",
+      "comment": "System-of-record code.",
+      "domain": "Dataset",
+      "range": "string"
+    },
+    {
+      "id": "qualityScore",
+      "label": "quality score",
+      "comment": "Numeric quality score from zero to one.",
+      "domain": "Dataset",
+      "range": "decimal"
+    },
+    {
+      "id": "recordStatus",
+      "label": "record status",
+      "comment": "Local status value; resolve it through the reference-data crosswalk.",
+      "domain": "MasterRecord",
+      "range": "string"
+    },
+    {
+      "id": "approvalDate",
+      "label": "approval date",
+      "comment": "Steward approval date.",
+      "domain": "MasterRecord",
+      "range": "date"
+    },
+    {
+      "id": "recordCount",
+      "label": "record count",
+      "comment": "Metadata field used in fictional enterprise exercises.",
+      "domain": "Dataset",
+      "range": "integer"
+    },
+    {
+      "id": "datasetVersion",
+      "label": "dataset version",
+      "comment": "Metadata field used in fictional enterprise exercises.",
+      "domain": "Dataset",
+      "range": "string"
+    },
+    {
+      "id": "effectiveFrom",
+      "label": "effective from",
+      "comment": "Metadata field used in fictional enterprise exercises.",
+      "domain": "ReferenceConcept",
+      "range": "date"
+    },
+    {
+      "id": "matchingConfidence",
+      "label": "matching confidence",
+      "comment": "Metadata field used in fictional enterprise exercises.",
+      "domain": "PartyMaster",
+      "range": "decimal"
+    },
+    {
+      "id": "localStatusCode",
+      "label": "local status code",
+      "comment": "Metadata field used in fictional enterprise exercises.",
+      "domain": "PartyMaster",
+      "range": "string"
+    },
+    {
+      "id": "systemIdentifier",
+      "label": "system identifier",
+      "comment": "Metadata field used in fictional enterprise exercises.",
+      "domain": "SoftwareSystem",
+      "range": "string"
+    },
+    {
+      "id": "refreshDate",
+      "label": "refresh date",
+      "comment": "Metadata field used in fictional enterprise exercises.",
+      "domain": "CuratedDataset",
+      "range": "date"
+    },
+    {
+      "id": "dataClassification",
+      "label": "data classification",
+      "comment": "Metadata field used in fictional enterprise exercises.",
+      "domain": "Dataset",
+      "range": "string"
+    },
+    {
+      "id": "stewardNote",
+      "label": "steward note",
+      "comment": "Metadata field used in fictional enterprise exercises.",
+      "domain": "MasterRecord",
+      "range": "string"
+    }
+  ],
+  "individuals": [
+    {
+      "id": "ResearchGroupA",
+      "label": "Research Group A",
+      "comment": "Invented organization.",
+      "types": [
+        "Organization"
+      ],
+      "assertions": []
+    },
+    {
+      "id": "StudyOrion",
+      "label": "Study Orion",
+      "comment": "Invented training study.",
+      "types": [
+        "ResearchStudy"
+      ],
+      "assertions": [
+        {
+          "prop": "sponsoredBy",
+          "kind": "object",
+          "value": "ResearchGroupA"
+        },
+        {
+          "prop": "produces",
+          "kind": "object",
+          "value": "SafetyDataset"
+        }
+      ]
+    },
+    {
+      "id": "SafetyDataset",
+      "label": "Safety dataset",
+      "comment": "Invented trial dataset.",
+      "types": [
+        "Dataset"
+      ],
+      "assertions": [
+        {
+          "prop": "ownedBy",
+          "kind": "object",
+          "value": "ResearchGroupA"
+        },
+        {
+          "prop": "sourceSystem",
+          "kind": "data",
+          "value": "Synthetic EDC"
+        },
+        {
+          "prop": "qualityScore",
+          "kind": "data",
+          "value": "0.95"
+        }
+      ]
+    },
+    {
+      "id": "MasterParty001",
+      "label": "Master party 001",
+      "comment": "Invented master record.",
+      "types": [
+        "MasterRecord"
+      ],
+      "assertions": [
+        {
+          "prop": "recordStatus",
+          "kind": "data",
+          "value": "APPROVED"
+        },
+        {
+          "prop": "approvalDate",
+          "kind": "data",
+          "value": "2026-01-12"
+        }
+      ]
+    },
+    {
+      "id": "CRMSource",
+      "label": "CRM source dataset",
+      "comment": "Synthetic enterprise record for educational demonstrations.",
+      "types": [
+        "SourceDataset"
+      ],
+      "assertions": [
+        {
+          "prop": "ownedBy",
+          "kind": "object",
+          "value": "ResearchGroupA"
+        },
+        {
+          "prop": "sourceSystem",
+          "kind": "data",
+          "value": "CRM"
+        },
+        {
+          "prop": "recordCount",
+          "kind": "data",
+          "value": "25000"
+        },
+        {
+          "prop": "datasetVersion",
+          "kind": "data",
+          "value": "2026.1"
+        }
+      ]
+    },
+    {
+      "id": "ERPSource",
+      "label": "ERP source dataset",
+      "comment": "Synthetic enterprise record for educational demonstrations.",
+      "types": [
+        "SourceDataset"
+      ],
+      "assertions": [
+        {
+          "prop": "ownedBy",
+          "kind": "object",
+          "value": "ResearchGroupA"
+        },
+        {
+          "prop": "sourceSystem",
+          "kind": "data",
+          "value": "ERP"
+        },
+        {
+          "prop": "recordCount",
+          "kind": "data",
+          "value": "18000"
+        }
+      ]
+    },
+    {
+      "id": "CuratedParties",
+      "label": "Curated party dataset",
+      "comment": "Synthetic enterprise record for educational demonstrations.",
+      "types": [
+        "CuratedDataset"
+      ],
+      "assertions": [
+        {
+          "prop": "ownedBy",
+          "kind": "object",
+          "value": "ResearchGroupA"
+        },
+        {
+          "prop": "derivedFrom",
+          "kind": "object",
+          "value": "CRMSource"
+        },
+        {
+          "prop": "derivedFrom",
+          "kind": "object",
+          "value": "ERPSource"
+        },
+        {
+          "prop": "qualityScore",
+          "kind": "data",
+          "value": "0.98"
+        },
+        {
+          "prop": "refreshDate",
+          "kind": "data",
+          "value": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "Customer360",
+      "label": "Customer 360 product",
+      "comment": "Synthetic enterprise record for educational demonstrations.",
+      "types": [
+        "DataProduct"
+      ],
+      "assertions": [
+        {
+          "prop": "ownedBy",
+          "kind": "object",
+          "value": "ResearchGroupA"
+        },
+        {
+          "prop": "hasContract",
+          "kind": "object",
+          "value": "ContractV1"
+        },
+        {
+          "prop": "datasetVersion",
+          "kind": "data",
+          "value": "1.0"
+        }
+      ]
+    },
+    {
+      "id": "ContractV1",
+      "label": "Data contract v1",
+      "comment": "Synthetic enterprise record for educational demonstrations.",
+      "types": [
+        "DataContract"
+      ],
+      "assertions": []
+    },
+    {
+      "id": "MetadataRegistry",
+      "label": "Metadata registry",
+      "comment": "Synthetic enterprise record for educational demonstrations.",
+      "types": [
+        "MetadataCatalog"
+      ],
+      "assertions": []
+    },
+    {
+      "id": "QualityRulesetA",
+      "label": "Quality rule set A",
+      "comment": "Synthetic enterprise record for educational demonstrations.",
+      "types": [
+        "QualityRule"
+      ],
+      "assertions": []
+    },
+    {
+      "id": "PrivacyTierA",
+      "label": "Data access policy A",
+      "comment": "Synthetic enterprise record for educational demonstrations.",
+      "types": [
+        "AccessPolicy"
+      ],
+      "assertions": []
+    },
+    {
+      "id": "IngestionPipeline",
+      "label": "Ingestion pipeline",
+      "comment": "Synthetic enterprise record for educational demonstrations.",
+      "types": [
+        "DataPipeline"
+      ],
+      "assertions": [
+        {
+          "prop": "consumes",
+          "kind": "object",
+          "value": "CRMSource"
+        },
+        {
+          "prop": "consumes",
+          "kind": "object",
+          "value": "ERPSource"
+        },
+        {
+          "prop": "publishes",
+          "kind": "object",
+          "value": "CuratedParties"
+        },
+        {
+          "prop": "implementsRule",
+          "kind": "object",
+          "value": "QualityRulesetA"
+        }
+      ]
+    },
+    {
+      "id": "MDMSystem",
+      "label": "MDM application",
+      "comment": "Synthetic enterprise record for educational demonstrations.",
+      "types": [
+        "SoftwareSystem"
+      ],
+      "assertions": [
+        {
+          "prop": "systemIdentifier",
+          "kind": "data",
+          "value": "mdm-demo-01"
+        }
+      ]
+    },
+    {
+      "id": "StewardMira",
+      "label": "Steward Mira",
+      "comment": "Synthetic enterprise record for educational demonstrations.",
+      "types": [
+        "DataSteward"
+      ],
+      "assertions": []
+    },
+    {
+      "id": "MasterParty002",
+      "label": "Master party 002",
+      "comment": "Synthetic enterprise record for educational demonstrations.",
+      "types": [
+        "PartyMaster"
+      ],
+      "assertions": [
+        {
+          "prop": "reviewedBy",
+          "kind": "object",
+          "value": "StewardMira"
+        },
+        {
+          "prop": "recordStatus",
+          "kind": "data",
+          "value": "APPROVED"
+        },
+        {
+          "prop": "matchingConfidence",
+          "kind": "data",
+          "value": "0.97"
+        },
+        {
+          "prop": "localStatusCode",
+          "kind": "data",
+          "value": "A"
+        }
+      ]
+    },
+    {
+      "id": "MasterParty003",
+      "label": "Master party 003",
+      "comment": "Synthetic enterprise record for educational demonstrations.",
+      "types": [
+        "PartyMaster"
+      ],
+      "assertions": [
+        {
+          "prop": "reviewedBy",
+          "kind": "object",
+          "value": "StewardMira"
+        },
+        {
+          "prop": "recordStatus",
+          "kind": "data",
+          "value": "PENDING"
+        },
+        {
+          "prop": "matchingConfidence",
+          "kind": "data",
+          "value": "0.82"
+        },
+        {
+          "prop": "localStatusCode",
+          "kind": "data",
+          "value": "P"
+        }
+      ]
+    },
+    {
+      "id": "OrionProtocol",
+      "label": "Study Orion protocol",
+      "comment": "Synthetic enterprise record for educational demonstrations.",
+      "types": [
+        "StudyProtocol"
+      ],
+      "assertions": [
+        {
+          "prop": "sponsoredBy",
+          "kind": "object",
+          "value": "ResearchGroupA"
+        }
+      ]
+    },
+    {
+      "id": "LineagePolicy",
+      "label": "Lineage access policy",
+      "comment": "Synthetic enterprise record for educational demonstrations.",
+      "types": [
+        "AccessPolicy"
+      ],
+      "assertions": []
+    },
+    {
+      "id": "SourceTraceIssue",
+      "label": "Missing source evidence",
+      "comment": "Synthetic enterprise record for educational demonstrations.",
+      "types": [
+        "DataQualityIssue"
+      ],
+      "assertions": []
+    },
+    {
+      "id": "AccountTerm",
+      "label": "Account (business term)",
+      "comment": "Synthetic enterprise record for educational demonstrations.",
+      "types": [
+        "BusinessGlossaryTerm"
+      ],
+      "assertions": []
+    }
+  ],
+  "concepts": [
+    {
+      "id": "StatusScheme",
+      "label": "Status vocabulary",
+      "comment": "A fictional controlled-vocabulary scheme.",
+      "scheme": "",
+      "broader": "",
+      "alt": "",
+      "isScheme": true
+    },
+    {
+      "id": "Approved",
+      "label": "Approved",
+      "comment": "Approved stewardship status.",
+      "scheme": "StatusScheme",
+      "broader": "",
+      "alt": "Accepted|Valid",
+      "isScheme": false
+    },
+    {
+      "id": "Pending",
+      "label": "Pending",
+      "comment": "Awaiting steward review.",
+      "scheme": "StatusScheme",
+      "broader": "",
+      "alt": "Open|In review",
+      "isScheme": false
+    },
+    {
+      "id": "Rejected",
+      "label": "Rejected",
+      "comment": "Not approved for publication.",
+      "scheme": "StatusScheme",
+      "broader": "",
+      "alt": "Declined",
+      "isScheme": false
+    },
+    {
+      "id": "PartyScheme",
+      "label": "Party status scheme",
+      "comment": "Fictional, openly reusable vocabulary concept.",
+      "scheme": "",
+      "broader": "",
+      "alt": "",
+      "isScheme": true
+    },
+    {
+      "id": "DataClassScheme",
+      "label": "Data classification scheme",
+      "comment": "Fictional, openly reusable vocabulary concept.",
+      "scheme": "",
+      "broader": "",
+      "alt": "",
+      "isScheme": true
+    },
+    {
+      "id": "ActiveParty",
+      "label": "Active party",
+      "comment": "Fictional, openly reusable vocabulary concept.",
+      "scheme": "PartyScheme",
+      "broader": "",
+      "alt": "",
+      "isScheme": false
+    },
+    {
+      "id": "InactiveParty",
+      "label": "Inactive party",
+      "comment": "Fictional, openly reusable vocabulary concept.",
+      "scheme": "PartyScheme",
+      "broader": "",
+      "alt": "",
+      "isScheme": false
+    },
+    {
+      "id": "PendingReview",
+      "label": "Pending review",
+      "comment": "Fictional, openly reusable vocabulary concept.",
+      "scheme": "PartyScheme",
+      "broader": "",
+      "alt": "",
+      "isScheme": false
+    },
+    {
+      "id": "MergedParty",
+      "label": "Merged party",
+      "comment": "Fictional, openly reusable vocabulary concept.",
+      "scheme": "PartyScheme",
+      "broader": "",
+      "alt": "",
+      "isScheme": false
+    },
+    {
+      "id": "PublicData",
+      "label": "Public data",
+      "comment": "Fictional, openly reusable vocabulary concept.",
+      "scheme": "DataClassScheme",
+      "broader": "",
+      "alt": "",
+      "isScheme": false
+    },
+    {
+      "id": "InternalData",
+      "label": "Internal data",
+      "comment": "Fictional, openly reusable vocabulary concept.",
+      "scheme": "DataClassScheme",
+      "broader": "",
+      "alt": "",
+      "isScheme": false
+    },
+    {
+      "id": "RestrictedData",
+      "label": "Restricted data",
+      "comment": "Fictional, openly reusable vocabulary concept.",
+      "scheme": "DataClassScheme",
+      "broader": "",
+      "alt": "",
+      "isScheme": false
+    },
+    {
+      "id": "RegulatedData",
+      "label": "Regulated data",
+      "comment": "Fictional, openly reusable vocabulary concept.",
+      "scheme": "DataClassScheme",
+      "broader": "",
+      "alt": "",
+      "isScheme": false
+    },
+    {
+      "id": "SensitivityCritical",
+      "label": "Sensitivity critical",
+      "comment": "Fictional, openly reusable vocabulary concept.",
+      "scheme": "DataClassScheme",
+      "broader": "RestrictedData",
+      "alt": "",
+      "isScheme": false
+    },
+    {
+      "id": "SensitivityLow",
+      "label": "Sensitivity low",
+      "comment": "Fictional, openly reusable vocabulary concept.",
+      "scheme": "DataClassScheme",
+      "broader": "InternalData",
+      "alt": "",
+      "isScheme": false
+    }
+  ],
+  "shapes": [
+    {
+      "id": "DatasetShape",
+      "label": "Dataset quality rules",
+      "comment": "All datasets should have an owner and a quality score.",
+      "target": "Dataset",
+      "property": "ownedBy",
+      "min": "1",
+      "max": "1",
+      "valueKind": "class",
+      "valueType": "Organization",
+      "pattern": ""
+    },
+    {
+      "id": "StudyShape",
+      "label": "Study quality rules",
+      "comment": "All studies must reference a sponsoring organization.",
+      "target": "ResearchStudy",
+      "property": "sponsoredBy",
+      "min": "1",
+      "max": "",
+      "valueKind": "class",
+      "valueType": "Organization",
+      "pattern": ""
+    },
+    {
+      "id": "CuratedDatasetShape",
+      "label": "Curated dataset ownership",
+      "comment": "Curated data must have a responsible owner.",
+      "target": "CuratedDataset",
+      "property": "ownedBy",
+      "min": "1",
+      "max": "",
+      "valueKind": "class",
+      "valueType": "Organization",
+      "pattern": ""
+    },
+    {
+      "id": "PartyMasterShape",
+      "label": "Party master status",
+      "comment": "Require a governed lifecycle code.",
+      "target": "PartyMaster",
+      "property": "recordStatus",
+      "min": "1",
+      "max": "",
+      "valueKind": "datatype",
+      "valueType": "string",
+      "pattern": ""
+    },
+    {
+      "id": "DataProductShape",
+      "label": "Data product contract",
+      "comment": "Products must reference their data contract.",
+      "target": "DataProduct",
+      "property": "hasContract",
+      "min": "1",
+      "max": "1",
+      "valueKind": "class",
+      "valueType": "DataContract",
+      "pattern": ""
+    },
+    {
+      "id": "SourceDatasetShape",
+      "label": "Source dataset identifier",
+      "comment": "Source datasets must declare their origin.",
+      "target": "SourceDataset",
+      "property": "sourceSystem",
+      "min": "1",
+      "max": "1",
+      "valueKind": "datatype",
+      "valueType": "string",
+      "pattern": ""
+    }
+  ],
+  "restrictions": [
+    {
+      "id": "OwnedDatasetRestriction",
+      "label": "Owned dataset",
+      "comment": "Demonstration of existential OWL restrictions.",
+      "target": "Dataset",
+      "property": "ownedBy",
+      "quantifier": "someValuesFrom",
+      "valueType": "Organization",
+      "cardinality": ""
+    },
+    {
+      "id": "ContractualProduct",
+      "label": "Contractual data product",
+      "comment": "A data product has some contract.",
+      "target": "DataProduct",
+      "property": "hasContract",
+      "quantifier": "someValuesFrom",
+      "valueType": "DataContract",
+      "cardinality": ""
+    },
+    {
+      "id": "GovernedCuratedAsset",
+      "label": "Stewarded curated asset",
+      "comment": "A curated dataset is governed by an organization.",
+      "target": "CuratedDataset",
+      "property": "ownedBy",
+      "quantifier": "someValuesFrom",
+      "valueType": "Organization",
+      "cardinality": ""
+    },
+    {
+      "id": "MasterStatusCardinality",
+      "label": "One steward reviewer",
+      "comment": "Example cardinality restriction.",
+      "target": "PartyMaster",
+      "property": "reviewedBy",
+      "quantifier": "minCardinality",
+      "valueType": "",
+      "cardinality": "1"
+    }
+  ]
+}

@@ -58,3 +58,13 @@ Do not use lesson counts as proof of editorial depth or standards conformance. A
 - Use the Gene Ontology and other OBO resources as *external references only* until the individual ontology license and attribution requirements have been checked. No external vocabulary bulk download is bundled.
 - The site does not imply endorsement by referenced tools or standards organizations. Credit their trademarks to their respective owners.
 - A project brand and domain trademark search is recommended before launch.
+
+
+## v5 Ontology Studio review
+
+- All default individuals, organizations, systems, controlled vocabulary examples and ontologies in the Studio are invented for teaching. No employer, client, actual participant, patient or proprietary internal asset data is included in the Studio default project.
+- The studio's generated example uses W3C namespace identifiers (RDF, RDFS, OWL, XSD, SKOS, SHACL, DCTERMS), which are published technical vocabularies. It does not bundle proprietary clinical controlled-vocabulary terms or definitions.
+- The studio is an **independent reimplementation of generic ontology modeling workflows**, not a copy of Protégé or WebProtégé. No Protégé trademarks, logos, UI artwork, code, or API libraries are packaged. Protégé is only referenced factually for comparison and interoperability.
+- Avoid labeling Tāttvikī as "Official Protégé" or claiming third-party affiliation. Trademark clearance for the new site's name remains outstanding. This is a technical content review, **not a legal opinion**.
+- All current studio authoring data is stored in browser localStorage, not on a user-account server. JSON backups and ontology exports may contain users' own data: the users control disclosure; warn against sharing confidential ontologies or uploading them to public GitHub repositories.
+- Do not treat classroom structural checks as certification under full OWL 2 DL / SHACL. Use standalone validators/reasoners and human review for regulated use.

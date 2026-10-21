@@ -1,0 +1,6 @@
+PREFIX ex: <https://example.org/tattviki/enterprise#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?curated ?source ?sourceSystem WHERE {
+  ?curated ex:derivedFrom ?source .
+  OPTIONAL { ?source ex:sourceSystem ?sourceSystem . }
+} ORDER BY ?curated ?source
