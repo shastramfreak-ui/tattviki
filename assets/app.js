@@ -59,6 +59,10 @@ let lessonPage = 0;
 let searchOpen = false;
 let globalSearch = '';
 let mobileOpen = false;
+let theme = load('tattviki-theme', 'dark');
+if(theme!=='light'&&theme!=='dark')theme='dark';
+document.documentElement.dataset.theme=theme;
+document.querySelector('meta[name="theme-color"]')?.setAttribute('content',theme==='dark'?'#101b2b':'#eff5fa');
 
 function load(k,def){try{const s=localStorage.getItem(k);return s===null?def:JSON.parse(s);}catch(_){return def;}}
 function store(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(_){}}
@@ -69,7 +73,7 @@ function route(){return decodeURIComponent((location.hash||'#home').replace(/^#/
 function go(path){location.hash='#'+path;if(path===route().join('/'))render();}
 function navItem([path,symbol,name]){let current=route()[0];if(current==='lesson')current='learn';return `<button type="button" class="nav-item ${current===path?'active':''}" data-route="${path}" ${current===path?'aria-current="page"':''}><span class="nav-ico" aria-hidden="true">${symbol}</span>${name}</button>`;}
 function sidebar(){return `<aside class="sidebar ${mobileOpen?'open':''}" aria-label="Main navigation"><a href="#home" class="brand" aria-label="Tāttvikī home"><img src="assets/logo.svg" alt=""/><span>Tāttvikī</span></a><div class="nav-section">LEARNING STUDIO</div>${navMain.map(navItem).join('')}<div class="nav-section">REFERENCE & COMMUNITY</div>${navExplore.map(navItem).join('')}<div class="sidebar-grow"></div><div class="side-note"><strong>Your ideas, connected.</strong><p>Move from an everyday concept to a semantic model you can query and validate.</p><button type="button" data-route="studio">Create an ontology →</button></div><div class="sidebar-bottom">Free • Open source • No account needed</div></aside>`;}
-function topbar(){let [s,id]=route();let label=s==='lesson'?'Lessons / '+(C.lessons.find(x=>x.id===id)?.title||''):(ROUTES[s]||'Overview');return `<header class="topbar"><div class="row"><button class="mobile-toggle" type="button" data-action="mobile" aria-label="Open navigation">☰</button><span class="crumb">Workspace <span style="padding:0 7px;color:#d3d9e0">/</span> <strong>${esc(label)}</strong></span></div><div class="top-actions"><button class="search-trigger" type="button" data-action="search-open" aria-label="Search lessons and tools">${icon('search')} <span>Search 613 topics...</span><kbd>/</kbd></button><span class="avatar" title="Your browser-only progress">T</span></div></header>`;}
+function topbar(){let [s,id]=route();let label=s==='lesson'?'Lessons / '+(C.lessons.find(x=>x.id===id)?.title||''):(ROUTES[s]||'Overview');return `<header class="topbar"><div class="row"><button class="mobile-toggle" type="button" data-action="mobile" aria-label="Open navigation">☰</button><span class="crumb">Workspace <span style="padding:0 7px;color:#d3d9e0">/</span> <strong>${esc(label)}</strong></span></div><div class="top-actions"><button class="search-trigger" type="button" data-action="search-open" aria-label="Search lessons and tools">${icon('search')} <span>Search 613 topics...</span><kbd>/</kbd></button><button class="theme-switch" type="button" data-action="theme-toggle" aria-label="Switch to ${theme==='dark'?'light':'dark'} mode" title="Switch to ${theme==='dark'?'light':'dark'} mode" aria-pressed="${theme==='dark'}"><span aria-hidden="true">${theme==='dark'?'☀':'☾'}</span><span class="theme-text">${theme==='dark'?'Light':'Dark'} mode</span></button><span class="avatar" title="Your browser-only progress">T</span></div></header>`;}
 function footer(){return `<footer class="footer">Created by Shubham · Free to learn · <a href="#about">How to contribute</a> · Content is educational, not vendor-certified</footer>`;}
 function stat(value,label,sym){return `<div class="stat"><div style="color:#1d9c86">${icon(sym)}</div><strong>${value}</strong><span>${label}</span></div>`;}
 function pathCard(p){let lessons=C.lessons.filter(l=>l.path===p.id),n=lessons.filter(l=>completed.includes(l.id)).length;return `<button class="path-card" type="button" data-path="${p.id}"><span class="path-icon ${p.color}">${p.icon}</span><h3>${esc(p.title)}</h3><p>${esc(p.description)}</p><div class="card-footer"><span>${lessons.length} lessons · ${esc(p.level)}</span><span>${n===lessons.length?'✓ Complete':n+' / '+lessons.length+' done'} ↗</span></div></button>`;}
@@ -265,6 +269,7 @@ async function copyText(text){
 }
 async function performAction(action,btn){let id=btn.dataset.id;
   switch(action){
+    case 'theme-toggle':theme=theme==='dark'?'light':'dark';store('tattviki-theme',theme);document.documentElement.dataset.theme=theme;document.querySelector('meta[name="theme-color"]')?.setAttribute('content',theme==='dark'?'#101b2b':'#eff5fa');render();break;
     case 'mobile':mobileOpen=!mobileOpen;render();break;
     case 'mobile-close':mobileOpen=false;render();break;
     case 'search-open':searchOpen=true;globalSearch='';render();break;

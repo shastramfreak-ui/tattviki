@@ -1,0 +1,27 @@
+{
+  "release": "9.0.0",
+  "date": "2026-10-21",
+  "curriculum_topics": 613,
+  "graph_visualizations": [
+    "Overview",
+    "Radial",
+    "Organic",
+    "Hierarchy",
+    "Swimlanes"
+  ],
+  "appearance": [
+    "dark",
+    "light"
+  ],
+  "browser_checks_passed": 26,
+  "content_validation": "passed",
+  "website_route_renderer": "9 routes passed",
+  "ontology_export": "512 triples RDFLib Turtle, RDF/XML and JSON-LD isomorphic",
+  "enterprise_python_tests": "6 passed",
+  "known_limitations": [
+    "Display limits are graphical only; model data remains complete",
+    "Dragged node coordinates are presentation-only",
+    "Full semantic reasoning and collaboration require optional backend",
+    "Public GitHub Pages deployment requires user push and settings"
+  ]
+}

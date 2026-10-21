@@ -1,3 +1,12 @@
+## Version 9 — Fluid graph explorer and light/dark theming (2026-10-21)
+
+- Replaced the tall fixed-column graph with a category overview and five selectable layouts (overview, radial, organic, hierarchy, swimlanes).
+- Added progressive visual density controls, domain drill-down, animated zoom-to-pointer, drag-to-pan and drag-to-reposition nodes, plus pinch gestures.
+- Preserved graph node selection and ontology inspector editing; improved focus, labels, search, neighbors and SVG diagram export.
+- Added a site-wide, persistent Light / Dark mode toggle with coordinated graph and panel palettes.
+- Added responsive controls, user-selectable visualization themes, static preview images and regression tests.
+- The original semantic data exports and enterprise projects remain unchanged; GitHub Pages requires no backend for visualization.
+
 # Changelog
 
 ## v8.0.0 — Graph Explorer, ontology starters, guided modeling & midnight UI

@@ -8,13 +8,13 @@
 
 [**Website**](https://shastramfreak-ui.github.io/tattviki/) · [**Ontology Studio**](https://shastramfreak-ui.github.io/tattviki/#studio) · [**Semantic Workbench**](https://shastramfreak-ui.github.io/tattviki/#semantic) · [**Curriculum**](CURRICULUM.md) · [**Contribute**](CONTRIBUTING.md)
 
-**Version 8** · **613 learning topics** · **15 learning modules** · **12 enterprise use-case blueprints**
+**Version 9** · **613 learning topics** · **15 learning modules** · **12 enterprise use-case blueprints**
 
 **Created by Shubham**
 
 </div>
 
-![Tāttvikī v8 multi-relationship ontology graph](previews/studio-v8-graph.png)
+![Tāttvikī v9 interactive semantic overview](previews/v9-overview-dark.png)
 
 **[Open the live Studio](https://shastramfreak-ui.github.io/tattviki/#studio)** · [Create a new ontology](https://shastramfreak-ui.github.io/tattviki/#studio) · [View the project templates](previews/studio-v8-new-ontology.png)
 
@@ -26,7 +26,7 @@
 - [Features and capabilities](#features-and-capabilities)
 - [Explore the learning paths](#explore-the-learning-paths)
 - [Get started locally](#get-started-locally)
-- [Visual Ontology Studio v8](#visual-ontology-studio-v8)
+- [Visual Ontology Studio v9](#visual-ontology-studio-v8)
 - [Semantic Workbench](#semantic-workbench)
 - [Enterprise projects](#enterprise-projects)
 - [Optional advanced backend](#optional-advanced-backend)
@@ -55,7 +55,7 @@ The **613 entries** consist of foundational lessons, concise micro-lessons, and 
 | --- | --- | --- |
 | Lessons, quizzes, searchable glossary and progress | ✅ | Not required |
 | Turtle practice, beginner SPARQL challenges and graph explorer | ✅ Teaching subset | Not required |
-| Visual OWL/RDF ontology modeling | ✅ Interactive graph, zoom/pan/focus | Not required |
+| Visual OWL/RDF ontology modeling | ✅ Interactive graph, five layouts, zoom/pan, node dragging, focus | Not required |
 | New blank ontology and multi-domain project starters | ✅ | Not required |
 | Class/property/individual/SKOS/SHACL graph views | ✅ | Not required |
 | Guided lessons linked directly to Studio | ✅ | Not required |
@@ -125,11 +125,26 @@ Then open **http://localhost:8000/**. Depending on your installation, you may ne
 
 > Opening `index.html` with `file://` can prevent the updates JSON from loading because browsers restrict local file access. Using a local HTTP server is recommended.
 
-## Visual Ontology Studio v8
+
+### v9 — Five graph layouts and dual appearance
+
+The Studio includes **five interactive layouts**: **Overview** (grouped semantic domains), **Radial** (type-centered relationships), **Organic** (deterministic spring-network), **Hierarchy** (parent/child levels), and **Swimlanes** (separate entity kinds). The Overview layout initially summarizes every entity category rather than shrinking all entities into a tall column; click any group to explore it.
+
+Use **Focus / Balanced / Expanded / Maximum** density levels in detailed layouts, or switch to **Neighbors** to inspect immediate relationships. The graph supports mouse-wheel zoom, click-to-fit, pointer dragging to pan, node repositioning, and two-finger pinch gestures. The **Focus** button makes the canvas wider, while node selection opens the editable ontology inspector. SVG export captures the currently displayed graph layout and camera view.
+
+Use the **Light mode / Dark mode** button in the top navigation to change the appearance of the *entire* learning website. The choice is stored locally in the browser (no login required).
+
+| Dark mode | Light mode |
+| --- | --- |
+| ![Midnight Studio overview](previews/v9-overview-dark.png) | ![Light Studio overview](previews/v9-overview-light.png) |
+
+> Large ontology layouts use progressive display limits (45, 80, 150 or 240 visible entities) for browser performance. This is a visual display limit, **not an RDF export or ontology-model limit**. The current node positions in a graph layout are presentation-only; drag positions are not saved as ontology axioms.
+
+## Visual Ontology Studio v9
 
 Open **http://localhost:8000/#studio**. Version 8 adds a genuine multi-relationship SVG graph viewer rather than displaying only the class tree.
 
-![Graph explorer, schema view](previews/studio-v8-graph.png)
+![Graph explorer, schema view](previews/v9-overview-dark.png)
 
 The graph shows `rdfs:subClassOf`, class equivalence/disjointness, `rdfs:domain` and `rdfs:range`, `rdfs:subPropertyOf`, `owl:inverseOf`, individual `rdf:type` and object assertions, SKOS broader/scheme links, and SHACL target/path and selected restriction links. Toggle among **Class hierarchy**, **Schema & axioms**, **Individuals**, **SKOS**, and **Everything**. Colored node categories indicate OWL classes, object properties, data properties, individuals, SKOS terms, SHACL shapes and OWL restrictions.
 
@@ -318,3 +333,7 @@ Please avoid uploading confidential enterprise schemas, personal information, pr
 **Created by Shubham**
 
 </div>
+
+### v9 visual checks
+
+Run `python scripts/test_v9_graph.py` after installing Playwright and its Chromium browser. The suite exercises all five layouts, domain drill-down, mousewheel zoom, pan, node movement, density controls, site-wide theme switching, RDF export, and mobile layout. See [`PLATFORM_REVIEW_V9.md`](PLATFORM_REVIEW_V9.md).
