@@ -1,0 +1,12 @@
+@prefix ex: <https://tattviki.example/education/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+ex:PipelineShape a sh:NodeShape ; sh:targetClass ex:Pipeline ;
+  sh:property [ sh:path ex:consumes ; sh:minCount 1 ; sh:class ex:Dataset ] ;
+  sh:property [ sh:path ex:produces ; sh:minCount 1 ; sh:class ex:Dataset ] ;
+  sh:property [ sh:path ex:pipelineId ; sh:minCount 1 ; sh:pattern "^PIPE-[0-9]+$" ] .

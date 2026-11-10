@@ -1,0 +1,12 @@
+@prefix ex: <https://tattviki.example/education/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+ex:DatasetShape a sh:NodeShape ; sh:targetClass ex:Dataset ;
+  sh:property [ sh:path dct:title ; sh:minCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path ex:steward ; sh:minCount 1 ; sh:class ex:Organization ] ;
+  sh:property [ sh:path ex:classification ; sh:minCount 1 ; sh:in ( ex:Public ex:Internal ex:Restricted ) ] .

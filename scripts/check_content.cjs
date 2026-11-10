@@ -7,6 +7,11 @@ vm.runInNewContext(fs.readFileSync('assets/content.js', 'utf8'), sandbox);
 vm.runInNewContext(fs.readFileSync('assets/curriculum.js', 'utf8'), sandbox);
 vm.runInNewContext(fs.readFileSync('assets/enterprise_curriculum.js', 'utf8'), sandbox);
 vm.runInNewContext(fs.readFileSync('assets/enterprise_cases.js', 'utf8'), sandbox);
+vm.runInNewContext(fs.readFileSync('assets/learning-guides.js', 'utf8'), sandbox);
+vm.runInNewContext(fs.readFileSync('assets/ai-curriculum.js', 'utf8'), sandbox);
+vm.runInNewContext(fs.readFileSync('assets/graph-learning.js', 'utf8'), sandbox);
+vm.runInNewContext(fs.readFileSync('assets/shacl-learning.js', 'utf8'), sandbox);
+vm.runInNewContext(fs.readFileSync('assets/editorial-patches.js', 'utf8'), sandbox);
 const { paths, lessons, tools, methods, glossary, challenges } = sandbox.window.OT;
 function unique(xs, category) {
   const set = new Set(xs);
@@ -15,7 +20,8 @@ function unique(xs, category) {
 unique(paths.map(x => x.id), 'learning path ID');
 unique(lessons.map(x => x.id), 'lesson ID');
 unique(lessons.map(x => x.title.toLocaleLowerCase().trim()), 'lesson title');
-assert.equal(lessons.length, 613, 'Expected 613 lessons');
+assert.equal(lessons.length, 737, 'Expected 737 lessons');
+assert.equal(Object.keys(sandbox.window.TATTVIKI_GUIDES).length,737, 'Every lesson needs a guide');
 assert.equal(sandbox.window.TATTVIKI_ENTERPRISE_CASES.length, 12, 'Expected 12 enterprise blueprints');
 unique(tools.map(x => x.name.toLowerCase()), 'tool');
 unique(glossary.map(([term]) => term.toLowerCase()), 'glossary term');

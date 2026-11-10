@@ -39,3 +39,9 @@ The longer chapters are **original structured teaching material**, not copies of
 The chapter system covers **breadth** across 613 topics. Several specialized topics use a shared technical foundation, so they should not yet be represented as 613 independently peer-reviewed expert treatises. Priority areas for fully original long-form, case-specific chapters are: OWL 2 DL reasoner explanations; complex SHACL-SPARQL rules; SPARQL federation/query planning; full MDM survivorship policies; RDM effective-time mappings; production lineage/observability; graph entity linking; GraphRAG evaluation; security/privacy and ontology interoperability.
 
 All publisher-owned sources and trade names belong to their respective owners. Linking to external material does not grant rights to redistribute that material.
+
+## v11 — AI retrieval curriculum editorial rules
+
+The 52 new v11 chapters distinguish rank-based algorithms, true neural embedding systems, graph-based retrieval, synthetic evaluation and agentic decision-making. **Do not describe TF-IDF vectors as learned semantic embeddings.** Make no implied claim that a deterministic browser simulation produces verified LLM answers. Content is educational; vendor capabilities and product support can change, so link to their official specifications and release notes rather than copying them.
+
+Each new subject contains a unique technical mechanism, a fictional enterprise scenario, a failure mode, practical implementation guidance and a testable exercise. Reading estimates for new lessons are about 5 minutes (7 for selected deep dives), with 20 minutes allotted for implementation practice. Some advanced material still warrants longer specialist references.

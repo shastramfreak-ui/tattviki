@@ -26,10 +26,17 @@ jobs:
       - name: Check learning content
         run: |
           node scripts/check_content.cjs
+          node scripts/check_v12_graph.cjs
+          node scripts/audit_repetition.cjs
+          node scripts/check_v13_shacl.cjs
           python scripts/check_learning_guides.py
           node scripts/test_ui_render.cjs
+          node scripts/check_v11_retrieval.cjs
+          python -m unittest discover -s projects/enterprise-retrieval-rag -p test_retrieval.py
       - name: Install enterprise lab dependencies
         run: python -m pip install -r projects/enterprise-mdm-rdm-metadata/requirements.txt
+      - name: Verify SHACL example graphs with full pySHACL
+        run: python -m unittest discover -s projects/shacl-validation-lab -p test_fixtures.py
       - name: Verify Ontology Studio RDF exports
         run: |
           node scripts/export_studio_demo.cjs

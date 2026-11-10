@@ -68,3 +68,7 @@ Do not use lesson counts as proof of editorial depth or standards conformance. A
 - Avoid labeling Tāttvikī as "Official Protégé" or claiming third-party affiliation. Trademark clearance for the new site's name remains outstanding. This is a technical content review, **not a legal opinion**.
 - All current studio authoring data is stored in browser localStorage, not on a user-account server. JSON backups and ontology exports may contain users' own data: the users control disclosure; warn against sharing confidential ontologies or uploading them to public GitHub repositories.
 - Do not treat classroom structural checks as certification under full OWL 2 DL / SHACL. Use standalone validators/reasoners and human review for regulated use.
+
+## v11 corpus and AI topics
+
+The v11 retrieval lab corpus (`projects/enterprise-retrieval-rag/corpus.json`) is an original fictional teaching dataset; it includes no real employee names, protected health records, vendor manuals, proprietary terminology downloads or credentials. Links to Microsoft, Anthropic, Neo4j, W3C and open-source project documentation reference external materials without copying their code or branding. Product names are used for explanation, not endorsement. A separate rights/trademark/privacy review remains appropriate before public operation.

@@ -1,3 +1,24 @@
+## v12 — Graph foundations, Graph Theory Lab and Studio Code Lab
+
+- 42 topic-specific lessons in four learning paths; total 707, keeping earlier IDs and browser progress compatible.
+- 12 independently validated synthetic directed multigraph networks (360 nodes and 616 labelled relationships).
+- Graph Theory Lab with BFS, Dijkstra, weak components, degree, unweighted PageRank and directed cycle/topology analysis; zoom, pan, three layouts, node inspection and JSON export.
+- Refactored standalone Playground into `#studio/code`; `#playground` deep links remain backwards compatible, and visual Studio Turtle can be loaded into Code Lab.
+- Added CAG versus CRAG versus RAG/GraphRAG comparisons; no false claim of actual transformer KV caching.
+- Independent NetworkX algorithm comparisons, graph structure checks, 707-lesson index validation and browser regression.
+- Browser-only functions continue to work on GitHub Pages; OWL/SHACL backend still requires separate hosting.
+
+# Changelog
+
+## v11 — 26 October 2026 — vectors, RAG, GraphRAG and context graphs
+
+- Added **52 separate topic-specific AI lessons** across six new paths, growing the curriculum from 613 to **665** with matching study guides and independent knowledge checks.
+- Added a free browser-based **Retrieval Systems Lab** with 28 fictional source documents, 20 graph edges and six labelled enterprise questions: BM25, TF-IDF/cosine proxy, reciprocal rank fusion, typed graph expansion, top-k, hop limits and role filtering.
+- Added explanation of evidence ranking, per-role Recall@k / Precision@k, and strategy-selection comparisons. This is an **educational search simulation, not neural embeddings or an LLM**.
+- Added **dependency-free executable Python enterprise retrieval lab** and tests, aligned with the browser exercises.
+- Integrated the new paths and lab into search, lesson completion, the dashboard, navigation, and theme-aware mobile layouts.
+- Updated official reference links, site metadata, static assets and content checks. Existing completed-lesson IDs remain unchanged.
+
 ## v10 — Expanded learning content and progress reliability (2026-10-22)
 
 - Added 613 structured reading chapters with worked cases, implementation patterns, risks, tests and topic-based quizzes.

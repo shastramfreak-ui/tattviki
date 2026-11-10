@@ -1,0 +1,62 @@
+[
+  {
+    "id": "people",
+    "title": "People and reporting lines",
+    "kind": "Foundations",
+    "goal": "A Person requires one label and one integer age. A manager must be another Person.",
+    "expect": 3,
+    "shapes": "@prefix ex: <https://tattviki.example/education/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\n\nex:PersonShape a sh:NodeShape ; sh:targetClass ex:Person ;\n  sh:property [ sh:path ex:name ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;\n  sh:property [ sh:path ex:age ; sh:minCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 18 ] ;\n  sh:property [ sh:path ex:manager ; sh:class ex:Person ] .\n",
+    "good": "@prefix ex: <https://tattviki.example/education/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\n\nex:Ada a ex:Person ; ex:name \"Ada\" ; ex:age 32 ; ex:manager ex:Bo .\nex:Bo a ex:Person ; ex:name \"Bo\" ; ex:age 41 .\n",
+    "bad": "@prefix ex: <https://tattviki.example/education/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\n\nex:Ada a ex:Person ; ex:name \"Ada\" ; ex:age \"twenty\" ; ex:manager ex:Robot .\nex:Bo a ex:Person ; ex:name \"Bo\" ; ex:age 41 .\n"
+  },
+  {
+    "id": "catalog",
+    "title": "Metadata catalog governance",
+    "kind": "Enterprise",
+    "goal": "Catalog datasets require a title, a steward organization, and an approved classification.",
+    "expect": 3,
+    "shapes": "@prefix ex: <https://tattviki.example/education/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\n\nex:DatasetShape a sh:NodeShape ; sh:targetClass ex:Dataset ;\n  sh:property [ sh:path dct:title ; sh:minCount 1 ; sh:datatype xsd:string ] ;\n  sh:property [ sh:path ex:steward ; sh:minCount 1 ; sh:class ex:Organization ] ;\n  sh:property [ sh:path ex:classification ; sh:minCount 1 ; sh:in ( ex:Public ex:Internal ex:Restricted ) ] .\n",
+    "good": "@prefix ex: <https://tattviki.example/education/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\n\nex:CatalogTeam a ex:Organization .\nex:SalesDataset a ex:Dataset ; dct:title \"Sales dataset\" ; ex:steward ex:CatalogTeam ; ex:classification ex:Internal .\n",
+    "bad": "@prefix ex: <https://tattviki.example/education/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\n\nex:CatalogTeam a ex:Organization .\nex:SalesDataset a ex:Dataset ; ex:steward ex:MissingTeam ; ex:classification ex:Secret .\n"
+  },
+  {
+    "id": "reference",
+    "title": "Controlled reference data",
+    "kind": "RDM / SKOS",
+    "goal": "A controlled concept needs one English preferred label and membership in an approved scheme.",
+    "expect": 3,
+    "shapes": "@prefix ex: <https://tattviki.example/education/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\n\nex:StatusShape a sh:NodeShape ; sh:targetClass skos:Concept ;\n  sh:property [ sh:path skos:prefLabel ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:Literal ] ;\n  sh:property [ sh:path skos:inScheme ; sh:minCount 1 ; sh:hasValue ex:StatusScheme ] .\n",
+    "good": "@prefix ex: <https://tattviki.example/education/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\n\nex:StatusScheme a skos:ConceptScheme .\nex:Active a skos:Concept ; skos:prefLabel \"Active\"@en ; skos:inScheme ex:StatusScheme .\n",
+    "bad": "@prefix ex: <https://tattviki.example/education/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\n\nex:StatusScheme a skos:ConceptScheme .\nex:Active a skos:Concept ; skos:prefLabel \"Active\"@en ; skos:prefLabel \"Current\"@en .\n"
+  },
+  {
+    "id": "lineage",
+    "title": "Data lineage contracts",
+    "kind": "Lineage",
+    "goal": "Every transformation has a source, a produced dataset, and a nonblank pipeline identifier.",
+    "expect": 2,
+    "shapes": "@prefix ex: <https://tattviki.example/education/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\n\nex:PipelineShape a sh:NodeShape ; sh:targetClass ex:Pipeline ;\n  sh:property [ sh:path ex:consumes ; sh:minCount 1 ; sh:class ex:Dataset ] ;\n  sh:property [ sh:path ex:produces ; sh:minCount 1 ; sh:class ex:Dataset ] ;\n  sh:property [ sh:path ex:pipelineId ; sh:minCount 1 ; sh:pattern \"^PIPE-[0-9]+$\" ] .\n",
+    "good": "@prefix ex: <https://tattviki.example/education/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\n\nex:RawCRM a ex:Dataset . ex:GoldenCustomer a ex:Dataset .\nex:Job9 a ex:Pipeline ; ex:consumes ex:RawCRM ; ex:produces ex:GoldenCustomer ; ex:pipelineId \"PIPE-009\" .\n",
+    "bad": "@prefix ex: <https://tattviki.example/education/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\n\nex:RawCRM a ex:Dataset . ex:GoldenCustomer a ex:Dataset .\nex:Job9 a ex:Pipeline ; ex:consumes ex:RawCRM ; ex:produces ex:Unknown ; ex:pipelineId \"job9\" .\n"
+  },
+  {
+    "id": "retail",
+    "title": "Retail order quality",
+    "kind": "Commerce",
+    "goal": "Orders require a customer, a nonnegative decimal total, and one permitted lifecycle status.",
+    "expect": 3,
+    "shapes": "@prefix ex: <https://tattviki.example/education/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\n\nex:OrderShape a sh:NodeShape ; sh:targetClass ex:Order ;\n  sh:property [ sh:path ex:customer ; sh:minCount 1 ; sh:class ex:Customer ] ;\n  sh:property [ sh:path ex:total ; sh:minCount 1 ; sh:datatype xsd:decimal ; sh:minInclusive 0 ] ;\n  sh:property [ sh:path ex:status ; sh:minCount 1 ; sh:in ( ex:Open ex:Shipped ex:Cancelled ) ] .\n",
+    "good": "@prefix ex: <https://tattviki.example/education/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\n\nex:C100 a ex:Customer . ex:Order99 a ex:Order ; ex:customer ex:C100 ; ex:total 75.50 ; ex:status ex:Open .\n",
+    "bad": "@prefix ex: <https://tattviki.example/education/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\n\nex:Order99 a ex:Order ; ex:customer ex:MissingCustomer ; ex:total -2.50 ; ex:status ex:Unknown .\n"
+  },
+  {
+    "id": "sensors",
+    "title": "Industrial sensor observations",
+    "kind": "IoT / digital twin",
+    "goal": "Observations need a decimal measured value, a timestamp, and a sensor resource of the expected class.",
+    "expect": 3,
+    "shapes": "@prefix ex: <https://tattviki.example/education/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\n\nex:ObservationShape a sh:NodeShape ; sh:targetClass ex:Observation ;\n  sh:property [ sh:path ex:observedBy ; sh:minCount 1 ; sh:class ex:Sensor ] ;\n  sh:property [ sh:path ex:value ; sh:minCount 1 ; sh:datatype xsd:decimal ; sh:minInclusive 0 ; sh:maxInclusive 500 ] ;\n  sh:property [ sh:path ex:observedAt ; sh:minCount 1 ; sh:datatype xsd:dateTime ] .\n",
+    "good": "@prefix ex: <https://tattviki.example/education/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\n\nex:SensorA a ex:Sensor .\nex:Observation10 a ex:Observation ; ex:observedBy ex:SensorA ; ex:value 20.50 ; ex:observedAt \"2026-10-27T12:00:00Z\"^^xsd:dateTime .\n",
+    "bad": "@prefix ex: <https://tattviki.example/education/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\n\nex:Observation10 a ex:Observation ; ex:observedBy ex:UnknownSensor ; ex:value 999.0 ; ex:observedAt \"tomorrow\" .\n"
+  }
+]

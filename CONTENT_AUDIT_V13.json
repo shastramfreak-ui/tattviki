@@ -1,0 +1,24 @@
+{
+  "current_lessons": 737,
+  "paths": 25,
+  "shacl_lessons": 30,
+  "editorial_changes": {
+    "genericDescriptions": 31,
+    "genericAnalogies": 240,
+    "oldTemplateObjectives": 240,
+    "genericExamples": 190,
+    "genericGuideOpenings": 613,
+    "genericChapterParagraphs": 613,
+    "genericVerificationLists": 665
+  },
+  "remaining": {
+    "remaining_generic_descriptions": 0,
+    "remaining_generic_analogy": 0,
+    "remaining_generic_objectives": 0,
+    "remaining_template_examples": 0,
+    "remaining_generic_guide_openings": 0,
+    "remaining_generic_core_2": 0,
+    "remaining_generic_verification": 0
+  },
+  "note": "This audit identifies repeated phrase templates, not all possible semantic redundancy. Further subject-matter editorial review remains necessary."
+}

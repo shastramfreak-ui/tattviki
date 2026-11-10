@@ -1,0 +1,501 @@
+{
+  "documents": [
+    {
+      "id": "D01",
+      "title": "Northforge supplier record",
+      "text": "Northforge Components is an approved industrial valve supplier. Supplier S-104 supplies Valve-742 for the East Plant.",
+      "kind": "supplier",
+      "access": "public",
+      "entities": [
+        "Northforge",
+        "Valve-742",
+        "Supplier-S104"
+      ]
+    },
+    {
+      "id": "D02",
+      "title": "Valve-742 installation",
+      "text": "Valve-742 is installed in Pump-3 at East Plant. The replacement valve is compatible with the PX-4 pump assembly.",
+      "kind": "asset",
+      "access": "engineer",
+      "entities": [
+        "Valve-742",
+        "Pump-3",
+        "East-Plant"
+      ]
+    },
+    {
+      "id": "D03",
+      "title": "Pump-3 service plan",
+      "text": "Maintenance Plan MP-9 covers Pump-3. A maintenance task was postponed pending arrival of the Valve-742 replacement.",
+      "kind": "maintenance",
+      "access": "engineer",
+      "entities": [
+        "Pump-3",
+        "Maintenance-MP9",
+        "Valve-742"
+      ]
+    },
+    {
+      "id": "D04",
+      "title": "Pump-3 maintenance approval",
+      "text": "Approval APR-81 delayed Pump-3 service after the valve shipment missed the agreed delivery window. Engineer sign-off required.",
+      "kind": "approval",
+      "access": "steward",
+      "entities": [
+        "Pump-3",
+        "Approval-APR81"
+      ]
+    },
+    {
+      "id": "D05",
+      "title": "East Plant component register",
+      "text": "East Plant operates Pump-3 and Sensor-17. Component replacement impact requires asset owner review.",
+      "kind": "asset",
+      "access": "public",
+      "entities": [
+        "East-Plant",
+        "Pump-3",
+        "Sensor-17"
+      ]
+    },
+    {
+      "id": "D06",
+      "title": "Customer 360 data product",
+      "text": "Customer 360 is a governed data product. The Data Governance team is its owner and steward.",
+      "kind": "catalog",
+      "access": "public",
+      "entities": [
+        "Customer360",
+        "Data-Governance"
+      ]
+    },
+    {
+      "id": "D07",
+      "title": "Customer 360 source lineage",
+      "text": "Customer 360 consumes CRM Accounts and ERP Parties datasets. The CRM is the system of record for contact preferences.",
+      "kind": "lineage",
+      "access": "engineer",
+      "entities": [
+        "Customer360",
+        "CRM-Accounts",
+        "ERP-Parties"
+      ]
+    },
+    {
+      "id": "D08",
+      "title": "CRM Accounts catalog entry",
+      "text": "CRM Accounts dataset is produced by the Customer Platform application and feeds Customer 360. Its catalog owner is CRM Operations.",
+      "kind": "catalog",
+      "access": "public",
+      "entities": [
+        "CRM-Accounts",
+        "Customer-Platform",
+        "CRM-Operations"
+      ]
+    },
+    {
+      "id": "D09",
+      "title": "ERP Parties metadata",
+      "text": "ERP Parties is an ERP source dataset containing supplier and customer party master identifiers. It contributes to Customer 360.",
+      "kind": "metadata",
+      "access": "public",
+      "entities": [
+        "ERP-Parties",
+        "Customer360"
+      ]
+    },
+    {
+      "id": "D10",
+      "title": "Data product access policy",
+      "text": "Access to restricted data products requires an approved purpose, group-based permissions, and a current owner approval.",
+      "kind": "policy",
+      "access": "public",
+      "entities": [
+        "Access-Policy",
+        "Data-Governance"
+      ]
+    },
+    {
+      "id": "D11",
+      "title": "Audit control for data access",
+      "text": "Every restricted data product access decision records requester, purpose, approver, policy version and expiry.",
+      "kind": "policy",
+      "access": "steward",
+      "entities": [
+        "Access-Policy",
+        "Approval-APR81"
+      ]
+    },
+    {
+      "id": "D12",
+      "title": "Reference-data status scheme",
+      "text": "Party status is governed as a controlled vocabulary. Code ACT means Active and code INA means Inactive or deactivated.",
+      "kind": "rdm",
+      "access": "public",
+      "entities": [
+        "Party-Status",
+        "Code-ACT",
+        "Code-INA"
+      ]
+    },
+    {
+      "id": "D13",
+      "title": "Customer status mapping",
+      "text": "The CRM value DISABLED maps to approved Party Status code INA. Mapping owner is Data Governance.",
+      "kind": "rdm",
+      "access": "engineer",
+      "entities": [
+        "Code-INA",
+        "Data-Governance"
+      ]
+    },
+    {
+      "id": "D14",
+      "title": "Supplier risk register",
+      "text": "Northforge risk status was put under review after two late shipments. Vendor Risk Office owns the risk review.",
+      "kind": "supplier",
+      "access": "steward",
+      "entities": [
+        "Northforge",
+        "Vendor-Risk"
+      ]
+    },
+    {
+      "id": "D15",
+      "title": "Supplier contract metadata",
+      "text": "The Northforge Components supply contract for Valve-742 contains replacement lead-time commitments and escalation policy.",
+      "kind": "supplier",
+      "access": "public",
+      "entities": [
+        "Northforge",
+        "Valve-742",
+        "Contract-44"
+      ]
+    },
+    {
+      "id": "D16",
+      "title": "Vendor risk oversight",
+      "text": "Vendor Risk Office monitors repeated supplier delays. A risk flag does not automatically mean the supplier is deactivated.",
+      "kind": "policy",
+      "access": "public",
+      "entities": [
+        "Vendor-Risk",
+        "Northforge"
+      ]
+    },
+    {
+      "id": "D17",
+      "title": "Graph query design for dependencies",
+      "text": "Dependency impact is traced by supplier supplies component, component installedIn asset, and asset governedBy maintenance plan.",
+      "kind": "architecture",
+      "access": "public",
+      "entities": [
+        "Northforge",
+        "Valve-742",
+        "Pump-3",
+        "Maintenance-MP9"
+      ]
+    },
+    {
+      "id": "D18",
+      "title": "Vector index engineering note",
+      "text": "Enterprise search indexes document chunks with vector dimensions, model versions and document-level access controls.",
+      "kind": "architecture",
+      "access": "public",
+      "entities": [
+        "Search-Index"
+      ]
+    },
+    {
+      "id": "D19",
+      "title": "Hybrid retrieval architecture",
+      "text": "Hybrid search combines BM25 keyword ranking and TF-IDF or neural vector ranking using reciprocal rank fusion. A reranker is optional.",
+      "kind": "architecture",
+      "access": "public",
+      "entities": [
+        "Search-Index"
+      ]
+    },
+    {
+      "id": "D20",
+      "title": "Context graph decision memory",
+      "text": "A decision graph links an action to actor, evidence snapshot, applicable policy version, and recorded time.",
+      "kind": "architecture",
+      "access": "public",
+      "entities": [
+        "Decision-Graph",
+        "Approval-APR81"
+      ]
+    },
+    {
+      "id": "D21",
+      "title": "Graph provenance contract",
+      "text": "Each extracted graph relation must link to the source document and its revision, so downstream explanations are auditable.",
+      "kind": "metadata",
+      "access": "public",
+      "entities": [
+        "Decision-Graph",
+        "Search-Index"
+      ]
+    },
+    {
+      "id": "D22",
+      "title": "Incident 917 critical alert",
+      "text": "Incident INC-917 reported pressure anomalies for Sensor-17. The alert requires on-call engineer triage.",
+      "kind": "maintenance",
+      "access": "engineer",
+      "entities": [
+        "Sensor-17",
+        "East-Plant"
+      ]
+    },
+    {
+      "id": "D23",
+      "title": "Document access restrictions",
+      "text": "Viewer access allows only public documents. Engineers may read engineering records; stewards may additionally inspect approval and risk records.",
+      "kind": "policy",
+      "access": "public",
+      "entities": [
+        "Access-Policy"
+      ]
+    },
+    {
+      "id": "D24",
+      "title": "Source freshness and stale index",
+      "text": "The supplier-risk index checkpoint was recorded before the latest ERP update. Results must show source and ingestion timestamps.",
+      "kind": "metadata",
+      "access": "steward",
+      "entities": [
+        "Northforge",
+        "Search-Index"
+      ]
+    },
+    {
+      "id": "D25",
+      "title": "GraphRAG corpus-level summary",
+      "text": "GraphRAG local search resolves entities and expands relevant text; global search can summarize detected communities across a corpus.",
+      "kind": "architecture",
+      "access": "public",
+      "entities": [
+        "Search-Index",
+        "Decision-Graph"
+      ]
+    },
+    {
+      "id": "D26",
+      "title": "Policy override temporal context",
+      "text": "An emergency purchasing exception expires on the next review date. Approvals must be rechecked against valid time.",
+      "kind": "approval",
+      "access": "steward",
+      "entities": [
+        "Approval-APR81",
+        "Access-Policy"
+      ]
+    },
+    {
+      "id": "D27",
+      "title": "Customer 360 validation policy",
+      "text": "Customer 360 publication requires a named steward, lineage evidence and documented quality checks before release.",
+      "kind": "policy",
+      "access": "public",
+      "entities": [
+        "Customer360",
+        "Data-Governance"
+      ]
+    },
+    {
+      "id": "D28",
+      "title": "Asset dependency semantic model",
+      "text": "The maintenance ontology defines Supplier, Component, Machine, Site and MaintenancePlan classes with typed property paths.",
+      "kind": "ontology",
+      "access": "public",
+      "entities": [
+        "Northforge",
+        "Valve-742",
+        "Pump-3",
+        "East-Plant",
+        "Maintenance-MP9"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "a": "Northforge",
+      "relation": "supplies",
+      "b": "Valve-742",
+      "access": "public"
+    },
+    {
+      "a": "Northforge",
+      "relation": "governedBy",
+      "b": "Vendor-Risk",
+      "access": "public"
+    },
+    {
+      "a": "Northforge",
+      "relation": "coveredBy",
+      "b": "Contract-44",
+      "access": "public"
+    },
+    {
+      "a": "Valve-742",
+      "relation": "installedIn",
+      "b": "Pump-3",
+      "access": "engineer"
+    },
+    {
+      "a": "Pump-3",
+      "relation": "locatedAt",
+      "b": "East-Plant",
+      "access": "public"
+    },
+    {
+      "a": "Pump-3",
+      "relation": "governedBy",
+      "b": "Maintenance-MP9",
+      "access": "engineer"
+    },
+    {
+      "a": "Pump-3",
+      "relation": "affectedBy",
+      "b": "Approval-APR81",
+      "access": "steward"
+    },
+    {
+      "a": "East-Plant",
+      "relation": "hasSensor",
+      "b": "Sensor-17",
+      "access": "public"
+    },
+    {
+      "a": "Customer360",
+      "relation": "ownedBy",
+      "b": "Data-Governance",
+      "access": "public"
+    },
+    {
+      "a": "Customer360",
+      "relation": "consumes",
+      "b": "CRM-Accounts",
+      "access": "public"
+    },
+    {
+      "a": "Customer360",
+      "relation": "consumes",
+      "b": "ERP-Parties",
+      "access": "public"
+    },
+    {
+      "a": "CRM-Accounts",
+      "relation": "producedBy",
+      "b": "Customer-Platform",
+      "access": "public"
+    },
+    {
+      "a": "CRM-Accounts",
+      "relation": "ownedBy",
+      "b": "CRM-Operations",
+      "access": "public"
+    },
+    {
+      "a": "Party-Status",
+      "relation": "hasConcept",
+      "b": "Code-ACT",
+      "access": "public"
+    },
+    {
+      "a": "Party-Status",
+      "relation": "hasConcept",
+      "b": "Code-INA",
+      "access": "public"
+    },
+    {
+      "a": "Access-Policy",
+      "relation": "approvedBy",
+      "b": "Data-Governance",
+      "access": "public"
+    },
+    {
+      "a": "Code-INA",
+      "relation": "managedBy",
+      "b": "Data-Governance",
+      "access": "public"
+    },
+    {
+      "a": "Approval-APR81",
+      "relation": "appliesPolicy",
+      "b": "Access-Policy",
+      "access": "steward"
+    },
+    {
+      "a": "Approval-APR81",
+      "relation": "recordedIn",
+      "b": "Decision-Graph",
+      "access": "steward"
+    },
+    {
+      "a": "Search-Index",
+      "relation": "provenanceTrackedBy",
+      "b": "Decision-Graph",
+      "access": "public"
+    }
+  ],
+  "queries": [
+    {
+      "q": "Which assets depend on Northforge Valve-742?",
+      "gold": [
+        "D01",
+        "D02",
+        "D03",
+        "D17",
+        "D28"
+      ],
+      "explain": "Multi-hop dependency across supplier, component and maintenance plan."
+    },
+    {
+      "q": "Who owns Customer 360 and which source datasets feed it?",
+      "gold": [
+        "D06",
+        "D07",
+        "D08",
+        "D09"
+      ],
+      "explain": "Catalog ownership and source lineage require compatible entity identifiers."
+    },
+    {
+      "q": "How is data product access approved and audited?",
+      "gold": [
+        "D10",
+        "D11",
+        "D23"
+      ],
+      "explain": "Keyword precision and policy citations; steward-only decisions must remain restricted."
+    },
+    {
+      "q": "Which reference code means deactivated customer?",
+      "gold": [
+        "D12",
+        "D13"
+      ],
+      "explain": "Exact approved code INA, including a synonym and a local-to-approved mapping."
+    },
+    {
+      "q": "Why was Pump-3 service delayed?",
+      "gold": [
+        "D03",
+        "D04"
+      ],
+      "explain": "Answer requires engineering context plus approval evidence unavailable to viewers."
+    },
+    {
+      "q": "What is the latest risk on Northforge supplier?",
+      "gold": [
+        "D14",
+        "D16",
+        "D24"
+      ],
+      "explain": "A current risk claim requires freshness and role-based access to risk records."
+    }
+  ]
+}

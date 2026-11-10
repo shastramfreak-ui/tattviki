@@ -1,0 +1,33 @@
+{
+  "release": "v12",
+  "curriculum_topics": 707,
+  "new_lessons": 42,
+  "learning_paths_added": 4,
+  "graph_datasets": 12,
+  "graph_nodes": 360,
+  "graph_directed_edges": 616,
+  "browser_checks_passed": 35,
+  "source_checks": [
+    "707 unique titles and guides",
+    "Graph Theory Lab from Studio model",
+    "Studio Code Lab migration",
+    "NetworkX algorithm cross-check across all twelve multigraphs",
+    "7 Turtle sample documents parsed",
+    "512-triple three-format Studio export equivalence"
+  ],
+  "unit_tests_passed": {
+    "enterprise_retrieval": 11,
+    "enterprise_mdm_rdm": 6,
+    "graph_capstone": 3,
+    "semantic_backend": 11
+  },
+  "known_limits": [
+    "GitHub Pages static hosting cannot run the Python backend",
+    "Code Lab includes a teaching subset of SPARQL/Turtle and is not a full query engine",
+    "Browser Graph Theory Lab implements 6 algorithms, not the entire graph-algorithm curriculum",
+    "CAG/CRAG are explained, not deployed as actual LLM/GPU systems",
+    "Automated code tests are not a formal production security audit",
+    "Actual GitHub Pages deployment must be verified on the repository"
+  ],
+  "licenses": "Original educational text and fictional datasets CC BY 4.0; source code MIT; third-party standards referenced externally."
+}

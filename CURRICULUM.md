@@ -1,6 +1,6 @@
 # Tāttvikī curriculum
 
-The curriculum contains **613 distinct topics** across 14 learning paths. It combines 13 original starter lessons, 240 legacy topic-focused micro-lessons across 12 modules, and 360 advanced enterprise lessons across 15 more modules.
+The curriculum contains **665 distinct topics** across 20 learning paths. It combines 13 original starter lessons, 240 legacy topic-focused micro-lessons across 12 modules, and 360 advanced enterprise lessons across 15 more modules, and 52 original AI retrieval / GraphRAG / context-graph lessons across six new paths.
 
 **Editorial disclosure:** The 240 legacy micro-lessons have original topic titles and contextual examples, but share a concise three-objective teaching format and general knowledge-check pattern. They are a breadth-first syllabus, not 240 independently peer-reviewed textbook chapters. Advanced mastery comes from the executable labs and official references, and deeper unique content should be added progressively.
 
@@ -265,3 +265,46 @@ The additional tracks span enterprise metadata (catalogs, lineage, DCAT, DCMI, P
 **Content depth:** the 360 new entries each define a specific topic, a matching source-to-target implementation assignment, a synthetic Turtle example, a negative-path review, a testable acceptance criterion and a source link, but retain a shared lesson layout. They are distinct scoped lessons, not 360 independently peer-reviewed in-depth textbook chapters. The 12 industry case blueprints are more bespoke; executable work is in the linked local labs.
 
 **Safety:** all scenarios are synthetic, and links to vendor tools, standards and terminologies do not transfer their licenses. See the preliminary audit at `LEGAL_AND_DATA_REVIEW.md`.
+
+
+## Advanced Retrieval, Vectors, Context Graphs & Agentic Systems (v11)
+
+See **[AI_CURRICULUM.md](AI_CURRICULUM.md)** for all 52 added lessons, the six new learning paths, their exact technical distinctions, verified primary sources and experimental limitations. The Retrieval Systems Lab is at `#retrieval` and the offline capstone at `projects/enterprise-retrieval-rag/`.
+
+
+## v13 — SHACL from zero to production (30 lessons)
+
+Every lesson has its own explanation, actual Turtle example, verification assignment and technical distinction.
+
+1. **[Why SHACL exists: validation versus inference](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-01)** — RDF and OWL can describe knowledge without imposing a closed-world record schema.
+2. **[Separate data graphs, shapes graphs and ontology graphs](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-02)** — A SHACL validation run takes a data graph and shapes graph.
+3. **[Create your first sh:NodeShape](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-03)** — A sh:NodeShape represents constraints applied to nodes.
+4. **[Choose focus nodes with targetClass and targetNode](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-04)** — sh:targetClass selects instances of a class, while sh:targetNode names individual resources.
+5. **[Write sh:property and direct sh:path](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-05)** — Property shapes operate on values reachable through a path from a focus node.
+6. **[Require and limit values with minCount and maxCount](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-06)** — sh:minCount checks the lower bound on values of a property; sh:maxCount checks the upper bound.
+7. **[Validate literal datatypes with sh:datatype](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-07)** — sh:datatype requires literal values with the named RDF datatype.
+8. **[Enforce object types with sh:class](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-08)** — sh:class constrains each property value to be an instance of a class under the validator’s active entailment regime.
+9. **[Distinguish IRIs and literals with sh:nodeKind](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-09)** — sh:nodeKind tests whether values are IRIs, blank nodes or literals.
+10. **[Apply lexical constraints with sh:pattern](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-10)** — sh:pattern uses regular expressions against lexical forms.
+11. **[Constrain accepted values using sh:in](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-11)** — sh:in accepts an RDF list of allowed terms.
+12. **[Require a specific relationship value using sh:hasValue](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-12)** — sh:hasValue requires at least one occurrence of an exact RDF term in a path’s values.
+13. **[Bound quantitative measurements with minInclusive and maxInclusive](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-13)** — sh:minInclusive and sh:maxInclusive compare numeric or ordered literal values with inclusive thresholds.
+14. **[Use severities, messages and quality levels](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-14)** — sh:severity labels a constraint result as violation, warning, or info.
+15. **[Closed shapes and ignored properties](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-15)** — sh:closed true rejects predicates not listed in property shapes, except the deliberately ignored properties.
+16. **[Combine requirements using sh:or, sh:and and sh:not](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-16)** — Logical constraint components compose shapes: sh:or accepts a list where any member must conform, sh:and requires all members, and sh:not rejects conformity to a forbidden shape.
+17. **[Qualify cardinality with qualifiedValueShape](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-17)** — sh:qualifiedValueShape counts only values that conform to a specified shape.
+18. **[Property paths: inverse, sequence and alternative](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-18)** — SHACL property paths can follow inverse links, RDF lists of predicates for sequences, or alternative paths.
+19. **[SPARQL-based SHACL constraints](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-19)** — SHACL-SPARQL can express graph-wide checks that are difficult to represent with Core constraints.
+20. **[Read SHACL validation reports precisely](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-20)** — A validation report is an RDF graph with sh:ValidationReport, sh:conforms and sh:result entries.
+21. **[Execute SHACL from Python with RDFLib and pySHACL](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-21)** — Python can load Turtle with RDFLib and run pyshacl.validate against a separate shapes graph.
+22. **[Run the Apache Jena SHACL CLI](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-22)** — Apache Jena offers an independent SHACL processor with a CLI, Java API and integrations with its RDF dataset stack.
+23. **[Set up a GraphDB SHACL-enabled repository](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-23)** — GraphDB implements SHACL validation as a repository configuration.
+24. **[Validate SKOS concepts and RDM releases](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-24)** — Reference-data validation often needs language-aware SKOS label checks, concept-scheme membership, approved mapping predicates and lifecycle metadata.
+25. **[SHACL data contracts for metadata and MDM](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-25)** — A data contract can combine semantic meaning with structural rules: required identifiers, stewardship ownership, allowed RDM statuses and lineage links.
+26. **[Integrate SHACL checks into CI/CD quality gates](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-26)** — A reliable pipeline validates syntax first, SHACL second, and downstream competency queries third.
+27. **[Version shapes and manage semantic compatibility](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-27)** — A shape release is an interface contract.
+28. **[Debug inference, class targeting and false passes](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-28)** — Focus nodes may not be selected when rdf:type is absent, even when a class is implied by RDFS domain or subclass rules.
+29. **[Explore SHACL Advanced Features safely](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-29)** — SHACL Advanced Features add capabilities beyond Core, such as rules and custom targets; processor support varies and may require explicit flags.
+30. **[Design a complete SHACL validation capstone](https://shastramfreak-ui.github.io/tattviki/#lesson/shacl-30)** — A production-style capstone should separate ontology schema, source-to-RDF transforms, SHACL quality rules, sample reference data, violations, a report parser, unit tests and a release gate.
+
+**Practice:** [SHACL Validation Lab](https://shastramfreak-ui.github.io/tattviki/#shacl) · [Python/pySHACL capstone](projects/shacl-validation-lab/README.md) · [standalone tool guide](SHACL_VALIDATION_GUIDE.md).

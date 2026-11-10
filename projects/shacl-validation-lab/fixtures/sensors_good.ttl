@@ -1,0 +1,10 @@
+@prefix ex: <https://tattviki.example/education/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+ex:SensorA a ex:Sensor .
+ex:Observation10 a ex:Observation ; ex:observedBy ex:SensorA ; ex:value 20.50 ; ex:observedAt "2026-10-27T12:00:00Z"^^xsd:dateTime .

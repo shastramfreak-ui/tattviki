@@ -8,7 +8,7 @@
 
 [**Website**](https://shastramfreak-ui.github.io/tattviki/) · [**Ontology Studio**](https://shastramfreak-ui.github.io/tattviki/#studio) · [**Semantic Workbench**](https://shastramfreak-ui.github.io/tattviki/#semantic) · [**Curriculum**](CURRICULUM.md) · [**Contribute**](CONTRIBUTING.md)
 
-**Version 10** · **613 learning topics** · **15 learning modules** · **12 enterprise use-case blueprints**
+**Version 13** · **737 learning topics** · **30 new SHACL units** · **12 graph datasets** · **12 enterprise use-case blueprints**
 
 **Created by Shubham**
 
@@ -20,9 +20,49 @@
 
 > **Deployment note:** The website links above refer to this repository's expected GitHub Pages address. The site is available there only after a successful GitHub Pages deployment.
 
-## New in v10 — detailed learning chapters & accurate progress
+## New in v13 — SHACL Validation from first shape to production quality gate
 
-Every learning topic now opens a multi-section chapter containing **concept explanations, worked enterprise scenarios, example RDF/SPARQL, tradeoffs, acceptance tests, reflection questions and a knowledge check**. The original 613 topics and existing visual ontology studio remain available.
+**[Open the SHACL Validation Lab](https://shastramfreak-ui.github.io/tattviki/#shacl)** · **[Read 30-lesson SHACL path](CURRICULUM.md#v13--shacl-from-zero-to-production-30-lessons)** · **[SHACL hands-on guide](SHACL_VALIDATION_GUIDE.md)** · **[Python validator & examples](projects/shacl-validation-lab/README.md)**
+
+A new beginner-to-advanced learning path provides **30 individually authored SHACL study chapters** covering node/property shapes, targeting, cardinality, datatypes, class checks, allowed values, numeric bounds, validation reports, inference choices, SPARQL constraints, pySHACL, Apache Jena, GraphDB, and production quality gates.
+
+The browser SHACL Lab contains **six synthetic enterprise scenarios**, each with editable SHACL shapes and passing/failing RDF data. It evaluates a **documented SHACL Core subset** and shows individual constraint results. Download the same Turtle files and reproduce validation in pySHACL or Apache Jena using the included capstone. The full engines do **not** run on GitHub Pages without separate services.
+
+**Repetitive lesson-content audit:** v13 replaces several prominent stock introduction, example and verification templates while retaining all older lesson IDs and saved progress. See [content-review findings](CONTENT_REVIEW_V13.md) and [machine audit](CONTENT_AUDIT_V13.json). This is a structural improvement, not proof that every legacy chapter is entirely non-repetitive.
+
+![SHACL Validation Lab](previews/v13-shacl-dark.png)
+
+## Previous v12 — Graph theory, algorithms, CAG and a consolidated Studio
+
+The standalone **Playground** has been consolidated into the **Ontology Studio Code Lab** (`#studio/code`). RDF/Turtle editing, beginner SPARQL, graph inspection and challenge exercises are retained; the old `#playground` route remains compatible. You can import the **current Studio ontology's Turtle export** into Code Lab. Full OWL/SPARQL/SHACL capabilities still require the optional local backend.
+
+**[Open the new Graph Theory Lab](https://shastramfreak-ui.github.io/tattviki/#graphlab)** for 12 original fictional enterprise/industry networks, **360 nodes and 616 directed relationships**. Compute BFS, Dijkstra, weak components, degree centrality, unweighted PageRank, and topological/cycle checks. Switch between radial, grid and swimlane views; pan, zoom, select, inspect and export.
+
+**42 distinct new lessons** in four learning paths teach graph mathematics, algorithms, graph governance and CAG/CRAG, bringing the total to **707**. The new lessons explain algorithms, graph identity, provenance, graph-RAG patterns and why Cache-Augmented Generation is not the same as Corrective RAG.
+
+[**Read the v12 field guide**](GRAPH_THEORY_AND_CAG_GUIDE.md) · [**Explore the 12 graph datasets**](data/graph_examples.json) · [**Graph algorithms source code**](assets/graph-lab.js)
+
+![Graph Theory Lab](previews/v12-graph-theory-dark.png)
+
+## Previous v11 — AI retrieval, vectors, GraphRAG and context graphs
+
+**52 new distinct advanced lessons** in six dedicated paths: Vector Foundations, Retrieval & RAG, GraphRAG Engineering, Context Graphs & Memory, Agentic Knowledge Systems, and Enterprise AI Architecture.
+
+Every new lesson includes an original technical explanation, an enterprise scenario, explicit failure conditions, a design or executable code example, verification exercises, a topic-specific knowledge check, and links to primary references. Some chapters include additional deep technical explanations. The material is structured for study, but it is **not a replacement for full specialist textbooks or the official documentation**.
+
+**[Launch the browser Retrieval Systems Lab](https://shastramfreak-ui.github.io/tattviki/#retrieval)** — run BM25, a transparent TF-IDF/cosine vector proxy, hybrid reciprocal-rank fusion, and a typed graph-expansion simulation over 28 fictional documents. Compare six questions, three access roles and retrieval metrics. The proxy is **not a neural embedding** and the lab does **not call an LLM or external service**.
+
+**[Run the offline Python lab](projects/enterprise-retrieval-rag/README.md)** — zero API keys, no external dataset downloads. It supports core search algorithms, role-aware visibility, graph traversal and unit tests. Start here if you want reproducible implementation practice.
+
+**[Read the 2026 industry field guide](AI_LANDSCAPE_2026.md)** — compare which retrieval architecture fits each question, plus the role of context graphs and agents.
+
+**[Browse the advanced AI syllabus](AI_CURRICULUM.md)** — definitions, limitations and authoritative technical sources (Microsoft GraphRAG, Neo4j GraphRAG, Azure AI Search, Anthropic contextual retrieval, W3C PROV).
+
+![AI Retrieval Systems Lab](previews/v11-retrieval-dark.png)
+
+## Previous v10 improvements — detailed chapters and progress fixes
+
+Every learning topic now opens a multi-section chapter containing **concept explanations, worked enterprise scenarios, example RDF/SPARQL, tradeoffs, acceptance tests, reflection questions and a knowledge check**. The previous 665 topics and existing visual ontology studio remain available, alongside 42 new study units.
 
 **Progress fix:** answering a quiz correctly immediately marks its lesson complete. The homepage and learning-path dashboard both update; completion and quiz results are saved in the current browser. In Learning Paths you can export a JSON progress backup and restore it later (including on another device).
 
@@ -36,7 +76,12 @@ Chapters are larger and more instructional than the previous short summaries; sp
 
 - [What is Tāttvikī?](#what-is-tāttvikī)
 - [Features and capabilities](#features-and-capabilities)
+- [SHACL validation course and full-tool lab](#new-in-v13--shacl-validation-from-first-shape-to-production-quality-gate)
 - [Learning-content guide](LEARNING_CONTENT_GUIDE.md)
+- [Content review and repetition audit](CONTENT_REVIEW_V13.md)
+- [Advanced AI / GraphRAG curriculum](AI_CURRICULUM.md)
+- [Graph Theory Lab and consolidated Code Lab](#new-in-v12--graph-theory-algorithms-cag-and-a-consolidated-studio)
+- [Retrieval Systems Lab](#retrieval-systems-lab)
 - [Explore the learning paths](#explore-the-learning-paths)
 - [Get started locally](#get-started-locally)
 - [Visual Ontology Studio v9](#visual-ontology-studio-v9)
@@ -60,14 +105,14 @@ It brings together:
 - **Enterprise semantics:** metadata catalogs, data lineage, master data management (MDM), reference data management (RDM), governance, integration, and knowledge-graph pipelines.
 - **Advanced topics:** reasoning, GraphRAG, semantic interoperability, data products, architecture patterns, and domain-focused implementations.
 
-The **613 entries** consist of foundational lessons, concise micro-lessons, and enterprise topic briefs. They are *not* all full textbook-length chapters. See [CURRICULUM.md](CURRICULUM.md) and [the searchable topic index](CURRICULUM_INDEX.csv).
+The **707 entries** consist of foundational lessons, concise micro-lessons, and enterprise topic briefs. They are *not* all full textbook-length chapters. See [CURRICULUM.md](CURRICULUM.md) and [the searchable topic index](CURRICULUM_INDEX.csv).
 
 ## Features and capabilities
 
 | Capability | Free browser experience | Optional local backend |
 | --- | --- | --- |
 | Lessons, quizzes, searchable glossary and progress | ✅ | Not required |
-| Turtle practice, beginner SPARQL challenges and graph explorer | ✅ Teaching subset | Not required |
+| Studio Code Lab (Turtle, beginner SPARQL, RDF preview) | ✅ Teaching subset | Not required |
 | Visual OWL/RDF ontology modeling | ✅ Interactive graph, five layouts, zoom/pan, node dragging, focus | Not required |
 | New blank ontology and multi-domain project starters | ✅ | Not required |
 | Class/property/individual/SKOS/SHACL graph views | ✅ | Not required |
@@ -76,6 +121,7 @@ The **613 entries** consist of foundational lessons, concise micro-lessons, and 
 | Turtle, RDF/XML, JSON-LD and diagram export | ✅ | Not required |
 | Browser RDFS inference preview and explained findings | ✅ Supported subset | Not required |
 | Relationship inspection and structural quality diagnostics | ✅ Supported subset | Not required |
+| Graph Theory Lab (12 networks, six graph algorithms) | ✅ Independently checked against NetworkX | Not required |
 | General SPARQL execution on an ontology | — | ✅ RDFLib, read-only |
 | OWL RL inference and SHACL Core validation | — | ✅ `owlrl` and `pySHACL` |
 | Shared projects, access roles and version history | — | ✅ SQLite-backed API |
@@ -97,6 +143,14 @@ In **Semantic Workbench** (`#semantic`), analyze the ontology currently open in 
 
 The browser-only analysis works on GitHub Pages; the advanced engine and shared revisions do not run on GitHub Pages itself.
 
+## Retrieval Systems Lab
+
+Open `#retrieval` to compare search methods over the same original, synthetic enterprise corpus. Try the role selector: the viewer sees public evidence, while engineers and stewards have different authorized views. Then switch between lexical retrieval, transparent TF-IDF/cosine, RRF and graph expansion. The lab reports a bounded, labelled synthetic evaluation and prints the source evidence rather than generating an unsupported answer.
+
+**Production guidance:** Actual neural embedding generation, approximate nearest-neighbor indexes, LLM-based synthesis, Microsoft GraphRAG indexing, comprehensive safety controls and real enterprise access management all require additional components and independent validation. This free GitHub Pages lab is educational only.
+
+Run `python projects/enterprise-retrieval-rag/retrieval_lab.py --mode hybrid` from the project root to reproduce the Python example. Run the tests from the project folder with `python -m unittest -v test_retrieval.py`.
+
 ## Explore the learning paths
 
 | Area | Example subjects |
@@ -110,6 +164,11 @@ The browser-only analysis works on GitHub Pages; the advanced engine and shared 
 | Enterprise data management | Metadata, MDM, RDM, master records, cataloging, data contracts |
 | Governance and operations | Versioning, stewardship, interoperability, FAIR, change management |
 | Advanced and applied topics | Reasoning, graph algorithms, GraphRAG, industry use cases |
+| Vector foundations | Embeddings, cosine similarity, sparse/dense retrieval, ANN, HNSW, evaluation |
+| Retrieval & RAG | BM25, hybrid RRF, contextual retrieval, reranking, citation verification |
+| GraphRAG engineering | Multi-hop, local/global/DRIFT search, communities, entity resolution |
+| Context graphs & agents | Temporal context, decisions, agent memory, tool routing, provenance |
+| Enterprise AI architecture | Permission-aware retrieval, metadata lineage, index refresh, latency, tests |
 
 Browse all subjects using the **Lessons** section of the website, [CURRICULUM.md](CURRICULUM.md), or [CURRICULUM_INDEX.csv](CURRICULUM_INDEX.csv).
 
@@ -301,7 +360,7 @@ Tattviki/
 
 | Check | Command |
 | --- | --- |
-| Curriculum integrity (613 entries) | `node scripts/check_content.cjs` |
+| Curriculum integrity (707 entries) | `node scripts/check_content.cjs` and `node scripts/check_v12_graph.cjs` |
 | Page/route rendering | `node scripts/test_ui_render.cjs` |
 | Browser interactions | `python scripts/test_browser.py` |
 | Ontology Studio regression tests | `python scripts/test_studio.py` |

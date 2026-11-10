@@ -1,0 +1,902 @@
+[
+  {
+    "id": "shacl-01",
+    "path": "shacl-mastery",
+    "time": 24,
+    "title": "Why SHACL exists: validation versus inference",
+    "description": "RDF and OWL can describe knowledge without imposing a closed-world record schema.",
+    "analogy": "A mastered party arrives without its primary display label. Reasoning may still infer its type; the publishing pipeline must decide whether to release it.",
+    "learn": [
+      "RDF and OWL can describe knowledge without imposing a closed-world record schema.",
+      "Do not claim that a class restriction such as owl:someValuesFrom is a mandatory field validation rule; open-world semantics can satisfy it via an unknown witness.",
+      "Remove ex:name from a Person in the People scenario and explain why SHACL flags it while an OWL reasoner need not."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:PersonShape a sh:NodeShape ; sh:targetClass ex:Person ; sh:property [ sh:path ex:name ; sh:minCount 1 ] .\n",
+    "try": "Remove ex:name from a Person in the People scenario and explain why SHACL flags it while an OWL reasoner need not. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For why shacl exists: validation versus inference, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Accept the a mastered party arrives without its primary display label example solely because it can be serialized without a syntax error.",
+        "Judge why shacl exists: validation versus inference by counting nodes without checking that its chosen focus nodes satisfy the actual shape.",
+        "Identify and test the actual contract: Remove ex:name from a Person in the People scenario and explain why SHACL flags it while an OWL reasoner need not."
+      ],
+      "answer": 2,
+      "why": "The contract must be exercised with data that can fail: Remove ex:name from a Person in the People scenario and explain why SHACL flags it while an OWL reasoner need not."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-02",
+    "path": "shacl-mastery",
+    "time": 28,
+    "title": "Separate data graphs, shapes graphs and ontology graphs",
+    "description": "A SHACL validation run takes a data graph and shapes graph.",
+    "analogy": "The catalog ingests datasets daily, while its governance team releases validation rules monthly. Keep the data snapshot and rules release in the audit record.",
+    "learn": [
+      "A SHACL validation run takes a data graph and shapes graph.",
+      "Embedding one unversioned constraint file into an ETL script makes historic failures hard to reproduce.",
+      "Run the same data against two shape versions and record both the pass/fail state and exact shapes hash."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:DatasetShape a sh:NodeShape ; sh:targetClass ex:Dataset ; sh:property [ sh:path dct:title ; sh:minCount 1 ] .\n",
+    "try": "Run the same data against two shape versions and record both the pass/fail state and exact shapes hash. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For separate data graphs, shapes graphs and ontology graphs, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Judge separate data graphs, shapes graphs and ontology graphs by counting nodes without checking that its chosen focus nodes satisfy the actual shape.",
+        "Identify and test the actual contract: Run the same data against two shape versions and record both the pass/fail state and exact shapes hash.",
+        "Accept the the catalog ingests datasets daily, while its governance team releases validation rules monthly example solely because it can be serialized without a syntax error."
+      ],
+      "answer": 1,
+      "why": "The contract must be exercised with data that can fail: Run the same data against two shape versions and record both the pass/fail state and exact shapes hash."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-03",
+    "path": "shacl-mastery",
+    "time": 32,
+    "title": "Create your first sh:NodeShape",
+    "description": "A sh:NodeShape represents constraints applied to nodes.",
+    "analogy": "A customer master has one top-level quality contract whose properties are maintained by the MDM team.",
+    "learn": [
+      "A sh:NodeShape represents constraints applied to nodes.",
+      "Declaring a NodeShape without a target can be useful for reusable nested shapes, but it will not automatically select your customer instances.",
+      "Type ex:C100 as ex:Customer, then add a property constraint and confirm it becomes a focus node."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:CustomerShape a sh:NodeShape ; sh:targetClass ex:Customer .\n",
+    "try": "Type ex:C100 as ex:Customer, then add a property constraint and confirm it becomes a focus node. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For create your first sh:nodeshape, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Identify and test the actual contract: Type ex:C100 as ex:Customer, then add a property constraint and confirm it becomes a focus node.",
+        "Accept the a customer master has one top-level quality contract whose properties are maintained by the mdm team example solely because it can be serialized without a syntax error.",
+        "Judge create your first sh:nodeshape by counting nodes without checking that its chosen focus nodes satisfy the actual shape."
+      ],
+      "answer": 0,
+      "why": "The contract must be exercised with data that can fail: Type ex:C100 as ex:Customer, then add a property constraint and confirm it becomes a focus node."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-04",
+    "path": "shacl-mastery",
+    "time": 20,
+    "title": "Choose focus nodes with targetClass and targetNode",
+    "description": "sh:targetClass selects instances of a class, while sh:targetNode names individual resources.",
+    "analogy": "A reference-data publication validates every Concept but temporarily targets one imported legacy record for a migration exception.",
+    "learn": [
+      "sh:targetClass selects instances of a class, while sh:targetNode names individual resources.",
+      "A shape with the wrong target may pass while ignoring the invalid rows you intended to inspect.",
+      "Create a Person without ex:age, then switch the target to an unrelated class and observe the difference in focus-node count."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:PersonShape a sh:NodeShape ; sh:targetClass ex:Person .\nex:OneRecordShape a sh:NodeShape ; sh:targetNode ex:Ada .\n",
+    "try": "Create a Person without ex:age, then switch the target to an unrelated class and observe the difference in focus-node count. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For choose focus nodes with targetclass and targetnode, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Accept the a reference-data publication validates every concept but temporarily targets one imported legacy record for a migration exception example solely because it can be serialized without a syntax error.",
+        "Judge choose focus nodes with targetclass and targetnode by counting nodes without checking that its chosen focus nodes satisfy the actual shape.",
+        "Identify and test the actual contract: Create a Person without ex:age, then switch the target to an unrelated class and observe the difference in focus-node count."
+      ],
+      "answer": 2,
+      "why": "The contract must be exercised with data that can fail: Create a Person without ex:age, then switch the target to an unrelated class and observe the difference in focus-node count."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-05",
+    "path": "shacl-mastery",
+    "time": 24,
+    "title": "Write sh:property and direct sh:path",
+    "description": "Property shapes operate on values reachable through a path from a focus node.",
+    "analogy": "Retail orders reference customers through ex:customer, not through the literal ex:customerName field displayed in the UI.",
+    "learn": [
+      "Property shapes operate on values reachable through a path from a focus node.",
+      "A property shape checking the wrong predicate may report missing values even when a similarly named source field exists.",
+      "Rename the data predicate while leaving sh:path unchanged; diagnose the reported missing-value violation."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:OrderShape a sh:NodeShape ; sh:targetClass ex:Order ; sh:property [ sh:path ex:customer ; sh:minCount 1 ] .\n",
+    "try": "Rename the data predicate while leaving sh:path unchanged; diagnose the reported missing-value violation. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For write sh:property and direct sh:path, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Judge write sh:property and direct sh:path by counting nodes without checking that its chosen focus nodes satisfy the actual shape.",
+        "Identify and test the actual contract: Rename the data predicate while leaving sh:path unchanged; diagnose the reported missing-value violation.",
+        "Accept the retail orders reference customers through ex:customer, not through the literal ex:customername field displayed in the ui example solely because it can be serialized without a syntax error."
+      ],
+      "answer": 1,
+      "why": "The contract must be exercised with data that can fail: Rename the data predicate while leaving sh:path unchanged; diagnose the reported missing-value violation."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-06",
+    "path": "shacl-mastery",
+    "time": 28,
+    "title": "Require and limit values with minCount and maxCount",
+    "description": "sh:minCount checks the lower bound on values of a property; sh:maxCount checks the upper bound.",
+    "analogy": "The consumer expects precisely one principal legal name per mastered organization, even when many aliases exist in a separate SKOS label collection.",
+    "learn": [
+      "sh:minCount checks the lower bound on values of a property; sh:maxCount checks the upper bound.",
+      "Multiple synonymous labels should not automatically be rejected if they are intentionally stored under a separate alternative-label property.",
+      "Remove a required name, then add two values; identify the distinct constraint components reported."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:PersonShape a sh:NodeShape ; sh:targetClass ex:Person ; sh:property [ sh:path ex:name ; sh:minCount 1 ; sh:maxCount 1 ] .\n",
+    "try": "Remove a required name, then add two values; identify the distinct constraint components reported. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For require and limit values with mincount and maxcount, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Identify and test the actual contract: Remove a required name, then add two values; identify the distinct constraint components reported.",
+        "Accept the the consumer expects precisely one principal legal name per mastered organization, even when many aliases exist in a separate skos label collection example solely because it can be serialized without a syntax error.",
+        "Judge require and limit values with mincount and maxcount by counting nodes without checking that its chosen focus nodes satisfy the actual shape."
+      ],
+      "answer": 0,
+      "why": "The contract must be exercised with data that can fail: Remove a required name, then add two values; identify the distinct constraint components reported."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-07",
+    "path": "shacl-mastery",
+    "time": 32,
+    "title": "Validate literal datatypes with sh:datatype",
+    "description": "sh:datatype requires literal values with the named RDF datatype.",
+    "analogy": "A CRM source sends a string age of \"32\" but the mastered RDF contract requires xsd:integer.",
+    "learn": [
+      "sh:datatype requires literal values with the named RDF datatype.",
+      "Passing a numeric-looking string without datatype validation can corrupt downstream comparisons and SPARQL arithmetic.",
+      "Compare ex:age 32 with ex:age \"32\" and explain how the RDF terms differ."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:PersonShape a sh:NodeShape ; sh:targetClass ex:Person ; sh:property [ sh:path ex:age ; sh:datatype xsd:integer ] .\n",
+    "try": "Compare ex:age 32 with ex:age \"32\" and explain how the RDF terms differ. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For validate literal datatypes with sh:datatype, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Accept the a crm source sends a string age of \"32\" but the mastered rdf contract requires xsd:integer example solely because it can be serialized without a syntax error.",
+        "Judge validate literal datatypes with sh:datatype by counting nodes without checking that its chosen focus nodes satisfy the actual shape.",
+        "Identify and test the actual contract: Compare ex:age 32 with ex:age \"32\" and explain how the RDF terms differ."
+      ],
+      "answer": 2,
+      "why": "The contract must be exercised with data that can fail: Compare ex:age 32 with ex:age \"32\" and explain how the RDF terms differ."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-08",
+    "path": "shacl-mastery",
+    "time": 20,
+    "title": "Enforce object types with sh:class",
+    "description": "sh:class constrains each property value to be an instance of a class under the validator’s active entailment regime.",
+    "analogy": "A dataset ownership link mistakenly points to a software license instead of a stewardship organization.",
+    "learn": [
+      "sh:class constrains each property value to be an instance of a class under the validator’s active entailment regime.",
+      "Confusing sh:class with rdfs:range can lead to unintentional inferred types rather than an explicit validation failure.",
+      "Remove the owner’s rdf:type and compare browser validation with pySHACL using no pre-inference."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:DatasetShape a sh:NodeShape ; sh:targetClass ex:Dataset ; sh:property [ sh:path ex:steward ; sh:class ex:Organization ] .\n",
+    "try": "Remove the owner’s rdf:type and compare browser validation with pySHACL using no pre-inference. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For enforce object types with sh:class, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Judge enforce object types with sh:class by counting nodes without checking that its chosen focus nodes satisfy the actual shape.",
+        "Identify and test the actual contract: Remove the owner’s rdf:type and compare browser validation with pySHACL using no pre-inference.",
+        "Accept the a dataset ownership link mistakenly points to a software license instead of a stewardship organization example solely because it can be serialized without a syntax error."
+      ],
+      "answer": 1,
+      "why": "The contract must be exercised with data that can fail: Remove the owner’s rdf:type and compare browser validation with pySHACL using no pre-inference."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-09",
+    "path": "shacl-mastery",
+    "time": 24,
+    "title": "Distinguish IRIs and literals with sh:nodeKind",
+    "description": "sh:nodeKind tests whether values are IRIs, blank nodes or literals.",
+    "analogy": "An imported thesaurus provides a label as ex:ActiveWord instead of an RDF literal with language annotation.",
+    "learn": [
+      "sh:nodeKind tests whether values are IRIs, blank nodes or literals.",
+      "The string \"https://example.org/X\" is still a literal unless written as an RDF IRI.",
+      "Replace skos:prefLabel \"Active\"@en with an IRI and inspect nodeKind results."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:StatusShape a sh:NodeShape ; sh:targetClass skos:Concept ; sh:property [ sh:path skos:prefLabel ; sh:nodeKind sh:Literal ] .\n",
+    "try": "Replace skos:prefLabel \"Active\"@en with an IRI and inspect nodeKind results. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For distinguish iris and literals with sh:nodekind, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Identify and test the actual contract: Replace skos:prefLabel \"Active\"@en with an IRI and inspect nodeKind results.",
+        "Accept the an imported thesaurus provides a label as ex:activeword instead of an rdf literal with language annotation example solely because it can be serialized without a syntax error.",
+        "Judge distinguish iris and literals with sh:nodekind by counting nodes without checking that its chosen focus nodes satisfy the actual shape."
+      ],
+      "answer": 0,
+      "why": "The contract must be exercised with data that can fail: Replace skos:prefLabel \"Active\"@en with an IRI and inspect nodeKind results."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-10",
+    "path": "shacl-mastery",
+    "time": 28,
+    "title": "Apply lexical constraints with sh:pattern",
+    "description": "sh:pattern uses regular expressions against lexical forms.",
+    "analogy": "A pipeline registry requires identifiers such as PIPE-009, rejecting ad hoc labels like job9.",
+    "learn": [
+      "sh:pattern uses regular expressions against lexical forms.",
+      "A regex can validate the appearance of a code but cannot establish that it is a registered, active identifier.",
+      "Change PIPE-009 to PIPE-nine and confirm the shape reports a PatternConstraintComponent."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:PipelineShape a sh:NodeShape ; sh:targetClass ex:Pipeline ; sh:property [ sh:path ex:pipelineId ; sh:pattern \"^PIPE-[0-9]+$\" ] .\n",
+    "try": "Change PIPE-009 to PIPE-nine and confirm the shape reports a PatternConstraintComponent. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For apply lexical constraints with sh:pattern, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Accept the a pipeline registry requires identifiers such as pipe-009, rejecting ad hoc labels like job9 example solely because it can be serialized without a syntax error.",
+        "Judge apply lexical constraints with sh:pattern by counting nodes without checking that its chosen focus nodes satisfy the actual shape.",
+        "Identify and test the actual contract: Change PIPE-009 to PIPE-nine and confirm the shape reports a PatternConstraintComponent."
+      ],
+      "answer": 2,
+      "why": "The contract must be exercised with data that can fail: Change PIPE-009 to PIPE-nine and confirm the shape reports a PatternConstraintComponent."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-11",
+    "path": "shacl-mastery",
+    "time": 32,
+    "title": "Constrain accepted values using sh:in",
+    "description": "sh:in accepts an RDF list of allowed terms.",
+    "analogy": "Retail fulfillment only permits status IRIs from a governed lifecycle while local ERP codes map into them.",
+    "learn": [
+      "sh:in accepts an RDF list of allowed terms.",
+      "Do not mix labels with code IRIs. \"Open\" is not the same RDF term as ex:Open.",
+      "Use the retail lab to change ex:Open to ex:Unknown and inspect InConstraintComponent."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:OrderShape a sh:NodeShape ; sh:targetClass ex:Order ; sh:property [ sh:path ex:status ; sh:in ( ex:Open ex:Shipped ex:Cancelled ) ] .\n",
+    "try": "Use the retail lab to change ex:Open to ex:Unknown and inspect InConstraintComponent. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For constrain accepted values using sh:in, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Judge constrain accepted values using sh:in by counting nodes without checking that its chosen focus nodes satisfy the actual shape.",
+        "Identify and test the actual contract: Use the retail lab to change ex:Open to ex:Unknown and inspect InConstraintComponent.",
+        "Accept the retail fulfillment only permits status iris from a governed lifecycle while local erp codes map into them example solely because it can be serialized without a syntax error."
+      ],
+      "answer": 1,
+      "why": "The contract must be exercised with data that can fail: Use the retail lab to change ex:Open to ex:Unknown and inspect InConstraintComponent."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-12",
+    "path": "shacl-mastery",
+    "time": 20,
+    "title": "Require a specific relationship value using sh:hasValue",
+    "description": "sh:hasValue requires at least one occurrence of an exact RDF term in a path’s values.",
+    "analogy": "A reference concept must explicitly belong to the approved scheme even if it has additional links to imported scheme versions.",
+    "learn": [
+      "sh:hasValue requires at least one occurrence of an exact RDF term in a path’s values.",
+      "hasValue alone does not prevent a second, disallowed value; add sh:in or maxCount if exclusivity is intended.",
+      "Add the correct scheme to a failing Concept and then add an extra scheme; explain which constraint would reject the second value."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:StatusShape a sh:NodeShape ; sh:targetClass skos:Concept ; sh:property [ sh:path skos:inScheme ; sh:hasValue ex:StatusScheme ] .\n",
+    "try": "Add the correct scheme to a failing Concept and then add an extra scheme; explain which constraint would reject the second value. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For require a specific relationship value using sh:hasvalue, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Identify and test the actual contract: Add the correct scheme to a failing Concept and then add an extra scheme; explain which constraint would reject the second value.",
+        "Accept the a reference concept must explicitly belong to the approved scheme even if it has additional links to imported scheme versions example solely because it can be serialized without a syntax error.",
+        "Judge require a specific relationship value using sh:hasvalue by counting nodes without checking that its chosen focus nodes satisfy the actual shape."
+      ],
+      "answer": 0,
+      "why": "The contract must be exercised with data that can fail: Add the correct scheme to a failing Concept and then add an extra scheme; explain which constraint would reject the second value."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-13",
+    "path": "shacl-mastery",
+    "time": 24,
+    "title": "Bound quantitative measurements with minInclusive and maxInclusive",
+    "description": "sh:minInclusive and sh:maxInclusive compare numeric or ordered literal values with inclusive thresholds.",
+    "analogy": "An industrial sensor measures a synthetic 20.50 reading; values outside its tested interval trigger a review.",
+    "learn": [
+      "sh:minInclusive and sh:maxInclusive compare numeric or ordered literal values with inclusive thresholds.",
+      "Bounds do not substitute for unit metadata, calibration validity, or sensor quality flags.",
+      "Change the synthetic value to 999.0, verify the failure and document why the business bound was chosen."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:ObservationShape a sh:NodeShape ; sh:targetClass ex:Observation ; sh:property [ sh:path ex:value ; sh:datatype xsd:decimal ; sh:minInclusive 0 ; sh:maxInclusive 500 ] .\n",
+    "try": "Change the synthetic value to 999.0, verify the failure and document why the business bound was chosen. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For bound quantitative measurements with mininclusive and maxinclusive, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Accept the an industrial sensor measures a synthetic 20 example solely because it can be serialized without a syntax error.",
+        "Judge bound quantitative measurements with mininclusive and maxinclusive by counting nodes without checking that its chosen focus nodes satisfy the actual shape.",
+        "Identify and test the actual contract: Change the synthetic value to 999.0, verify the failure and document why the business bound was chosen."
+      ],
+      "answer": 2,
+      "why": "The contract must be exercised with data that can fail: Change the synthetic value to 999.0, verify the failure and document why the business bound was chosen."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-14",
+    "path": "shacl-mastery",
+    "time": 28,
+    "title": "Use severities, messages and quality levels",
+    "description": "sh:severity labels a constraint result as violation, warning, or info.",
+    "analogy": "A catalog allows a dataset to remain discoverable during an onboarding period even though an optional classification label is missing.",
+    "learn": [
+      "sh:severity labels a constraint result as violation, warning, or info.",
+      "Avoid treating all SHACL results as the same operational severity. Distinguish validation conformance from your organization’s quality acceptance criteria.",
+      "Generate both a blocking violation and a warning in pySHACL; decide how your CI job should respond."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:DatasetShape a sh:NodeShape ; sh:targetClass ex:Dataset ; sh:property [ sh:path dct:title ; sh:minCount 1 ; sh:severity sh:Warning ; sh:message \"Add a discoverable catalog title\" ] .\n",
+    "try": "Generate both a blocking violation and a warning in pySHACL; decide how your CI job should respond. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For use severities, messages and quality levels, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Judge use severities, messages and quality levels by counting nodes without checking that its chosen focus nodes satisfy the actual shape.",
+        "Identify and test the actual contract: Generate both a blocking violation and a warning in pySHACL; decide how your CI job should respond.",
+        "Accept the a catalog allows a dataset to remain discoverable during an onboarding period even though an optional classification label is missing example solely because it can be serialized without a syntax error."
+      ],
+      "answer": 1,
+      "why": "The contract must be exercised with data that can fail: Generate both a blocking violation and a warning in pySHACL; decide how your CI job should respond."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-15",
+    "path": "shacl-mastery",
+    "time": 32,
+    "title": "Closed shapes and ignored properties",
+    "description": "sh:closed true rejects predicates not listed in property shapes, except the deliberately ignored properties.",
+    "analogy": "A partner exchange API only accepts documented fields, while internal metadata enrichments are stored in a separate graph.",
+    "learn": [
+      "sh:closed true rejects predicates not listed in property shapes, except the deliberately ignored properties.",
+      "Closed shapes can break backwards compatibility when a source adds harmless metadata; evaluate versioning and extension points.",
+      "In the Python lab, add ex:unknownField to a targeted Person and verify a closed-shape violation."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:PersonShape a sh:NodeShape ; sh:targetClass ex:Person ; sh:closed true ; sh:ignoredProperties ( rdf:type ) ; sh:property [ sh:path ex:name ; sh:minCount 1 ] .\n",
+    "try": "In the Python lab, add ex:unknownField to a targeted Person and verify a closed-shape violation. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For closed shapes and ignored properties, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Identify and test the actual contract: In the Python lab, add ex:unknownField to a targeted Person and verify a closed-shape violation.",
+        "Accept the a partner exchange api only accepts documented fields, while internal metadata enrichments are stored in a separate graph example solely because it can be serialized without a syntax error.",
+        "Judge closed shapes and ignored properties by counting nodes without checking that its chosen focus nodes satisfy the actual shape."
+      ],
+      "answer": 0,
+      "why": "The contract must be exercised with data that can fail: In the Python lab, add ex:unknownField to a targeted Person and verify a closed-shape violation."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-16",
+    "path": "shacl-mastery",
+    "time": 20,
+    "title": "Combine requirements using sh:or, sh:and and sh:not",
+    "description": "Logical constraint components compose shapes: sh:or accepts a list where any member must conform, sh:and requires all members, and sh:not rejects conformity to a forbidden shape.",
+    "analogy": "An MDM contact is usable when it provides either an approved email contact route or a phone route.",
+    "learn": [
+      "Logical constraint components compose shapes: sh:or accepts a list where any member must conform, sh:and requires all members, and sh:not rejects conformity to a forbidden shape.",
+      "Do not interpret sh:or as selecting just one exclusive alternative; both alternatives may conform.",
+      "Create contacts with email only, phone only, both and neither. Run full pySHACL and compare expected results."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:ContactShape a sh:NodeShape ; sh:targetClass ex:Contact ; sh:or ( [ sh:property [ sh:path ex:email ; sh:minCount 1 ] ] [ sh:property [ sh:path ex:phone ; sh:minCount 1 ] ] ) .\n",
+    "try": "Create contacts with email only, phone only, both and neither. Run full pySHACL and compare expected results. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For combine requirements using sh:or, sh:and and sh:not, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Accept the an mdm contact is usable when it provides either an approved email contact route or a phone route example solely because it can be serialized without a syntax error.",
+        "Judge combine requirements using sh:or, sh:and and sh:not by counting nodes without checking that its chosen focus nodes satisfy the actual shape.",
+        "Identify and test the actual contract: Create contacts with email only, phone only, both and neither. Run full pySHACL and compare expected results."
+      ],
+      "answer": 2,
+      "why": "The contract must be exercised with data that can fail: Create contacts with email only, phone only, both and neither. Run full pySHACL and compare expected results."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-17",
+    "path": "shacl-mastery",
+    "time": 24,
+    "title": "Qualify cardinality with qualifiedValueShape",
+    "description": "sh:qualifiedValueShape counts only values that conform to a specified shape.",
+    "analogy": "A data product may have multiple contacts but must have at least one approved data steward.",
+    "learn": [
+      "sh:qualifiedValueShape counts only values that conform to a specified shape.",
+      "sh:minCount 1 on ex:hasOwner alone does not establish that any owner meets the approval criteria.",
+      "Test a product with one unapproved contact and one approved steward in a full validator."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:PortfolioShape a sh:NodeShape ; sh:targetClass ex:Portfolio ; sh:property [ sh:path ex:hasOwner ; sh:qualifiedValueShape [ sh:class ex:ApprovedSteward ] ; sh:qualifiedMinCount 1 ] .\n",
+    "try": "Test a product with one unapproved contact and one approved steward in a full validator. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For qualify cardinality with qualifiedvalueshape, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Judge qualify cardinality with qualifiedvalueshape by counting nodes without checking that its chosen focus nodes satisfy the actual shape.",
+        "Identify and test the actual contract: Test a product with one unapproved contact and one approved steward in a full validator.",
+        "Accept the a data product may have multiple contacts but must have at least one approved data steward example solely because it can be serialized without a syntax error."
+      ],
+      "answer": 1,
+      "why": "The contract must be exercised with data that can fail: Test a product with one unapproved contact and one approved steward in a full validator."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-18",
+    "path": "shacl-mastery",
+    "time": 28,
+    "title": "Property paths: inverse, sequence and alternative",
+    "description": "SHACL property paths can follow inverse links, RDF lists of predicates for sequences, or alternative paths.",
+    "analogy": "An organization must own at least one dataset even though the data records ownership from dataset to organization.",
+    "learn": [
+      "SHACL property paths can follow inverse links, RDF lists of predicates for sequences, or alternative paths.",
+      "Do not replicate inverse edges merely to satisfy a shape without considering authoritative source modeling.",
+      "Use pySHACL or Jena to test an organization with and without incoming ex:ownedBy links."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:OrgShape a sh:NodeShape ; sh:targetClass ex:Organization ; sh:property [ sh:path [ sh:inversePath ex:ownedBy ] ; sh:minCount 1 ] .\n",
+    "try": "Use pySHACL or Jena to test an organization with and without incoming ex:ownedBy links. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For property paths: inverse, sequence and alternative, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Identify and test the actual contract: Use pySHACL or Jena to test an organization with and without incoming ex:ownedBy links.",
+        "Accept the an organization must own at least one dataset even though the data records ownership from dataset to organization example solely because it can be serialized without a syntax error.",
+        "Judge property paths: inverse, sequence and alternative by counting nodes without checking that its chosen focus nodes satisfy the actual shape."
+      ],
+      "answer": 0,
+      "why": "The contract must be exercised with data that can fail: Use pySHACL or Jena to test an organization with and without incoming ex:ownedBy links."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-19",
+    "path": "shacl-mastery",
+    "time": 32,
+    "title": "SPARQL-based SHACL constraints",
+    "description": "SHACL-SPARQL can express graph-wide checks that are difficult to represent with Core constraints.",
+    "analogy": "An ingestion pipeline rejects a self-lineage loop for datasets that must have strictly acyclic derivation relationships.",
+    "learn": [
+      "SHACL-SPARQL can express graph-wide checks that are difficult to represent with Core constraints.",
+      "Graph-wide SPARQL checks can be expensive; benchmark against production sizes and restrict untrusted functions.",
+      "Compare a cyclic and acyclic lineage fixture using Apache Jena or pySHACL."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:DatasetShape a sh:NodeShape ; sh:targetClass ex:Dataset ; sh:sparql [ a sh:SPARQLConstraint ; sh:message \"A source cannot derive from itself\" ; sh:select \"SELECT $this WHERE { $this ex:derivedFrom $this }\" ] .\n",
+    "try": "Compare a cyclic and acyclic lineage fixture using Apache Jena or pySHACL. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For sparql-based shacl constraints, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Accept the an ingestion pipeline rejects a self-lineage loop for datasets that must have strictly acyclic derivation relationships example solely because it can be serialized without a syntax error.",
+        "Judge sparql-based shacl constraints by counting nodes without checking that its chosen focus nodes satisfy the actual shape.",
+        "Identify and test the actual contract: Compare a cyclic and acyclic lineage fixture using Apache Jena or pySHACL."
+      ],
+      "answer": 2,
+      "why": "The contract must be exercised with data that can fail: Compare a cyclic and acyclic lineage fixture using Apache Jena or pySHACL."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-20",
+    "path": "shacl-mastery",
+    "time": 20,
+    "title": "Read SHACL validation reports precisely",
+    "description": "A validation report is an RDF graph with sh:ValidationReport, sh:conforms and sh:result entries.",
+    "analogy": "A quality dashboard groups violations by source, shape version and component so stewards can prioritize remediation.",
+    "learn": [
+      "A validation report is an RDF graph with sh:ValidationReport, sh:conforms and sh:result entries.",
+      "A boolean-only pass/fail check loses the actionable evidence needed to correct a dataset.",
+      "Run the People scenario; trace an age datatype violation back to its exact focus node and offending literal."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:ExampleReport a sh:ValidationReport ; sh:conforms false ; sh:result [ a sh:ValidationResult ; sh:focusNode ex:Ada ; sh:resultPath ex:age ; sh:sourceConstraintComponent sh:DatatypeConstraintComponent ] .\n",
+    "try": "Run the People scenario; trace an age datatype violation back to its exact focus node and offending literal. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For read shacl validation reports precisely, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Judge read shacl validation reports precisely by counting nodes without checking that its chosen focus nodes satisfy the actual shape.",
+        "Identify and test the actual contract: Run the People scenario; trace an age datatype violation back to its exact focus node and offending literal.",
+        "Accept the a quality dashboard groups violations by source, shape version and component so stewards can prioritize remediation example solely because it can be serialized without a syntax error."
+      ],
+      "answer": 1,
+      "why": "The contract must be exercised with data that can fail: Run the People scenario; trace an age datatype violation back to its exact focus node and offending literal."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-21",
+    "path": "shacl-mastery",
+    "time": 24,
+    "title": "Execute SHACL from Python with RDFLib and pySHACL",
+    "description": "Python can load Turtle with RDFLib and run pyshacl.validate against a separate shapes graph.",
+    "analogy": "A source-to-RDF ETL job validates each governed release before publishing it to the catalog.",
+    "learn": [
+      "Python can load Turtle with RDFLib and run pyshacl.validate against a separate shapes graph.",
+      "Avoid mutating a production source graph in-place during validation; keep immutable snapshots for reproducibility.",
+      "Execute the included six synthetic scenario pairs and confirm good cases pass and bad cases fail."
+    ],
+    "example": "from rdflib import Graph\nfrom pyshacl import validate\ndata = Graph().parse(\"data.ttl\", format=\"turtle\")\nshapes = Graph().parse(\"shapes.ttl\", format=\"turtle\")\nconforms, report_graph, report_text = validate(data_graph=data, shacl_graph=shapes, inference=\"none\")\nprint(conforms, report_text)",
+    "try": "Execute the included six synthetic scenario pairs and confirm good cases pass and bad cases fail. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For execute shacl from python with rdflib and pyshacl, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Identify and test the actual contract: Execute the included six synthetic scenario pairs and confirm good cases pass and bad cases fail.",
+        "Accept the a source-to-rdf etl job validates each governed release before publishing it to the catalog example solely because it can be serialized without a syntax error.",
+        "Judge execute shacl from python with rdflib and pyshacl by counting nodes without checking that its chosen focus nodes satisfy the actual shape."
+      ],
+      "answer": 0,
+      "why": "The contract must be exercised with data that can fail: Execute the included six synthetic scenario pairs and confirm good cases pass and bad cases fail."
+    },
+    "resource": {
+      "text": "pySHACL documentation",
+      "url": "https://github.com/RDFLib/pySHACL"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-22",
+    "path": "shacl-mastery",
+    "time": 28,
+    "title": "Run the Apache Jena SHACL CLI",
+    "description": "Apache Jena offers an independent SHACL processor with a CLI, Java API and integrations with its RDF dataset stack.",
+    "analogy": "A JVM-based enterprise platform tests shape releases in CI with a standards-oriented command-line job.",
+    "learn": [
+      "Apache Jena offers an independent SHACL processor with a CLI, Java API and integrations with its RDF dataset stack.",
+      "Make sure the shacl executable is from Apache Jena, not an unrelated shell command with the same name.",
+      "Export the Catalog scenario, validate both fixtures, and compare component types with pySHACL."
+    ],
+    "example": "shacl validate --shapes shapes.ttl --data data.ttl",
+    "try": "Export the Catalog scenario, validate both fixtures, and compare component types with pySHACL. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For run the apache jena shacl cli, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Accept the a jvm-based enterprise platform tests shape releases in ci with a standards-oriented command-line job example solely because it can be serialized without a syntax error.",
+        "Judge run the apache jena shacl cli by counting nodes without checking that its chosen focus nodes satisfy the actual shape.",
+        "Identify and test the actual contract: Export the Catalog scenario, validate both fixtures, and compare component types with pySHACL."
+      ],
+      "answer": 2,
+      "why": "The contract must be exercised with data that can fail: Export the Catalog scenario, validate both fixtures, and compare component types with pySHACL."
+    },
+    "resource": {
+      "text": "Apache Jena SHACL",
+      "url": "https://jena.apache.org/documentation/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-23",
+    "path": "shacl-mastery",
+    "time": 32,
+    "title": "Set up a GraphDB SHACL-enabled repository",
+    "description": "GraphDB implements SHACL validation as a repository configuration.",
+    "analogy": "An enterprise catalog repository prevents publication of datasets without required owner and title metadata.",
+    "learn": [
+      "GraphDB implements SHACL validation as a repository configuration.",
+      "GraphDB versions differ in setup and rules. Do not assume turning on a checkbox retrofits all existing repositories.",
+      "Create a new SHACL-enabled test repository, load the shapes through the supported mechanism, and test an invalid update."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:DatasetShape a sh:NodeShape ; sh:targetClass ex:Dataset ; sh:property [ sh:path dct:title ; sh:minCount 1 ] .\n",
+    "try": "Create a new SHACL-enabled test repository, load the shapes through the supported mechanism, and test an invalid update. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For set up a graphdb shacl-enabled repository, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Judge set up a graphdb shacl-enabled repository by counting nodes without checking that its chosen focus nodes satisfy the actual shape.",
+        "Identify and test the actual contract: Create a new SHACL-enabled test repository, load the shapes through the supported mechanism, and test an invalid update.",
+        "Accept the an enterprise catalog repository prevents publication of datasets without required owner and title metadata example solely because it can be serialized without a syntax error."
+      ],
+      "answer": 1,
+      "why": "The contract must be exercised with data that can fail: Create a new SHACL-enabled test repository, load the shapes through the supported mechanism, and test an invalid update."
+    },
+    "resource": {
+      "text": "GraphDB SHACL documentation",
+      "url": "https://graphdb.ontotext.com/documentation/10.8/shacl-validation.html"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-24",
+    "path": "shacl-mastery",
+    "time": 20,
+    "title": "Validate SKOS concepts and RDM releases",
+    "description": "Reference-data validation often needs language-aware SKOS label checks, concept-scheme membership, approved mapping predicates and lifecycle metadata.",
+    "analogy": "Two source systems publish status codes that map into an enterprise SKOS scheme; review changes before approval.",
+    "learn": [
+      "Reference-data validation often needs language-aware SKOS label checks, concept-scheme membership, approved mapping predicates and lifecycle metadata.",
+      "A concept may legitimately have one preferred label per language. A global maxCount 1 is too restrictive for multilingual vocabularies.",
+      "Test a concept with English and Marathi prefLabels, then design a language-specific uniqueness policy."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:StatusShape a sh:NodeShape ; sh:targetClass skos:Concept ; sh:property [ sh:path skos:inScheme ; sh:hasValue ex:StatusScheme ] .\n",
+    "try": "Test a concept with English and Marathi prefLabels, then design a language-specific uniqueness policy. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For validate skos concepts and rdm releases, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Identify and test the actual contract: Test a concept with English and Marathi prefLabels, then design a language-specific uniqueness policy.",
+        "Accept the two source systems publish status codes that map into an enterprise skos scheme; review changes before approval example solely because it can be serialized without a syntax error.",
+        "Judge validate skos concepts and rdm releases by counting nodes without checking that its chosen focus nodes satisfy the actual shape."
+      ],
+      "answer": 0,
+      "why": "The contract must be exercised with data that can fail: Test a concept with English and Marathi prefLabels, then design a language-specific uniqueness policy."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/skos-reference/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-25",
+    "path": "shacl-mastery",
+    "time": 24,
+    "title": "SHACL data contracts for metadata and MDM",
+    "description": "A data contract can combine semantic meaning with structural rules: required identifiers, stewardship ownership, allowed RDM statuses and lineage links.",
+    "analogy": "An MDM hub receives CRM and ERP records and publishes golden entities into a metadata-governed graph.",
+    "learn": [
+      "A data contract can combine semantic meaning with structural rules: required identifiers, stewardship ownership, allowed RDM statuses and lineage links.",
+      "Passing SHACL does not prove entity resolution is accurate; matching and survivorship require their own evaluation.",
+      "Test an imported record with no source ID and an unapproved status, then document who owns each remediation."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:MasterShape a sh:NodeShape ; sh:targetClass ex:MasterRecord ; sh:property [ sh:path ex:sourceId ; sh:minCount 1 ] ; sh:property [ sh:path ex:status ; sh:in ( ex:Active ex:Suspended ) ] .\n",
+    "try": "Test an imported record with no source ID and an unapproved status, then document who owns each remediation. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For shacl data contracts for metadata and mdm, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Accept the an mdm hub receives crm and erp records and publishes golden entities into a metadata-governed graph example solely because it can be serialized without a syntax error.",
+        "Judge shacl data contracts for metadata and mdm by counting nodes without checking that its chosen focus nodes satisfy the actual shape.",
+        "Identify and test the actual contract: Test an imported record with no source ID and an unapproved status, then document who owns each remediation."
+      ],
+      "answer": 2,
+      "why": "The contract must be exercised with data that can fail: Test an imported record with no source ID and an unapproved status, then document who owns each remediation."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-26",
+    "path": "shacl-mastery",
+    "time": 28,
+    "title": "Integrate SHACL checks into CI/CD quality gates",
+    "description": "A reliable pipeline validates syntax first, SHACL second, and downstream competency queries third.",
+    "analogy": "A GitHub Actions job blocks a vocabulary deployment if the new shapes invalidate an approved reference-data snapshot.",
+    "learn": [
+      "A reliable pipeline validates syntax first, SHACL second, and downstream competency queries third.",
+      "Do not accept only the count of violations; compare focus nodes and constraint components for meaningful regression evidence.",
+      "Run good and bad fixtures in CI; ensure an intentionally invalid case is expected to fail and cannot silently pass."
+    ],
+    "example": "python validate.py --scenario catalog --data bad\n# Expect nonzero exit status when violations exist",
+    "try": "Run good and bad fixtures in CI; ensure an intentionally invalid case is expected to fail and cannot silently pass. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For integrate shacl checks into ci/cd quality gates, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Judge integrate shacl checks into ci/cd quality gates by counting nodes without checking that its chosen focus nodes satisfy the actual shape.",
+        "Identify and test the actual contract: Run good and bad fixtures in CI; ensure an intentionally invalid case is expected to fail and cannot silently pass.",
+        "Accept the a github actions job blocks a vocabulary deployment if the new shapes invalidate an approved reference-data snapshot example solely because it can be serialized without a syntax error."
+      ],
+      "answer": 1,
+      "why": "The contract must be exercised with data that can fail: Run good and bad fixtures in CI; ensure an intentionally invalid case is expected to fail and cannot silently pass."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-27",
+    "path": "shacl-mastery",
+    "time": 32,
+    "title": "Version shapes and manage semantic compatibility",
+    "description": "A shape release is an interface contract.",
+    "analogy": "A mandatory stewardship field is introduced after an initial soft-launch where it was only advisory.",
+    "learn": [
+      "A shape release is an interface contract.",
+      "Changing warning to violation may break ingestion even though the data and property names are unchanged.",
+      "Compare v1 and v2 shapes against the same stored snapshot, producing a versioned list of newly failing nodes."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:DatasetShape a sh:NodeShape ; sh:targetClass ex:Dataset ; sh:property [ sh:path ex:steward ; sh:minCount 1 ] .\n",
+    "try": "Compare v1 and v2 shapes against the same stored snapshot, producing a versioned list of newly failing nodes. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For version shapes and manage semantic compatibility, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Identify and test the actual contract: Compare v1 and v2 shapes against the same stored snapshot, producing a versioned list of newly failing nodes.",
+        "Accept the a mandatory stewardship field is introduced after an initial soft-launch where it was only advisory example solely because it can be serialized without a syntax error.",
+        "Judge version shapes and manage semantic compatibility by counting nodes without checking that its chosen focus nodes satisfy the actual shape."
+      ],
+      "answer": 0,
+      "why": "The contract must be exercised with data that can fail: Compare v1 and v2 shapes against the same stored snapshot, producing a versioned list of newly failing nodes."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-28",
+    "path": "shacl-mastery",
+    "time": 20,
+    "title": "Debug inference, class targeting and false passes",
+    "description": "Focus nodes may not be selected when rdf:type is absent, even when a class is implied by RDFS domain or subclass rules.",
+    "analogy": "A member of a subclass does not appear in the target selection of a simplistic browser validator that checks exact rdf:type only.",
+    "learn": [
+      "Focus nodes may not be selected when rdf:type is absent, even when a class is implied by RDFS domain or subclass rules.",
+      "Do not assume two SHACL processors choose identical target nodes when they use different inference configurations.",
+      "Compare inference=\"none\" with inference=\"rdfs\" in pySHACL on a graph with subclass declarations."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:Researcher rdfs:subClassOf ex:Person .\nex:Ada a ex:Researcher .\nex:PersonShape a sh:NodeShape ; sh:targetClass ex:Person ; sh:property [ sh:path ex:age ; sh:minCount 1 ] .\n",
+    "try": "Compare inference=\"none\" with inference=\"rdfs\" in pySHACL on a graph with subclass declarations. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For debug inference, class targeting and false passes, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Accept the a member of a subclass does not appear in the target selection of a simplistic browser validator that checks exact rdf:type only example solely because it can be serialized without a syntax error.",
+        "Judge debug inference, class targeting and false passes by counting nodes without checking that its chosen focus nodes satisfy the actual shape.",
+        "Identify and test the actual contract: Compare inference=\"none\" with inference=\"rdfs\" in pySHACL on a graph with subclass declarations."
+      ],
+      "answer": 2,
+      "why": "The contract must be exercised with data that can fail: Compare inference=\"none\" with inference=\"rdfs\" in pySHACL on a graph with subclass declarations."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-29",
+    "path": "shacl-mastery",
+    "time": 24,
+    "title": "Explore SHACL Advanced Features safely",
+    "description": "SHACL Advanced Features add capabilities beyond Core, such as rules and custom targets; processor support varies and may require explicit flags.",
+    "analogy": "A metadata enrichment pipeline derives helper classifications from approved rules but must preserve evidence for each inferred output.",
+    "learn": [
+      "SHACL Advanced Features add capabilities beyond Core, such as rules and custom targets; processor support varies and may require explicit flags.",
+      "Experimental extensions should not be represented as interoperable SHACL Core behavior, especially across processors.",
+      "Run a basic Core baseline first, then enable explicitly supported advanced features in a controlled environment."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:ThingShape a sh:NodeShape ; sh:targetClass ex:Thing .\n# Add advanced targets or rules only in a supported full processor.\n",
+    "try": "Run a basic Core baseline first, then enable explicitly supported advanced features in a controlled environment. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For explore shacl advanced features safely, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Judge explore shacl advanced features safely by counting nodes without checking that its chosen focus nodes satisfy the actual shape.",
+        "Identify and test the actual contract: Run a basic Core baseline first, then enable explicitly supported advanced features in a controlled environment.",
+        "Accept the a metadata enrichment pipeline derives helper classifications from approved rules but must preserve evidence for each inferred output example solely because it can be serialized without a syntax error."
+      ],
+      "answer": 1,
+      "why": "The contract must be exercised with data that can fail: Run a basic Core baseline first, then enable explicitly supported advanced features in a controlled environment."
+    },
+    "resource": {
+      "text": "pySHACL documentation",
+      "url": "https://github.com/RDFLib/pySHACL"
+    },
+    "module": "SHACL engineering and validation"
+  },
+  {
+    "id": "shacl-30",
+    "path": "shacl-mastery",
+    "time": 28,
+    "title": "Design a complete SHACL validation capstone",
+    "description": "A production-style capstone should separate ontology schema, source-to-RDF transforms, SHACL quality rules, sample reference data, violations, a report parser, unit tests and a release gate.",
+    "analogy": "Combine the Catalog, SKOS, and Lineage scenarios into a governed enterprise data-product publication.",
+    "learn": [
+      "A production-style capstone should separate ontology schema, source-to-RDF transforms, SHACL quality rules, sample reference data, violations, a report parser, unit tests and a release gate.",
+      "A validator that only runs against valid examples can appear trustworthy while never catching real defects.",
+      "Implement positive, negative and change-impact tests; export Turtle and store the machine-readable sh:ValidationReport."
+    ],
+    "example": "@prefix ex: <https://tattviki.example/education/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix dct: <http://purl.org/dc/terms/> .\nex:ReleaseShape a sh:NodeShape ; sh:targetClass ex:Dataset ; sh:property [ sh:path ex:steward ; sh:minCount 1 ] ; sh:property [ sh:path ex:classification ; sh:in ( ex:Public ex:Internal ex:Restricted ) ] .\n",
+    "try": "Implement positive, negative and change-impact tests; export Turtle and store the machine-readable sh:ValidationReport. Use the SHACL Validation Lab for supported Core constraints and the Python/Jena toolchain for advanced features.",
+    "quiz": {
+      "q": "For design a complete shacl validation capstone, which test provides meaningful evidence in this scenario?",
+      "options": [
+        "Identify and test the actual contract: Implement positive, negative and change-impact tests; export Turtle and store the machine-readable sh:ValidationReport.",
+        "Accept the combine the catalog, skos, and lineage scenarios into a governed enterprise data-product publication example solely because it can be serialized without a syntax error.",
+        "Judge design a complete shacl validation capstone by counting nodes without checking that its chosen focus nodes satisfy the actual shape."
+      ],
+      "answer": 0,
+      "why": "The contract must be exercised with data that can fail: Implement positive, negative and change-impact tests; export Turtle and store the machine-readable sh:ValidationReport."
+    },
+    "resource": {
+      "text": "W3C SHACL Core",
+      "url": "https://www.w3.org/TR/shacl/"
+    },
+    "module": "SHACL engineering and validation"
+  }
+]

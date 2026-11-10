@@ -1,0 +1,20 @@
+{
+  "version": "13.0.0",
+  "lessons": 737,
+  "learning_paths": 25,
+  "new_shacl_lessons": 30,
+  "shacl_scenarios": 6,
+  "shacl_turtle_fixtures": 18,
+  "browser_interaction_checks_passed": 20,
+  "shacl_core_subset_checks_passed": 19,
+  "shacl_fixture_tests_passed": 3,
+  "shacl_fixture_tests_skipped": 1,
+  "skip_reason": "pySHACL could not be installed in this environment; full validator test included for environments with dependencies installed, including GitHub Actions",
+  "graph_datasets": 12,
+  "graph_nodes": 360,
+  "graph_edges": 616,
+  "existing_retrieval_tests_passed": 11,
+  "existing_enterprise_tests_passed": 6,
+  "editorial_review": "Stock templates detected and addressed by reproducible audit; further human editorial review remains necessary",
+  "external_deployment_tested": false
+}
